@@ -1,0 +1,6 @@
+framework module Pods_odiggo {
+  umbrella header "Pods-odiggo-umbrella.h"
+
+  export *
+  module * { export * }
+}

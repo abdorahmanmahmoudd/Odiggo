@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  odiggo
+
+  Created by Abdelrahman Ali on 01/01/2021.
+  
+*/
+
+// MARK: - GENERAL
+"GENERAL_ERROR_DESCRIPTION" = "Countered a problem!";
+"NO_INTERNET_CONNECTION" = "No internet connection, please try again later!";
+

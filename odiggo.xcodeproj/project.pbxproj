@@ -3,27 +3,53 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		28945193259FC9B100FF77DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28945192259FC9B100FF77DD /* AppDelegate.swift */; };
-		28945195259FC9B100FF77DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28945194259FC9B100FF77DD /* SceneDelegate.swift */; };
-		28945197259FC9B100FF77DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28945196259FC9B100FF77DD /* ViewController.swift */; };
-		2894519A259FC9B100FF77DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28945198259FC9B100FF77DD /* Main.storyboard */; };
 		2894519C259FC9B200FF77DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2894519B259FC9B200FF77DD /* Assets.xcassets */; };
 		2894519F259FC9B200FF77DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2894519D259FC9B200FF77DD /* LaunchScreen.storyboard */; };
+		289451BC259FCC5900FF77DD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 289451BB259FCC5900FF77DD /* Localizable.strings */; };
+		289451C2259FD0DD00FF77DD /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451C1259FD0DD00FF77DD /* AppCoordinator.swift */; };
+		289451C9259FD13A00FF77DD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451C8259FD13A00FF77DD /* Coordinator.swift */; };
+		289451CD259FD17000FF77DD /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451CC259FD17000FF77DD /* Injectable.swift */; };
+		289451D0259FD19D00FF77DD /* ReusableIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451CF259FD19D00FF77DD /* ReusableIdentifier.swift */; };
+		289451D3259FD1F700FF77DD /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451D2259FD1F700FF77DD /* String.swift */; };
+		289451D6259FD21600FF77DD /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451D5259FD21600FF77DD /* UIView.swift */; };
+		289451D9259FD24E00FF77DD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451D8259FD24E00FF77DD /* Constants.swift */; };
+		289451DC259FD29700FF77DD /* API+NetworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451DB259FD29700FF77DD /* API+NetworkRepository.swift */; };
+		289451DF259FD29F00FF77DD /* API+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451DE259FD29F00FF77DD /* API+Error.swift */; };
+		289451E4259FD56F00FF77DD /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451E2259FD56F00FF77DD /* OnboardingViewController.swift */; };
+		289451E5259FD56F00FF77DD /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 289451E3259FD56F00FF77DD /* OnboardingViewController.xib */; };
+		289451E9259FD59200FF77DD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451E8259FD59200FF77DD /* BaseViewController.swift */; };
+		289451EC259FD67000FF77DD /* BaseStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451EB259FD67000FF77DD /* BaseStateController.swift */; };
+		D738663F8C403373C7658C95 /* Pods_odiggo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5009EA90518A495E603905DA /* Pods_odiggo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2894518F259FC9B100FF77DD /* odiggo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = odiggo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28945192259FC9B100FF77DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		28945194259FC9B100FF77DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		28945196259FC9B100FF77DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		28945199259FC9B100FF77DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2894519B259FC9B200FF77DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2894519E259FC9B200FF77DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		289451A0259FC9B200FF77DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		289451BB259FCC5900FF77DD /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		289451C1259FD0DD00FF77DD /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		289451C8259FD13A00FF77DD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		289451CC259FD17000FF77DD /* Injectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injectable.swift; sourceTree = "<group>"; };
+		289451CF259FD19D00FF77DD /* ReusableIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableIdentifier.swift; sourceTree = "<group>"; };
+		289451D2259FD1F700FF77DD /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		289451D5259FD21600FF77DD /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		289451D8259FD24E00FF77DD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		289451DB259FD29700FF77DD /* API+NetworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+NetworkRepository.swift"; sourceTree = "<group>"; };
+		289451DE259FD29F00FF77DD /* API+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Error.swift"; sourceTree = "<group>"; };
+		289451E2259FD56F00FF77DD /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		289451E3259FD56F00FF77DD /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
+		289451E8259FD59200FF77DD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		289451EB259FD67000FF77DD /* BaseStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStateController.swift; sourceTree = "<group>"; };
+		3A9292F249E3BC31F464EE25 /* Pods-odiggo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-odiggo.release.xcconfig"; path = "Target Support Files/Pods-odiggo/Pods-odiggo.release.xcconfig"; sourceTree = "<group>"; };
+		5009EA90518A495E603905DA /* Pods_odiggo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_odiggo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9780943F6E214C75579013C6 /* Pods-odiggo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-odiggo.debug.xcconfig"; path = "Target Support Files/Pods-odiggo/Pods-odiggo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D738663F8C403373C7658C95 /* Pods_odiggo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +69,8 @@
 			children = (
 				28945191259FC9B100FF77DD /* odiggo */,
 				28945190259FC9B100FF77DD /* Products */,
+				970FA18B7A519C56FDA89763 /* Pods */,
+				E73375D45A8ED131A8308C15 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +85,131 @@
 		28945191259FC9B100FF77DD /* odiggo */ = {
 			isa = PBXGroup;
 			children = (
-				28945192259FC9B100FF77DD /* AppDelegate.swift */,
-				28945194259FC9B100FF77DD /* SceneDelegate.swift */,
-				28945196259FC9B100FF77DD /* ViewController.swift */,
-				28945198259FC9B100FF77DD /* Main.storyboard */,
-				2894519B259FC9B200FF77DD /* Assets.xcassets */,
-				2894519D259FC9B200FF77DD /* LaunchScreen.storyboard */,
-				289451A0259FC9B200FF77DD /* Info.plist */,
+				289451B3259FCB8300FF77DD /* Source */,
+				289451B1259FCB7100FF77DD /* Resources */,
 			);
 			path = odiggo;
+			sourceTree = "<group>";
+		};
+		289451B1259FCB7100FF77DD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2894519D259FC9B200FF77DD /* LaunchScreen.storyboard */,
+				2894519B259FC9B200FF77DD /* Assets.xcassets */,
+				289451A0259FC9B200FF77DD /* Info.plist */,
+				289451BB259FCC5900FF77DD /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		289451B3259FCB8300FF77DD /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				289451B4259FCBB600FF77DD /* Application */,
+				289451B5259FCBBF00FF77DD /* Base */,
+				289451B9259FCBDD00FF77DD /* Common */,
+				289451B8259FCBD300FF77DD /* Network */,
+				289451B7259FCBCD00FF77DD /* Story */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		289451B4259FCBB600FF77DD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				28945192259FC9B100FF77DD /* AppDelegate.swift */,
+				289451C1259FD0DD00FF77DD /* AppCoordinator.swift */,
+				289451D8259FD24E00FF77DD /* Constants.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		289451B5259FCBBF00FF77DD /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				289451E8259FD59200FF77DD /* BaseViewController.swift */,
+				289451EB259FD67000FF77DD /* BaseStateController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		289451B7259FCBCD00FF77DD /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				289451E1259FD48600FF77DD /* Onboarding */,
+			);
+			path = Story;
+			sourceTree = "<group>";
+		};
+		289451B8259FCBD300FF77DD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				289451DB259FD29700FF77DD /* API+NetworkRepository.swift */,
+				289451DE259FD29F00FF77DD /* API+Error.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		289451B9259FCBDD00FF77DD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				289451C5259FD0F300FF77DD /* Extensions */,
+				289451C6259FD11200FF77DD /* Helpers */,
+				289451C7259FD12500FF77DD /* UIComponents */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		289451C5259FD0F300FF77DD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				289451D2259FD1F700FF77DD /* String.swift */,
+				289451D5259FD21600FF77DD /* UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		289451C6259FD11200FF77DD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				289451C8259FD13A00FF77DD /* Coordinator.swift */,
+				289451CC259FD17000FF77DD /* Injectable.swift */,
+				289451CF259FD19D00FF77DD /* ReusableIdentifier.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		289451C7259FD12500FF77DD /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		289451E1259FD48600FF77DD /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				289451E2259FD56F00FF77DD /* OnboardingViewController.swift */,
+				289451E3259FD56F00FF77DD /* OnboardingViewController.xib */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		970FA18B7A519C56FDA89763 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9780943F6E214C75579013C6 /* Pods-odiggo.debug.xcconfig */,
+				3A9292F249E3BC31F464EE25 /* Pods-odiggo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E73375D45A8ED131A8308C15 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5009EA90518A495E603905DA /* Pods_odiggo.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +219,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 289451A3259FC9B200FF77DD /* Build configuration list for PBXNativeTarget "odiggo" */;
 			buildPhases = (
+				7781CB36B1DC77FD68240A50 /* [CP] Check Pods Manifest.lock */,
 				2894518B259FC9B100FF77DD /* Sources */,
 				2894518C259FC9B100FF77DD /* Frameworks */,
 				2894518D259FC9B100FF77DD /* Resources */,
+				FFBED3DE5E81E42A8F852F37 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,35 +272,80 @@
 			buildActionMask = 2147483647;
 			files = (
 				2894519F259FC9B200FF77DD /* LaunchScreen.storyboard in Resources */,
+				289451BC259FCC5900FF77DD /* Localizable.strings in Resources */,
 				2894519C259FC9B200FF77DD /* Assets.xcassets in Resources */,
-				2894519A259FC9B100FF77DD /* Main.storyboard in Resources */,
+				289451E5259FD56F00FF77DD /* OnboardingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7781CB36B1DC77FD68240A50 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-odiggo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFBED3DE5E81E42A8F852F37 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-odiggo/Pods-odiggo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-odiggo/Pods-odiggo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-odiggo/Pods-odiggo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2894518B259FC9B100FF77DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28945197259FC9B100FF77DD /* ViewController.swift in Sources */,
+				289451D3259FD1F700FF77DD /* String.swift in Sources */,
+				289451DF259FD29F00FF77DD /* API+Error.swift in Sources */,
+				289451CD259FD17000FF77DD /* Injectable.swift in Sources */,
+				289451C2259FD0DD00FF77DD /* AppCoordinator.swift in Sources */,
+				289451D6259FD21600FF77DD /* UIView.swift in Sources */,
+				289451E9259FD59200FF77DD /* BaseViewController.swift in Sources */,
 				28945193259FC9B100FF77DD /* AppDelegate.swift in Sources */,
-				28945195259FC9B100FF77DD /* SceneDelegate.swift in Sources */,
+				289451DC259FD29700FF77DD /* API+NetworkRepository.swift in Sources */,
+				289451C9259FD13A00FF77DD /* Coordinator.swift in Sources */,
+				289451D0259FD19D00FF77DD /* ReusableIdentifier.swift in Sources */,
+				289451EC259FD67000FF77DD /* BaseStateController.swift in Sources */,
+				289451E4259FD56F00FF77DD /* OnboardingViewController.swift in Sources */,
+				289451D9259FD24E00FF77DD /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		28945198259FC9B100FF77DD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				28945199259FC9B100FF77DD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2894519D259FC9B200FF77DD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -283,12 +475,13 @@
 		};
 		289451A4259FC9B200FF77DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9780943F6E214C75579013C6 /* Pods-odiggo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B8L6UA4MUM;
-				INFOPLIST_FILE = odiggo/Info.plist;
+				INFOPLIST_FILE = odiggo/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,12 +495,13 @@
 		};
 		289451A5259FC9B200FF77DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A9292F249E3BC31F464EE25 /* Pods-odiggo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B8L6UA4MUM;
-				INFOPLIST_FILE = odiggo/Info.plist;
+				INFOPLIST_FILE = odiggo/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
