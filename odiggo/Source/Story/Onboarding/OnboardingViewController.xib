@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingViewController" customModule="odiggo" customModuleProvider="target">
             <connections>
+                <outlet property="scrollView" destination="AqB-Sq-2jn" id="YLC-qH-TV0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +19,21 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AqB-Sq-2jn">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="MNn-Ku-xnO"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="QNj-JK-hP7"/>
+                </scrollView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="AqB-Sq-2jn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2wZ-DG-9lU"/>
+                <constraint firstItem="AqB-Sq-2jn" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="A2r-2I-Wo0"/>
+                <constraint firstItem="AqB-Sq-2jn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JIm-Ne-dnd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AqB-Sq-2jn" secondAttribute="trailing" id="ZNF-hP-ceh"/>
+            </constraints>
             <point key="canvasLocation" x="122" y="125"/>
         </view>
     </objects>

@@ -10,3 +10,12 @@
 "GENERAL_ERROR_DESCRIPTION" = "Countered a problem!";
 "NO_INTERNET_CONNECTION" = "No internet connection, please try again later!";
 
+// MARK: Onboarding
+"WELCOME_SUBTITLE" = "Odiggo is a one-stop shop for everything that you need for your vehicle, either your looking for a cool accessory or a superior car part then odiggo is your online place to be, as we are trying to help all car owners to find the best quality car parts with the lowest prices";
+"GET_STARTED_BUTTON_TITLE" = "Get Started";
+"NEXT_BUTTON_TITLE" = "Next";
+"SKIP_BUTTON_TITLE" = "Skip";
+"ADD_YOUR_CAR" = "ADD YOUR CAR";
+"FIND_PRODUCT" = "FIND PRODUCT";
+"BUY_AND_FIX" = "BUY AND FIX";
+"ONBOARDING_SUBTITLE" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporLorem";

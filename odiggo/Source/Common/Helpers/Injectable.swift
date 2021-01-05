@@ -23,8 +23,9 @@ protocol Injectable {
     func assertInjection()
 }
 
+// MARK: Injectable+UIViewController
 extension Injectable where Self: UIViewController {
-    
+
     /**
      Creates a UIViewController of a given type
      - parameter payload: The payload we want to inject into our ViewController
@@ -39,5 +40,20 @@ extension Injectable where Self: UIViewController {
         viewController.assertInjection()
         
         return viewController
+    }
+}
+
+// MARK: Injectable+UIView
+extension Injectable where Self: UIView {
+
+    // Create a UIView with Identifier and inject it with a payload
+    static func create(payload: Payload) -> Self {
+
+        let view = self.init()
+
+        view.inject(payload: payload)
+        view.assertInjection()
+
+        return view
     }
 }

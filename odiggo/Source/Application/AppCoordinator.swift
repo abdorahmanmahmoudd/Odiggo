@@ -41,6 +41,7 @@ final class AppCoordinator: Coordinator {
     /// Starting point
     func start() {
 //        startTabbarController()
+        startOnboarding()
     }
     
 //    func startTabbarController() {
@@ -57,5 +58,29 @@ final class AppCoordinator: Coordinator {
 //        /// Set navigationController root viewController
 //        navigationController.setViewControllers([tabbarController], animated: true)
 //    }
+    
+    func startOnboarding() {
+        let onboardingCoordinator = OnboardingCoordinator(navigationController)
+        onboardingCoordinator.parentCoordinator = self
+        addChildCoordinator(onboardingCoordinator)
+        onboardingCoordinator.start()
+    }
+}
+
+// MARK: Additional behaviour
+extension AppCoordinator {
+    
+    func childDidFinish(_ child: Coordinator) {
+        
+        switch child.self {
+        case is OnboardingCoordinator:
+            debugPrint("OnboardingCoordinator didFinish")
+            
+        default:
+            debugPrint("childDidFinish not handling \(child)")
+        }
+        
+        removeChildCoordinator(child)
+    }
 }
 
