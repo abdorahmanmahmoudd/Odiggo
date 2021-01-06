@@ -12,7 +12,7 @@ final class OnboardingView: UIView {
     // UI Outlets
     @IBOutlet private weak var skipButton: OButton!
     @IBOutlet private weak var nextButton: OButton!
-    @IBOutlet private weak var pageControlView: OPageControlView!
+    @IBOutlet private weak var pageControlView: PageControl!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var subtitleLabel: UILabel!
     @IBOutlet private weak var coverImageView: UIImageView!
@@ -20,11 +20,13 @@ final class OnboardingView: UIView {
     /// Set these closures to handle the button click
     var nextTapped: (() -> Void)? = nil
     var skipTapped: (() -> Void)? = nil
+    var pageControlValueChange: ((Int) -> Void)? = nil
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
         styleViews()
+        pageControlView.addTarget(self, action: #selector(onPageChanged(_:)), for: .valueChanged)
     }
     
     private func styleViews() {
@@ -49,7 +51,7 @@ final class OnboardingView: UIView {
     }
     
     func setPages(_ pages: Int) {
-        pageControlView.pages = pages
+        pageControlView.numberOfPages = pages
     }
     
     func setCurrentPage(_ page: Int) {
@@ -62,5 +64,9 @@ final class OnboardingView: UIView {
     
     @IBAction private func skipButtonTapped(_ sender: UIButton) {
         skipTapped?()
+    }
+    
+    @objc func onPageChanged(_ sender: PageControl) {
+        pageControlValueChange?(sender.currentPage)
     }
 }

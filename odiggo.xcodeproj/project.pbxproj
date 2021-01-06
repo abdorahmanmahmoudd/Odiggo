@@ -49,9 +49,8 @@
 		289451E5259FD56F00FF77DD /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 289451E3259FD56F00FF77DD /* OnboardingViewController.xib */; };
 		289451E9259FD59200FF77DD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451E8259FD59200FF77DD /* BaseViewController.swift */; };
 		289451EC259FD67000FF77DD /* BaseStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451EB259FD67000FF77DD /* BaseStateController.swift */; };
-		28FD652A25A3D96A004C9F0F /* OPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD652925A3D96A004C9F0F /* OPageControl.swift */; };
-		28FD652E25A3D9E2004C9F0F /* Dotview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD652D25A3D9E2004C9F0F /* Dotview.swift */; };
 		28FD653125A3E9DB004C9F0F /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD653025A3E9DB004C9F0F /* Array.swift */; };
+		28FD653725A4C522004C9F0F /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD653625A4C522004C9F0F /* PageControl.swift */; };
 		D738663F8C403373C7658C95 /* Pods_odiggo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5009EA90518A495E603905DA /* Pods_odiggo.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,9 +99,8 @@
 		289451E3259FD56F00FF77DD /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		289451E8259FD59200FF77DD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		289451EB259FD67000FF77DD /* BaseStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStateController.swift; sourceTree = "<group>"; };
-		28FD652925A3D96A004C9F0F /* OPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPageControl.swift; sourceTree = "<group>"; };
-		28FD652D25A3D9E2004C9F0F /* Dotview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dotview.swift; sourceTree = "<group>"; };
 		28FD653025A3E9DB004C9F0F /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		28FD653625A4C522004C9F0F /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		3A9292F249E3BC31F464EE25 /* Pods-odiggo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-odiggo.release.xcconfig"; path = "Target Support Files/Pods-odiggo/Pods-odiggo.release.xcconfig"; sourceTree = "<group>"; };
 		5009EA90518A495E603905DA /* Pods_odiggo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_odiggo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9780943F6E214C75579013C6 /* Pods-odiggo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-odiggo.debug.xcconfig"; path = "Target Support Files/Pods-odiggo/Pods-odiggo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -340,7 +338,7 @@
 		289451C7259FD12500FF77DD /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				28FD652825A3D946004C9F0F /* OPageControl */,
+				28FD652825A3D946004C9F0F /* PageControl */,
 				2874F00625A3A8EA00A05111 /* OButton */,
 			);
 			path = UIComponents;
@@ -358,13 +356,12 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		28FD652825A3D946004C9F0F /* OPageControl */ = {
+		28FD652825A3D946004C9F0F /* PageControl */ = {
 			isa = PBXGroup;
 			children = (
-				28FD652925A3D96A004C9F0F /* OPageControl.swift */,
-				28FD652D25A3D9E2004C9F0F /* Dotview.swift */,
+				28FD653625A4C522004C9F0F /* PageControl.swift */,
 			);
-			path = OPageControl;
+			path = PageControl;
 			sourceTree = "<group>";
 		};
 		970FA18B7A519C56FDA89763 /* Pods */ = {
@@ -520,17 +517,16 @@
 				281C451925A0971700FD8C08 /* OnboardingView.swift in Sources */,
 				2874F00F25A3A9A300A05111 /* OButton+Style.swift in Sources */,
 				289451C2259FD0DD00FF77DD /* AppCoordinator.swift in Sources */,
-				28FD652E25A3D9E2004C9F0F /* Dotview.swift in Sources */,
 				28FD653125A3E9DB004C9F0F /* Array.swift in Sources */,
 				289451D6259FD21600FF77DD /* UIView.swift in Sources */,
 				2874F00825A3A93800A05111 /* OButton.swift in Sources */,
-				28FD652A25A3D96A004C9F0F /* OPageControl.swift in Sources */,
 				2874F00425A39AFE00A05111 /* Fonts.swift in Sources */,
 				289451E9259FD59200FF77DD /* BaseViewController.swift in Sources */,
 				281C456A25A0C2FD00FD8C08 /* UIColor.swift in Sources */,
 				281C457025A0C97200FD8C08 /* OnboardingCoordinator.swift in Sources */,
 				281C451C25A0972400FD8C08 /* GetStartedView.swift in Sources */,
 				28945193259FC9B100FF77DD /* AppDelegate.swift in Sources */,
+				28FD653725A4C522004C9F0F /* PageControl.swift in Sources */,
 				281C452825A0A9B600FD8C08 /* OnboardingFlow.swift in Sources */,
 				2874F00C25A3A97D00A05111 /* OButton+ContentAlignment.swift in Sources */,
 				289451DC259FD29700FF77DD /* API+NetworkRepository.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 final class GetStartedView: UIView {
 
     // UI Outlets
-    @IBOutlet private weak var pageControlView: OPageControlView!
+    @IBOutlet private weak var pageControlView: PageControl!
     @IBOutlet private weak var coverImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var subtitleLabel: UILabel!
@@ -18,11 +18,13 @@ final class GetStartedView: UIView {
     
     /// Set this closure to handle the button click
     var getStartedTapped: (() -> Void)? = nil
+    var pageControlValueChange: ((Int) -> Void)? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         styleViews()
+        pageControlView.addTarget(self, action: #selector(onPageChanged(_:)), for: .valueChanged)
     }
     
     private func styleViews() {
@@ -42,7 +44,7 @@ final class GetStartedView: UIView {
     }
     
     func setPages(_ pages: Int) {
-        pageControlView.pages = pages
+        pageControlView.numberOfPages = pages
     }
     
     func setCurrentPage(_ page: Int) {
@@ -51,5 +53,9 @@ final class GetStartedView: UIView {
     
     @IBAction private func getStartedTapped(_ sender: UIButton) {
         getStartedTapped?()
+    }
+    
+    @objc func onPageChanged(_ sender: PageControl) {
+        pageControlValueChange?(sender.currentPage)
     }
 }

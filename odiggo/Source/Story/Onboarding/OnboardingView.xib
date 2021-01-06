@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -24,34 +24,41 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buyAndFix" translatesAutoresizingMaskIntoConstraints="NO" id="AkS-0u-hGI">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="597.5"/>
-                    <constraints>
-                        <constraint firstAttribute="width" priority="750" constant="414" id="uDo-2q-Ao2"/>
-                    </constraints>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buyAndFix" translatesAutoresizingMaskIntoConstraints="NO" id="AkS-0u-hGI">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="587"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftL-Ah-eJH">
-                    <rect key="frame" x="187" y="628.5" width="40.5" height="29.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftL-Ah-eJH">
+                    <rect key="frame" x="187" y="618" width="40.333333333333343" height="29.333333333333371"/>
                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="25"/>
                     <color key="textColor" name="pinkishRed"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subtitle" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kok-J8-CqV">
-                    <rect key="frame" x="20" y="678" width="374" height="19"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="subtitleLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporLorem " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kok-J8-CqV">
+                    <rect key="frame" x="20" y="667.33333333333337" width="374" height="37.333333333333371"/>
                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                     <color key="textColor" name="black"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3L0-ob-hsK" customClass="OPageControlView" customModule="odiggo" customModuleProvider="target">
-                    <rect key="frame" x="107" y="717" width="200" height="33"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3L0-ob-hsK" customClass="PageControl" customModule="odiggo" customModuleProvider="target">
+                    <rect key="frame" x="20" y="724.66666666666663" width="374" height="24"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="33" id="2HO-9A-gDz"/>
-                        <constraint firstAttribute="width" constant="200" id="3z0-T1-LcX"/>
+                        <constraint firstAttribute="height" constant="24" id="2HO-9A-gDz"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="pageIndicatorTintColor">
+                            <color key="value" name="paleRose"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="currentPageIndicatorTintColor">
+                            <color key="value" name="pinkishRed"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="numberOfPages">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VbT-cc-fUM" customClass="OButton" customModule="odiggo" customModuleProvider="target">
-                    <rect key="frame" x="104" y="770" width="294" height="50"/>
+                    <rect key="frame" x="104" y="768.66666666666663" width="294" height="50"/>
                     <color key="backgroundColor" name="pinkishRed"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="lZK-53-Gni"/>
@@ -65,7 +72,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPe-r8-oSX" customClass="OButton" customModule="odiggo" customModuleProvider="target">
-                    <rect key="frame" x="16" y="779.5" width="62" height="31"/>
+                    <rect key="frame" x="16" y="778" width="62" height="31"/>
                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                     <state key="normal" title="Skip">
                         <color key="titleColor" name="greyish"/>
@@ -81,7 +88,7 @@
                 <constraint firstItem="AkS-0u-hGI" firstAttribute="top" secondItem="PQV-LQ-TvF" secondAttribute="top" id="0jr-jM-C5a"/>
                 <constraint firstItem="aPe-r8-oSX" firstAttribute="centerY" secondItem="VbT-cc-fUM" secondAttribute="centerY" id="2KU-gc-obU"/>
                 <constraint firstItem="3L0-ob-hsK" firstAttribute="centerX" secondItem="PQV-LQ-TvF" secondAttribute="centerX" id="2Lb-1q-03G"/>
-                <constraint firstItem="AkS-0u-hGI" firstAttribute="height" secondItem="PQV-LQ-TvF" secondAttribute="height" multiplier="0.667" id="6di-g0-8kW"/>
+                <constraint firstItem="AkS-0u-hGI" firstAttribute="height" secondItem="PQV-LQ-TvF" secondAttribute="height" multiplier="0.655" id="6di-g0-8kW"/>
                 <constraint firstItem="aPe-r8-oSX" firstAttribute="leading" secondItem="PQV-LQ-TvF" secondAttribute="leading" constant="16" id="AWi-RM-MIv"/>
                 <constraint firstAttribute="trailing" secondItem="kok-J8-CqV" secondAttribute="trailing" constant="20" id="FIR-6Z-ha6"/>
                 <constraint firstItem="ftL-Ah-eJH" firstAttribute="centerX" secondItem="PQV-LQ-TvF" secondAttribute="centerX" id="Iq0-cD-mEG"/>
@@ -89,6 +96,7 @@
                 <constraint firstItem="VbT-cc-fUM" firstAttribute="width" secondItem="PQV-LQ-TvF" secondAttribute="width" multiplier="0.71" id="OlQ-p8-gyJ"/>
                 <constraint firstItem="VbT-cc-fUM" firstAttribute="top" secondItem="3L0-ob-hsK" secondAttribute="bottom" constant="20" id="P9P-27-kal"/>
                 <constraint firstAttribute="trailing" secondItem="AkS-0u-hGI" secondAttribute="trailing" id="S0A-8V-9sw"/>
+                <constraint firstItem="3L0-ob-hsK" firstAttribute="leading" secondItem="ZaH-0M-dE4" secondAttribute="leading" constant="20" id="Sky-TU-OkN"/>
                 <constraint firstItem="kok-J8-CqV" firstAttribute="top" secondItem="ftL-Ah-eJH" secondAttribute="bottom" constant="20" id="U15-ZL-hR8"/>
                 <constraint firstItem="AkS-0u-hGI" firstAttribute="leading" secondItem="PQV-LQ-TvF" secondAttribute="leading" id="UUq-ur-exw"/>
                 <constraint firstItem="3L0-ob-hsK" firstAttribute="top" secondItem="kok-J8-CqV" secondAttribute="bottom" constant="20" id="g1t-VT-dtJ"/>
@@ -115,6 +123,9 @@
         </namedColor>
         <namedColor name="greyish">
             <color red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="paleRose">
+            <color red="0.99607843137254903" green="0.74509803921568629" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="pinkishRed">
             <color red="0.89411764705882357" green="0.062745098039215685" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

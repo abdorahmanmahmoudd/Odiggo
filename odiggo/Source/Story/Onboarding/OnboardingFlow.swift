@@ -44,10 +44,10 @@ enum OnboardingFlow: CaseIterable {
             return ("BUY_AND_FIX".localized, "ONBOARDING_SUBTITLE".localized, "buyAndFix")
             
         case .findProduct:
-            return ("FIND_PRODUCT".localized, "ONBOARDING_SUBTITLE".localized, "buyAndFix")
+            return ("FIND_PRODUCT".localized, "ONBOARDING_SUBTITLE".localized, "findProduct")
         
         case .getStarted:
-            return ("ADD_YOUR_CAR".localized, "ONBOARDING_SUBTITLE".localized, "buyAndFix")
+            return ("ADD_YOUR_CAR".localized, "ONBOARDING_SUBTITLE".localized, "addYourCar")
         }
     }
 }
