@@ -25,7 +25,7 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" image="welcome" translatesAutoresizingMaskIntoConstraints="NO" id="num-rA-i7u">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="508"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="subttile" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3T-NQ-si1">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="subttile" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3T-NQ-si1">
                     <rect key="frame" x="20" y="616" width="374" height="19"/>
                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                     <color key="textColor" name="black"/>
@@ -45,7 +45,7 @@
                         <action selector="getStartedTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="DT0-FP-hGx"/>
                     </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" image="odiggo logo" translatesAutoresizingMaskIntoConstraints="NO" id="nw9-YI-UsF">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" image="odiggo logo" translatesAutoresizingMaskIntoConstraints="NO" id="nw9-YI-UsF">
                     <rect key="frame" x="140.5" y="539" width="133" height="52"/>
                 </imageView>
             </subviews>
@@ -59,7 +59,7 @@
                 <constraint firstItem="num-rA-i7u" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LkP-uc-QQN"/>
                 <constraint firstAttribute="trailing" secondItem="D3T-NQ-si1" secondAttribute="trailing" constant="20" id="TFm-mz-Adr"/>
                 <constraint firstItem="NPL-nS-7YJ" firstAttribute="top" secondItem="D3T-NQ-si1" secondAttribute="bottom" constant="25" id="WZ2-CU-JHR"/>
-                <constraint firstItem="nw9-YI-UsF" firstAttribute="top" secondItem="num-rA-i7u" secondAttribute="bottom" constant="31" id="aFe-Zv-cVS"/>
+                <constraint firstItem="nw9-YI-UsF" firstAttribute="top" secondItem="num-rA-i7u" secondAttribute="bottom" priority="750" constant="31" id="aFe-Zv-cVS"/>
                 <constraint firstItem="NPL-nS-7YJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="e4V-0G-bKZ"/>
                 <constraint firstItem="D3T-NQ-si1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="ncW-ak-iaE"/>
                 <constraint firstAttribute="trailing" secondItem="NPL-nS-7YJ" secondAttribute="trailing" constant="16" id="xs1-4y-RGf"/>

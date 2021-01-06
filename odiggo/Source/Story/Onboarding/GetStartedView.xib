@@ -24,17 +24,17 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addYourCar" translatesAutoresizingMaskIntoConstraints="NO" id="zWy-LT-uJk">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addYourCar" translatesAutoresizingMaskIntoConstraints="NO" id="zWy-LT-uJk">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="560"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="subtitle" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQq-DS-nYp">
-                    <rect key="frame" x="20" y="668" width="374" height="18.666666666666629"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="subtitleLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporLorem " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQq-DS-nYp">
+                    <rect key="frame" x="20" y="668" width="374" height="37.333333333333371"/>
                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                     <color key="textColor" name="black"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ng-Lt-Wgc" customClass="OButton" customModule="odiggo" customModuleProvider="target">
-                    <rect key="frame" x="16" y="750.66666666666663" width="382" height="50"/>
+                    <rect key="frame" x="16" y="769.33333333333337" width="382" height="50"/>
                     <color key="backgroundColor" name="pinkishRed"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="FZ0-kW-Q6q"/>
@@ -54,7 +54,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZ0-y6-RHY" customClass="PageControl" customModule="odiggo" customModuleProvider="target">
-                    <rect key="frame" x="20" y="706.66666666666663" width="374" height="24"/>
+                    <rect key="frame" x="20" y="725.33333333333337" width="374" height="24"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="L1P-7n-hYY"/>
@@ -75,7 +75,7 @@
                 <constraint firstItem="wQq-DS-nYp" firstAttribute="leading" secondItem="0WK-0m-03K" secondAttribute="leading" constant="20" id="0LY-0a-VQC"/>
                 <constraint firstItem="wQq-DS-nYp" firstAttribute="top" secondItem="uSd-Lo-0Ms" secondAttribute="bottom" constant="20" id="1p5-I2-T7Z"/>
                 <constraint firstItem="zWy-LT-uJk" firstAttribute="leading" secondItem="0WK-0m-03K" secondAttribute="leading" id="83Z-BC-CD4"/>
-                <constraint firstItem="uSd-Lo-0Ms" firstAttribute="top" secondItem="zWy-LT-uJk" secondAttribute="bottom" constant="58" id="HfQ-Dk-qxL"/>
+                <constraint firstItem="uSd-Lo-0Ms" firstAttribute="top" secondItem="zWy-LT-uJk" secondAttribute="bottom" priority="750" constant="58" id="HfQ-Dk-qxL"/>
                 <constraint firstItem="9ng-Lt-Wgc" firstAttribute="top" secondItem="aZ0-y6-RHY" secondAttribute="bottom" constant="20" id="OB1-AO-XhW"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="9ng-Lt-Wgc" secondAttribute="bottom" constant="8" id="Pss-XD-Cge"/>
                 <constraint firstItem="aZ0-y6-RHY" firstAttribute="top" secondItem="wQq-DS-nYp" secondAttribute="bottom" constant="20" id="SD8-8u-Zh7"/>
