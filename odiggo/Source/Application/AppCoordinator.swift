@@ -40,8 +40,14 @@ final class AppCoordinator: Coordinator {
     
     /// Starting point
     func start() {
-//        startTabbarController()
-        startOnboarding()
+
+        if UserManager.shared.onboardingCompleted {
+            startAuthentication()
+            
+        } else {
+            startOnboarding()
+        }
+        
     }
     
 //    func startTabbarController() {
@@ -65,6 +71,13 @@ final class AppCoordinator: Coordinator {
         addChildCoordinator(onboardingCoordinator)
         onboardingCoordinator.start()
     }
+    
+    func startAuthentication() {
+        let authenticationCoordiantor = AuthenticationCoordinator(navigationController)
+        authenticationCoordiantor.parentCoordinator = self
+        addChildCoordinator(authenticationCoordiantor)
+        authenticationCoordiantor.start()
+    }
 }
 
 // MARK: Additional behaviour
@@ -72,15 +85,15 @@ extension AppCoordinator {
     
     func childDidFinish(_ child: Coordinator) {
         
+        removeChildCoordinator(child)
+        
         switch child.self {
         case is OnboardingCoordinator:
-            debugPrint("OnboardingCoordinator didFinish")
+            startAuthentication()
             
         default:
             debugPrint("childDidFinish not handling \(child)")
         }
-        
-        removeChildCoordinator(child)
     }
 }
 

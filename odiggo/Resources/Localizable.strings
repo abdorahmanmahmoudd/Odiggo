@@ -19,3 +19,17 @@
 "FIND_PRODUCT" = "FIND PRODUCT";
 "BUY_AND_FIX" = "BUY AND FIX";
 "ONBOARDING_SUBTITLE" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporLorem";
+
+// MARK: Login
+"WELCOME_BACK" = "Welcome Back";
+"LOGIN_SUBTITLE" = "Stay Logged in With Your Account to get a Better experience";
+"FORGET_PASSWORD_Q" = "Forgot Password?";
+"USERNAME_TITLE" = "User Name";
+"PASSWORD_TITLE" = "Password";
+"PASSWORD_PLACEHOLDER" = "Enter Password";
+"LOGIN_BUTTON" = "Login";
+"CONTINUE_WITH_GOOGLE" = "Continue with Google";
+"CONTINUE_WITH_FB" = "Continue with Facebook";
+"CONTINUE_WITH_APPLE" = "Continue with Apple";
+"SIGNUP_Q" = "Don’t Have an Account?";
+"SIGNUP" = "Sign up";

@@ -29,7 +29,7 @@ final class OnboardingViewController: BaseViewController {
     }
     
     private func styleNavigationItem() {
-        
+        navigationController?.navigationBar.barStyle = .black
     }
     
     private func configure() {

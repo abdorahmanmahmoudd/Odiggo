@@ -10,14 +10,14 @@ import RxSwift
 
 /// A protocol to group all of our app repositories so we have single and central dependency for network requests across the app.
 protocol NetworkRepository {
-    
+    var authenticationRepository: AuthenticationRepository { get }
 }
 
 // MARK: - API shared client
 class API: NetworkRepository {
 
-    /// URLs
-    enum URLEnvironment {
+    /// Environment types
+    enum Environment {
         case production
     }
     
@@ -29,29 +29,61 @@ class API: NetworkRepository {
     /// Shared `URLSession`
     let sharedSession = URLSession.shared
     
-    /// Returns the url of the given type
+    /// Returns the base URL of the given type
     ///
     /// - Parameter env: the base URL envrionment
-    /// - Returns: the url
-    func urlOfType(_ environment: URLEnvironment) -> String {
+    /// - Returns: the URL string
+    func baseUrl(of environment: Environment) -> String {
         
         switch environment {
         case .production:
-            return "https://www.odiggo.com/"
+            return "https://www.odiggo.com.eg"
         }
     }
 }
 
 // MARK: - API+NetworkRepository
 extension API {
+    
+    var authenticationRepository: AuthenticationRepository {
+        return AuthenticationAPI()
+    }
+}
 
+// MARK: API+Request
+extension API {
+    
+    /// Helper method to construct the URL Request
+    func request(fullUrl: String, method: HTTPMethod = .post, parameters: [String: String?] = [:]) -> URLRequest? {
+        
+        let urlString = fullUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        
+        guard let urlStringUnwrapped = urlString, var urlComponents = URLComponents(string: urlStringUnwrapped) else {
+            return nil
+        }
+        urlComponents.setQueryItems(parameters: parameters)
+        
+        guard let url  = urlComponents.url else {
+            return nil
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = method.rawValue
+        request.httpBody = urlComponents.percentEncodedQuery?.data(using: .utf8)
+        
+//        if let accessToken = accessToken {
+//            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+//        }
+        
+        return request
+    }
 }
 
 // MARK: - API+Response
 extension API {
       
-    /// Shared generic URL request function.
-    func response<T>(for request: URL) -> Single<T> where T: Decodable {
+    /// Helper method to trigger the API call and parse the response
+    func response<T>(for request: URLRequest) -> Single<T> where T: Decodable {
         
         return Single<T>.create { (single) -> Disposable in
             

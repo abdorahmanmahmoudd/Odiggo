@@ -1,13 +1,13 @@
 //
-//  OnboardingCoordinator.swift
+//  AuthenticationCoordinator.swift
 //  odiggo
 //
-//  Created by Abdelrahman Ali on 02/01/2021.
+//  Created by Abdelrahman Ali on 07/01/2021.
 //
 
 import UIKit
 
-final class OnboardingCoordinator: Coordinator {
+final class AuthenticationCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
@@ -20,18 +20,17 @@ final class OnboardingCoordinator: Coordinator {
     
     func start() {
     
-        let onboardingVC = OnboardingViewController.init()
-        onboardingVC.coordinator = self
-        navigationController.setViewControllers([onboardingVC], animated: true)
+        let LoginVC = LoginViewController.init()
+        LoginVC.coordinator = self
+        navigationController.setViewControllers([LoginVC], animated: true)
     }
 }
 
 // MARK: Additional behaviour
-extension OnboardingCoordinator {
+extension AuthenticationCoordinator {
     
     /// After pop animation is done etc..
     func didFinish() {
-        UserManager.shared.onboardingCompleted = true
         (parentCoordinator as? AppCoordinator)?.childDidFinish(self)
     }
 }

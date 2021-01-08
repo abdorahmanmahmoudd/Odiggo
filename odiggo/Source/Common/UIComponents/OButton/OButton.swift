@@ -13,7 +13,9 @@ final class OButton: UIButton {
     private let verticalPadding: CGFloat = 8.0
     private let cornerRadius: CGFloat = 25.0
 
-    func config(title: String?, image: UIImage?, type: ButtonStyle, font: UIFont, alignment: ContentAlignment, state: ButtonStates) {
+    func config(title: String? = nil, image: UIImage? = nil, type: ButtonStyle, font: UIFont,
+                alignment: ContentAlignment = .textLeading, state: ButtonStates = .normal) {
+        
         setTitle(title, for: .normal)
         setTitleColor(type.titleColor(state: state), for: .normal)
         titleLabel?.font = font

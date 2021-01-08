@@ -33,15 +33,11 @@ final class OnboardingView: UIView {
         titleLabel.font = .font(.primaryBold, .gigantic)
         subtitleLabel.font = .font(.primaryMedium, .medium)
         
-        nextButton.titleLabel?.font = .font(.primaryBold, .medium)
-        nextButton.config(title: "NEXT_BUTTON_TITLE".localized, image: nil,
-                          type: .primary, font: .font(.primaryBold, .medium),
-                          alignment: .textLeading, state: .normal)
+        nextButton.config(title: "NEXT_BUTTON_TITLE".localized,
+                          type: .primary, font: .font(.primaryBold, .medium))
         
-        skipButton.titleLabel?.font = .font(.primaryBold, .medium)
-        skipButton.config(title: "SKIP_BUTTON_TITLE".localized, image: nil,
-                          type: .text, font: .font(.primaryMedium, .medium),
-                          alignment: .textLeading, state: .normal)
+        skipButton.config(title: "SKIP_BUTTON_TITLE".localized,
+                          type: .text(titleColor: .greyish), font: .font(.primaryMedium, .medium))
     }
     
     func configure(title: String?, subtitle: String?, coverImage: String) {

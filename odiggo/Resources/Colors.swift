@@ -16,5 +16,11 @@ extension UIColor {
         case black
         case greyish
         case poleRose
+        case white
+        case warmGrey
+        case denim
+        case warmGreyTwo
+        case blackTwo
+        case scarlet
     }
 }
