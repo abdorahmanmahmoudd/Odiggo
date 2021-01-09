@@ -29,7 +29,7 @@ extension OButton {
                 case .normal:
                     return UIColor.white
                 case .disabled:
-                    return UIColor.color(color: .greyish)
+                    return UIColor.color(color: .warmGreyTwo)
                 }
             case .text(let color):
                 switch state {
@@ -55,7 +55,7 @@ extension OButton {
                 case .normal:
                     return UIColor.color(color: .pinkishRed)
                 case .disabled:
-                    return UIColor.color(color: .poleRose)
+                    return UIColor.color(color: .denim).withAlphaComponent(0.16)
                 }
             case .text:
                 switch state {

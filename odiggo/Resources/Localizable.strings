@@ -25,6 +25,7 @@
 "LOGIN_SUBTITLE" = "Stay Logged in With Your Account to get a Better experience";
 "FORGET_PASSWORD_Q" = "Forgot Password?";
 "USERNAME_TITLE" = "User Name";
+"USERNAME_HINT" = "Enter a valid username";
 "PASSWORD_TITLE" = "Password";
 "PASSWORD_PLACEHOLDER" = "Enter Password";
 "LOGIN_BUTTON" = "Login";
@@ -33,3 +34,13 @@
 "CONTINUE_WITH_APPLE" = "Continue with Apple";
 "SIGNUP_Q" = "Don’t Have an Account?";
 "SIGNUP" = "Sign up";
+"LOGIN_Q" = "Have an Account?";
+"LOGIN" = "Login";
+"SIGNUP_BUTTON" = "Sign up";
+"PASSWORD_CONFIRMATION_TITLE" = "Confirm Password";
+"EMAIL_TITLE" = "E-mail";
+"EMAIL_PLACEHOLDER" = "Enter your Email";
+"EMAIL_HINT" = "Enter a valid Email address";
+"PASSWORD_HINT" = "Enter a valid password";
+"PASSWORD_CONFIRMATION_HINT" = "Passwords does not match";
+"INVALID_CREDENTIALS_MSG" = "Incorrect username and/or password entered";

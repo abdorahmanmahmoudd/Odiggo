@@ -45,6 +45,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     
     /// Shared Error Handling functionality
     func handleError(_ error: Error?) {
+        
         debugPrint("error \(String(describing: error))")
         self.showLoadingIndicator(visible: false)
         
@@ -59,6 +60,10 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     /// To be overrwitten by subclasses
     func retry() {
         debugPrint("Override by view controller subclass")
+    }
+    
+    @IBAction func viewTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 }
 

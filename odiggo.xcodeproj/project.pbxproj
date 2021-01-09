@@ -27,6 +27,9 @@
 		281C456525A0C0F800FD8C08 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 281C456425A0C0F800FD8C08 /* Colors.xcassets */; };
 		281C456A25A0C2FD00FD8C08 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C456925A0C2FD00FD8C08 /* UIColor.swift */; };
 		281C457025A0C97200FD8C08 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C456F25A0C97200FD8C08 /* OnboardingCoordinator.swift */; };
+		2866737225A8B4D600A3227A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2866737025A8B4D600A3227A /* SignupViewController.swift */; };
+		2866737325A8B4D600A3227A /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2866737125A8B4D600A3227A /* SignupViewController.xib */; };
+		2866737625A8B4E400A3227A /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2866737525A8B4E400A3227A /* SignupViewModel.swift */; };
 		2874F00425A39AFE00A05111 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2874F00325A39AFE00A05111 /* Fonts.swift */; };
 		2874F00825A3A93800A05111 /* OButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2874F00725A3A93800A05111 /* OButton.swift */; };
 		2874F00C25A3A97D00A05111 /* OButton+ContentAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2874F00B25A3A97D00A05111 /* OButton+ContentAlignment.swift */; };
@@ -45,7 +48,7 @@
 		289451D6259FD21600FF77DD /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451D5259FD21600FF77DD /* UIView.swift */; };
 		289451D9259FD24E00FF77DD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451D8259FD24E00FF77DD /* Constants.swift */; };
 		289451DC259FD29700FF77DD /* API+NetworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451DB259FD29700FF77DD /* API+NetworkRepository.swift */; };
-		289451DF259FD29F00FF77DD /* API+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451DE259FD29F00FF77DD /* API+Error.swift */; };
+		289451DF259FD29F00FF77DD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451DE259FD29F00FF77DD /* APIError.swift */; };
 		289451E4259FD56F00FF77DD /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451E2259FD56F00FF77DD /* OnboardingViewController.swift */; };
 		289451E5259FD56F00FF77DD /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 289451E3259FD56F00FF77DD /* OnboardingViewController.xib */; };
 		289451E9259FD59200FF77DD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289451E8259FD59200FF77DD /* BaseViewController.swift */; };
@@ -87,6 +90,9 @@
 		281C456425A0C0F800FD8C08 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		281C456925A0C2FD00FD8C08 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		281C456F25A0C97200FD8C08 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		2866737025A8B4D600A3227A /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		2866737125A8B4D600A3227A /* SignupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
+		2866737525A8B4E400A3227A /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		2874F00325A39AFE00A05111 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		2874F00725A3A93800A05111 /* OButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OButton.swift; sourceTree = "<group>"; };
 		2874F00B25A3A97D00A05111 /* OButton+ContentAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OButton+ContentAlignment.swift"; sourceTree = "<group>"; };
@@ -107,7 +113,7 @@
 		289451D5259FD21600FF77DD /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		289451D8259FD24E00FF77DD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		289451DB259FD29700FF77DD /* API+NetworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+NetworkRepository.swift"; sourceTree = "<group>"; };
-		289451DE259FD29F00FF77DD /* API+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Error.swift"; sourceTree = "<group>"; };
+		289451DE259FD29F00FF77DD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		289451E2259FD56F00FF77DD /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		289451E3259FD56F00FF77DD /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		289451E8259FD59200FF77DD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -331,7 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				289451DB259FD29700FF77DD /* API+NetworkRepository.swift */,
-				289451DE259FD29F00FF77DD /* API+Error.swift */,
+				289451DE259FD29F00FF77DD /* APIError.swift */,
 				28A8695F25A7A4C100987624 /* HTTPMethod.swift */,
 				28A8695025A79F2700987624 /* Repositories */,
 			);
@@ -419,6 +425,9 @@
 		28A8693E25A7691300987624 /* Signup */ = {
 			isa = PBXGroup;
 			children = (
+				2866737025A8B4D600A3227A /* SignupViewController.swift */,
+				2866737125A8B4D600A3227A /* SignupViewController.xib */,
+				2866737525A8B4E400A3227A /* SignupViewModel.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -538,6 +547,7 @@
 				281C451225A096F300FD8C08 /* WelcomeView.xib in Resources */,
 				289451BC259FCC5900FF77DD /* Localizable.strings in Resources */,
 				281C454E25A0B3B700FD8C08 /* Montserrat-ExtraBold.ttf in Resources */,
+				2866737325A8B4D600A3227A /* SignupViewController.xib in Resources */,
 				281C454C25A0B3B700FD8C08 /* OFL.txt in Resources */,
 				2894519C259FC9B200FF77DD /* Assets.xcassets in Resources */,
 				28A8694B25A76A7900987624 /* LoginViewController.xib in Resources */,
@@ -606,11 +616,12 @@
 				289451D3259FD1F700FF77DD /* String.swift in Sources */,
 				2893A9CC25A7E57F0038BFA9 /* UserManager.swift in Sources */,
 				281C452B25A0AF0C00FD8C08 /* Colors.swift in Sources */,
-				289451DF259FD29F00FF77DD /* API+Error.swift in Sources */,
+				289451DF259FD29F00FF77DD /* APIError.swift in Sources */,
 				289451CD259FD17000FF77DD /* Injectable.swift in Sources */,
 				2874F01E25A3BADC00A05111 /* UIViewController.swift in Sources */,
 				28A8694A25A76A7900987624 /* LoginViewController.swift in Sources */,
 				281C451925A0971700FD8C08 /* OnboardingView.swift in Sources */,
+				2866737225A8B4D600A3227A /* SignupViewController.swift in Sources */,
 				2874F00F25A3A9A300A05111 /* OButton+Style.swift in Sources */,
 				28A8694E25A79E8800987624 /* LoginViewModel.swift in Sources */,
 				289451C2259FD0DD00FF77DD /* AppCoordinator.swift in Sources */,
@@ -627,6 +638,7 @@
 				281C457025A0C97200FD8C08 /* OnboardingCoordinator.swift in Sources */,
 				28A8695225A79F3C00987624 /* AuthenticationRepository.swift in Sources */,
 				281C451C25A0972400FD8C08 /* GetStartedView.swift in Sources */,
+				2866737625A8B4E400A3227A /* SignupViewModel.swift in Sources */,
 				28945193259FC9B100FF77DD /* AppDelegate.swift in Sources */,
 				28FD653725A4C522004C9F0F /* PageControl.swift in Sources */,
 				28A8698325A7C89B00987624 /* UITextField.swift in Sources */,

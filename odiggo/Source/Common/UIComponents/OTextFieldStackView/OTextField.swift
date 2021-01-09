@@ -12,7 +12,7 @@ final class OTextField: UITextField {
     private let box: UIView = UIView()
     private let accessoryButton = UIButton(frame: CGRect(x: 0, y: 0, width: 16, height: 16))
     private let textInset: UIEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 30)
-    var hideClearButton: Bool = false
+    var hideClearButton: Bool = true
     
     override var isEnabled: Bool {
         didSet {
@@ -20,13 +20,13 @@ final class OTextField: UITextField {
         }
     }
 
-    var textfieldType: OTextFieldType = .disabled {
+    var textfieldType: OTextFieldType = .username {
         didSet {
             updateForType()
         }
     }
     
-    var isActive: Bool = false {
+    var isActive: Bool = true {
         didSet {
             updateForActive()
         }
@@ -90,7 +90,7 @@ final class OTextField: UITextField {
         switch textfieldType {
         case .disabled:
             return
-        case .username:
+        case .username, .email:
             text = ""
         case .password:
             sender.isSelected.toggle()
@@ -169,13 +169,19 @@ extension OTextField {
         
         switch textfieldType {
         case .username:
-            
             keyboardType = .emailAddress
             textContentType = .username
+            box.layer.borderWidth = 1
+            
+        case .email:
+            keyboardType = .emailAddress
+            textContentType = .emailAddress
+            box.layer.borderWidth = 1
             
         case .password:
             keyboardType = .asciiCapable
             textContentType = .password
+            box.layer.borderWidth = 1
             
         case .disabled:
             box.layer.borderColor = UIColor.color(color: .poleRose).withAlphaComponent(0.2).cgColor

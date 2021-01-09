@@ -30,6 +30,9 @@ final class LoginViewController: BaseViewController {
     let disposeBag = DisposeBag()
     
     private var viewModel: LoginViewModel!
+    
+    private var usernameIsValid = false
+    private var passwordIsValid = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,21 +44,27 @@ final class LoginViewController: BaseViewController {
         bindObservables()
     }
     
+    private func styleNavigationItem() {
+        navigationController?.navigationBar.barStyle = .black
+    }
+    
     private func configureViews() {
         
         configureTexts()
         
-        usernameStackView.textfieldType = 2
+        usernameStackView.delegate = self
         usernameStackView.textfieldDelegate = self
+        
+        passwordStackView.textfieldType = .password
+        passwordStackView.delegate = self
+        passwordStackView.lastTextfield = true
         passwordStackView.textfieldDelegate = self
         
         titleLabel.font = .font(.primaryBold, .huge)
         subtitleLabel.font = .font(.primaryRegular, .medium)
+        signupQuestionLabel.font = .font(.primaryRegular, .small)
+        signupLabel.font = .font(.primaryRegular, .little)
         containerView.layer.cornerRadius = 22
-    }
-    
-    private func styleNavigationItem() {
-        navigationController?.navigationBar.barStyle = .black
     }
     
     private func configureTexts() {
@@ -78,118 +87,193 @@ final class LoginViewController: BaseViewController {
         
         usernameStackView.titleText = "USERNAME_TITLE".localized
         usernameStackView.textField.setPlaceHolder(text: "USERNAME_TITLE".localized)
+        usernameStackView.attributedAccessoryText = NSAttributedString(string: "USERNAME_HINT".localized)
+        
         passwordStackView.titleText = "PASSWORD_TITLE".localized
         passwordStackView.textField.setPlaceHolder(text: "PASSWORD_PLACEHOLDER".localized)
+        passwordStackView.attributedAccessoryText = NSAttributedString(string: "INVALID_CREDENTIALS_MSG".localized)
     }
     
     private func bindObservables() {
-        
         configureValidators()
+        
+        /// Set view model state change callback
+        viewModel.refreshState = { [weak self] in
+            
+            guard let self = self else {
+                return
+            }
+            
+            switch self.viewModel.state {
+            
+            case .initial, .refreshing:
+                debugPrint("initial & refreshing LoginViewController")
+                
+            case .loading:
+                debugPrint("loading LoginViewController")
+                self.showLoadingIndicator(visible: true)
+                
+            case .error(let error):
+                self.handleError(error)
+                
+            case .result:
+                debugPrint("Result LoginViewController")
+                self.showLoadingIndicator(visible: false)
+            }
+        }
+    }
+    
+    private func isLoginEnabled() -> Bool {
+        return usernameIsValid && passwordIsValid
+    }
+    
+    private func login() {
+        guard let username = usernameStackView.textField.text,
+              let password = passwordStackView.textField.text else { return }
+        view.endEditing(true)
+        viewModel.login(username: username, password: password)
+    }
+    
+    override func viewTapped(_ sender: UITapGestureRecognizer) {
+        super.viewTapped(sender)
+        loginButton.status = isLoginEnabled() ? .normal : .disabled
+    }
+    
+    override func handleError(_ error: Error?) {
+        super.handleError(error)
+        
+        if (error as? APIError)?.mapNetworkError() == .unauthorized {
+            passwordStackView.showError(true)
+        }
+    }
+}
+
+// MARK: - Actions
+extension LoginViewController {
+    
+    @IBAction func signupTapped(_ sender: Any) {
+        (coordinator as? AuthenticationCoordinator)?.startSignup()
+    }
+    
+    @IBAction func loginButtonTapped(_ sender: OButton) {
+        login()
+    }
+    
+    @IBAction func googleButtonTapped(_ sender: OButton) {
         
     }
     
-    private func configureValidators() {
+    @IBAction func facebookButtonTapped(_ sender: OButton) {
         
-        /// username input validation
-        usernameStackView.textField.rx.text.observeOn(MainScheduler.instance).map({ (input) -> Bool? in
-            
-            guard let text = input, !text.isEmpty else { return nil }
-            return text.hasContent()
-            
-        }).subscribe(onNext: { [weak self] (valid) in
-            
-            guard let self = self, let valid = valid else { return }
-            self.usernameStackView.showError(!valid)
-            self.loginButton.isEnabled = valid
-            
-        }).disposed(by: disposeBag)
-        
-        /// password validation
-        passwordStackView.textField.rx.text.observeOn(MainScheduler.instance).map({ (input) -> Bool in
-            
-            guard let inputLength = input?.count else { return false }
-            return inputLength >= Constants.Login.passwordMinimumLength
-            
-        }).subscribe(onNext: { [weak self] (valid) in
-            
-            guard let self = self else { return }
-            self.loginButton.isEnabled = valid
-            
-        }).disposed(by: disposeBag)
     }
-
+    
+    @IBAction func appleButtonTapped(_ sender: OButton) {
+        
+    }
 }
 
 // MARK: - UITextFieldDelegate
 extension LoginViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        guard let text = textField.text else {
-//            return true
-//        }
-//
-//        let newLength = text.count + string.count - range.length
-//
-//        switch textField {
-//        case nameStackView.onboardTextfield:
-//            return newLength <= 40
-//        case pincodeStackView.onboardTextfield:
-//            return showPlaceholders(text, newText: string, textField: textField, newLength: newLength)
-//        default:
-//            return true
-//        }
-        return true
+        guard let text = textField.text else {
+            return true
+        }
+        let newLength = text.count + string.count - range.length
+        return newLength <= Constants.Login.inputsMaxLength
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-//        guard let textField = textField as? VDLOnboardingTextfield else {
-//            return
-//        }
-//
-//        textField.isActive = false
-//
-//        switch textField {
-//        case pincodeStackView.onboardTextfield:
-//            if textField.text?.contains("•") == true {
-//                textField.text = ""
-//            }
-//        default:
-//            break
-//        }
+        
+        guard let textField = textField as? OTextField else {
+            return
+        }
+    
+        textField.isActive = false
+        passwordStackView.showError(false)
+        usernameStackView.showError(!usernameIsValid)
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        guard let textField = textField as? OTextField else {
-            return true
+        
+        passwordStackView.showError(false)
+        usernameStackView.showError(false)
+        
+        if let textField = textField as? OTextField {
+            textField.isActive = true
+            
+            switch textField {
+            case passwordStackView.textField:
+                passwordIsValid = false
+                loginButton.status = isLoginEnabled() ? .normal : .disabled
+                
+            default:
+                break
+            }
         }
-//
-//        textField.isActive = true
-//        switch textField {
-//        case usernameStackView.textField:
-//            nameIsValid = false
-//            nextIsEnabled()
-//        case pincodeStackView.onboardTextfield:
-//            textField.attributedText = NSMutableAttributedString(string: "••••").setOpacityForRange(range: NSRange(location: 1, length: Constants.pincodeMinNumber - 1))
-//        default:
-//            break
-//        }
         
         return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        let nextTag = textField.tag + 1
-//        guard let nextTextField = textField.superview?.superview?.viewWithTag(nextTag), ageGroup == .adult else {
-//            let save = nextIsEnabled()
-//            if save == true {
-//                textField.resignFirstResponder()
-//                createProfile()
-//            }
-//            return save
-//        }
-//
-//        nextTextField.becomeFirstResponder()
+        let nextTag = textField.tag + 1
+        
+        guard let nextTextField = textField.superview?.superview?.viewWithTag(nextTag) else {
+            /// reached last one
+            if isLoginEnabled() {
+                textField.resignFirstResponder()
+                login()
+            }
+            return isLoginEnabled()
+        }
+        
+        nextTextField.becomeFirstResponder()
         return false
+    }
+}
+
+// MARK: - OTextFieldStackViewDelegate
+extension LoginViewController: OTextFieldStackViewDelegate {
+    
+    func errorButtonTapped() {
+        debugPrint("LoginViewController errorButtonTapped")
+    }
+
+}
+
+// MARK: - Validators
+extension LoginViewController {
+    
+    private func configureValidators() {
+        
+        /// username input validation
+        usernameStackView.textField.rx.text.observeOn(MainScheduler.instance).map({ (input) -> Bool? in
+            
+            guard let text = input, !text.isEmpty else { return false }
+            return text.hasContent()
+            
+        }).subscribe(onNext: { [weak self] (valid) in
+            
+            guard let self = self, let valid = valid else { return }
+            self.usernameStackView.showError(!valid)
+            self.usernameIsValid = valid
+            self.loginButton.status = self.isLoginEnabled() ? .normal : .disabled
+            
+        }).disposed(by: disposeBag)
+        
+        /// password validation
+        passwordStackView.textField.rx.text.observeOn(MainScheduler.instance).map({ (input) -> Bool in
+            
+            guard let input = input else { return false }
+            return input.isValidPassword()
+            
+        }).subscribe(onNext: { [weak self] (valid) in
+            
+            guard let self = self else { return }
+            self.passwordIsValid = valid
+            self.loginButton.status = self.isLoginEnabled() ? .normal : .disabled
+            
+        }).disposed(by: disposeBag)
     }
 }
 

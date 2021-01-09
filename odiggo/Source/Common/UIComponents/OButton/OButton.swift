@@ -12,19 +12,23 @@ final class OButton: UIButton {
     private let horizontalEdgeInset: CGFloat = 16.0
     private let verticalPadding: CGFloat = 8.0
     private let cornerRadius: CGFloat = 25.0
+    private var type: ButtonStyle?
+    var status: ButtonStates = ButtonStates.normal {
+        didSet {
+            guard let type = self.type else { return }
+            configureState(status, forType: type)
+        }
+    }
 
     func config(title: String? = nil, image: UIImage? = nil, type: ButtonStyle, font: UIFont,
                 alignment: ContentAlignment = .textLeading, state: ButtonStates = .normal) {
         
+        self.type = type
         setTitle(title, for: .normal)
-        setTitleColor(type.titleColor(state: state), for: .normal)
         titleLabel?.font = font
 
         setImage(image, for: .normal)
         imageView?.contentMode = .scaleAspectFit
-
-        tintColor = type.titleColor(state: state)
-        backgroundColor = type.backgroundColor(state: state)
 
         switch alignment {
         case .textLeading:
@@ -38,6 +42,14 @@ final class OButton: UIButton {
         layer.borderColor = type.borderColor()
 
         setInsets(alignment: alignment, image: image, type: type)
+        
+        configureState(state, forType: type)
+    }
+    
+    private func configureState(_ state: ButtonStates, forType type: ButtonStyle) {
+        setTitleColor(type.titleColor(state: state), for: .normal)
+        tintColor = type.titleColor(state: state)
+        backgroundColor = type.backgroundColor(state: state)
     }
 
     private func setInsets(alignment: ContentAlignment, image: UIImage?, type: ButtonStyle) {

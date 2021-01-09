@@ -11,6 +11,7 @@ import Foundation
 struct Constants {
     
     struct Login {
+        static let inputsMaxLength = 40
         static let passwordMinimumLength = 9
     }
     

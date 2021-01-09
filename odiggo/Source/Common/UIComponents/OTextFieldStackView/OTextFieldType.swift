@@ -7,10 +7,11 @@
 
 import UIKit
 
-enum OTextFieldType: Int {
+enum OTextFieldType {
     
-    case password = 0
+    case password
     case disabled
+    case email
     case username
     
     var image: UIImage {
@@ -21,6 +22,8 @@ enum OTextFieldType: Int {
             return UIImage()
         case .username:
             return UIImage(named: "username-icon") ?? UIImage()
+        case .email:
+            return UIImage(named: "email-icon") ?? UIImage()
         }
     }
     
@@ -32,17 +35,16 @@ enum OTextFieldType: Int {
             return UIImage()
         case .username:
             return UIImage(named: "username-icon") ?? UIImage()
+        case .email:
+            return UIImage(named: "email-icon") ?? UIImage()
         }
     }
     
     var inactiveBorderColor: CGColor {
-        switch self {
-        default:
-            return UIColor.clear.cgColor
-        }
+        return UIColor.clear.cgColor
     }
     
     var activeBorderColor: CGColor {
-        return UIColor.color(color: .pinkishRed).withAlphaComponent(0.3).cgColor
+        return UIColor.color(color: .warmGreyTwo).withAlphaComponent(0.3).cgColor
     }
 }

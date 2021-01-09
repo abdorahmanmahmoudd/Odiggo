@@ -5,8 +5,11 @@ target 'odiggo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
+  
   # Pods for odiggo
- # image loading
+  pod 'IQKeyboardManager', '6.5.6'
+  
+  # image loading
   pod 'Nuke', '9.2.0'
 
   # RxSwift

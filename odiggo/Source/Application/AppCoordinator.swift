@@ -73,7 +73,7 @@ final class AppCoordinator: Coordinator {
     }
     
     func startAuthentication() {
-        let authenticationCoordiantor = AuthenticationCoordinator(navigationController)
+        let authenticationCoordiantor = AuthenticationCoordinator(navigationController, api)
         authenticationCoordiantor.parentCoordinator = self
         addChildCoordinator(authenticationCoordiantor)
         authenticationCoordiantor.start()

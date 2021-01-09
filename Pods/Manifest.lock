@@ -1,5 +1,6 @@
 PODS:
   - Cosmos (23.0.0)
+  - IQKeyboardManager (6.5.6)
   - Nuke (9.2.0)
   - PKHUD (5.3.0)
   - RxCocoa (5.1.1):
@@ -10,15 +11,17 @@ PODS:
   - RxSwift (5.1.1)
 
 DEPENDENCIES:
-  - Cosmos
-  - Nuke
-  - PKHUD
-  - RxCocoa
-  - RxSwift
+  - Cosmos (= 23.0.0)
+  - IQKeyboardManager
+  - Nuke (= 9.2.0)
+  - PKHUD (= 5.3.0)
+  - RxCocoa (= 5.1.1)
+  - RxSwift (= 5.1.1)
 
 SPEC REPOS:
   trunk:
     - Cosmos
+    - IQKeyboardManager
     - Nuke
     - PKHUD
     - RxCocoa
@@ -27,12 +30,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Nuke: 1394e48b0940e01dd20f52ac56b121ab154e370d
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 81209f70a930c4d9bad42fd6dda8c6ad637537c8
+PODFILE CHECKSUM: 46d8f1e63d9988a175c9545b873c950c20f220dc
 
 COCOAPODS: 1.10.0

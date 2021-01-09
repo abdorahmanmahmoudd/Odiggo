@@ -26,15 +26,15 @@ final class OTextFieldStackView: UIStackView {
         }
     }
     
-    @IBInspectable var textfieldType: Int = 2 {
-        didSet {
-            updateView()
-        }
-    }
-    
     @IBInspectable var lastTextfield: Bool = false {
         didSet {
             textField.returnKeyType = lastTextfield ? .go : .next
+        }
+    }
+    
+    @IBInspectable var titleText: String? {
+        didSet {
+            updateTitle()
         }
     }
     
@@ -50,9 +50,9 @@ final class OTextFieldStackView: UIStackView {
         }
     }
     
-    var titleText: String? {
+    var textfieldType: OTextFieldType = .username {
         didSet {
-            updateTitle()
+            updateView()
         }
     }
     
@@ -115,6 +115,9 @@ final class OTextFieldStackView: UIStackView {
         
         accessoryButton.isEnabled = false
         accessoryButton.isHidden = true
+        
+        accessoryButton.titleLabel?.font = UIFont.font(.primaryMedium, .small)
+        accessoryButton.setTitleColor(UIColor.color(color: .warmGrey), for: .normal)
     }
     
     func setupConstraints() {
@@ -139,9 +142,7 @@ final class OTextFieldStackView: UIStackView {
     }
     
     private func updateView() {
-        if let type = OTextFieldType(rawValue: textfieldType) {
-            textField.textfieldType = type
-        }
+        textField.textfieldType = textfieldType
     }
     
 }

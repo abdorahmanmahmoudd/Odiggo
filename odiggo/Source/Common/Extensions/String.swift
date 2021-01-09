@@ -27,6 +27,13 @@ extension String {
         let result = emailTest.evaluate(with: self)
         return result
     }
+    
+    func isValidPassword() -> Bool {
+        let passwordRegEx = "^[^\";'\\\\|]{6,16}$"
+        let passwordPred = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
+
+        return passwordPred.evaluate(with: self)
+    }
 
     /// Check if string is a valid UInt
     func uintValue() -> UInt? {

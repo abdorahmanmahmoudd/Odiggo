@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignupViewController" customModule="odiggo" customModuleProvider="target">
+            <connections>
+                <outlet property="accountQuestionLabel" destination="z52-G6-0xl" id="iF9-6O-Z2o"/>
+                <outlet property="appleButton" destination="JcX-dK-oOC" id="49d-QZ-ju4"/>
+                <outlet property="containerView" destination="NEz-W7-giu" id="6et-YH-o4Z"/>
+                <outlet property="emailStackView" destination="K0R-Xk-KaW" id="PQC-m2-njy"/>
+                <outlet property="facebookButton" destination="813-lh-8nD" id="MN6-f6-Gxn"/>
+                <outlet property="googleButton" destination="YVL-ND-WOt" id="Py6-ys-yKJ"/>
+                <outlet property="loginButton" destination="qAb-9J-z8G" id="c0n-0N-tId"/>
+                <outlet property="loginLabel" destination="QPa-bA-tfI" id="DeP-m8-Txg"/>
+                <outlet property="passwordConfirmationStackView" destination="HNV-3I-3Dv" id="H1h-NX-wOd"/>
+                <outlet property="passwordStackView" destination="dmJ-Yf-27I" id="d8R-7H-HIM"/>
+                <outlet property="signupButton" destination="CUt-yU-32W" id="Omk-Zq-kHa"/>
+                <outlet property="subtitleLabel" destination="iBI-pM-XQP" id="9jz-Db-WCh"/>
+                <outlet property="titleLabel" destination="lId-tF-OdD" id="Gof-AQ-06K"/>
+                <outlet property="usernameStackView" destination="eSn-Nb-f4y" id="iJ6-A7-kno"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="pzh-Hm-LXP">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zero-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Y32-dm-4qJ">
+                            <rect key="frame" x="310" y="-53" width="153" height="227"/>
+                        </imageView>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NEz-W7-giu" userLabel="contentView">
+                            <rect key="frame" x="0.0" y="98.999999999999943" width="414" height="829.66666666666652"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="odiggo logo" translatesAutoresizingMaskIntoConstraints="NO" id="O7F-oa-Lym">
+                                    <rect key="frame" x="140.66666666666666" y="34" width="132.99999999999997" height="38"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="38" id="sPP-Ci-QD2"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lId-tF-OdD">
+                                    <rect key="frame" x="192.66666666666666" y="107" width="28.666666666666657" height="20.333333333333329"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="denim"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBI-pM-XQP">
+                                    <rect key="frame" x="32" y="138.33333333333334" width="350" height="20.333333333333343"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eSn-Nb-f4y" customClass="OTextFieldStackView" customModule="odiggo" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="203.66666666666669" width="382" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="750" constant="72" id="l0v-08-RuE"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textfieldOrder">
+                                            <integer key="value" value="0"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="K0R-Xk-KaW" customClass="OTextFieldStackView" customModule="odiggo" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="267.66666666666669" width="382" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="750" constant="72" id="hHR-Qa-eAs"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textfieldOrder">
+                                            <integer key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dmJ-Yf-27I" customClass="OTextFieldStackView" customModule="odiggo" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="331.66666666666669" width="382" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="750" constant="72" id="J9X-g2-HnU"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textfieldOrder">
+                                            <integer key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HNV-3I-3Dv" customClass="OTextFieldStackView" customModule="odiggo" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="395.66666666666669" width="382" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="750" constant="72" id="fVu-49-Sw7"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textfieldOrder">
+                                            <integer key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="lastTextfield" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUt-yU-32W" customClass="OButton" customModule="odiggo" customModuleProvider="target">
+                                    <rect key="frame" x="43.333333333333343" y="469.66666666666663" width="327.33333333333326" height="50"/>
+                                    <color key="backgroundColor" name="pinkishRed"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="RaN-2q-Jco"/>
+                                    </constraints>
+                                    <state key="normal" title="sign up"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVL-ND-WOt" customClass="OButton" customModule="odiggo" customModuleProvider="target">
+                                    <rect key="frame" x="43.333333333333329" y="539.66666666666663" width="150.66666666666669" height="50"/>
+                                    <state key="normal" title="google sign up"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="813-lh-8nD" customClass="OButton" customModule="odiggo" customModuleProvider="target">
+                                    <rect key="frame" x="220" y="539.66666666666663" width="150.66666666666663" height="50"/>
+                                    <state key="normal" title="google sign up"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JcX-dK-oOC" customClass="OButton" customModule="odiggo" customModuleProvider="target">
+                                    <rect key="frame" x="43.333333333333343" y="609.66666666666663" width="327.33333333333326" height="50"/>
+                                    <state key="normal" title="apple sign up"/>
+                                </button>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="i5l-Ls-YyV">
+                                    <rect key="frame" x="113.66666666666669" y="709.66666666666663" width="187" height="30"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have an Account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z52-G6-0xl">
+                                            <rect key="frame" x="0.0" y="0.0" width="141.33333333333334" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="denim"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPa-bA-tfI">
+                                            <rect key="frame" x="145.33333333333331" y="0.0" width="41.666666666666657" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="pinkishRed"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAb-9J-z8G">
+                                    <rect key="frame" x="113.66666666666669" y="709.66666666666663" width="187" height="30"/>
+                                    <connections>
+                                        <action selector="loginTapped:" destination="-1" eventType="touchUpInside" id="113-N4-qd9"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstItem="CUt-yU-32W" firstAttribute="top" secondItem="HNV-3I-3Dv" secondAttribute="bottom" constant="30" id="0sb-Xk-rwm"/>
+                                <constraint firstItem="lId-tF-OdD" firstAttribute="top" secondItem="O7F-oa-Lym" secondAttribute="bottom" constant="35" id="14H-Yw-gBJ"/>
+                                <constraint firstItem="iBI-pM-XQP" firstAttribute="top" secondItem="lId-tF-OdD" secondAttribute="bottom" constant="11" id="243-JV-Ixy"/>
+                                <constraint firstItem="YVL-ND-WOt" firstAttribute="height" secondItem="CUt-yU-32W" secondAttribute="height" id="53C-TT-lo0"/>
+                                <constraint firstAttribute="trailing" secondItem="K0R-Xk-KaW" secondAttribute="trailing" constant="16" id="581-lg-joM"/>
+                                <constraint firstItem="O7F-oa-Lym" firstAttribute="centerX" secondItem="NEz-W7-giu" secondAttribute="centerX" id="Cjb-60-YYW"/>
+                                <constraint firstAttribute="trailing" secondItem="iBI-pM-XQP" secondAttribute="trailing" constant="32" id="DSB-yk-4kY"/>
+                                <constraint firstItem="JcX-dK-oOC" firstAttribute="height" secondItem="CUt-yU-32W" secondAttribute="height" id="DaJ-tW-5Dn"/>
+                                <constraint firstItem="O7F-oa-Lym" firstAttribute="top" secondItem="NEz-W7-giu" secondAttribute="top" constant="34" id="DdH-wY-UvZ"/>
+                                <constraint firstItem="YVL-ND-WOt" firstAttribute="width" secondItem="CUt-yU-32W" secondAttribute="width" multiplier="0.46" id="Ent-te-3Oj"/>
+                                <constraint firstItem="lId-tF-OdD" firstAttribute="centerX" secondItem="NEz-W7-giu" secondAttribute="centerX" id="HF7-ZZ-bzJ"/>
+                                <constraint firstItem="813-lh-8nD" firstAttribute="trailing" secondItem="CUt-yU-32W" secondAttribute="trailing" id="HvY-tH-P19"/>
+                                <constraint firstItem="813-lh-8nD" firstAttribute="height" secondItem="CUt-yU-32W" secondAttribute="height" id="M2V-pK-r75"/>
+                                <constraint firstItem="dmJ-Yf-27I" firstAttribute="leading" secondItem="NEz-W7-giu" secondAttribute="leading" constant="16" id="Nmw-my-0q9"/>
+                                <constraint firstItem="iBI-pM-XQP" firstAttribute="leading" secondItem="NEz-W7-giu" secondAttribute="leading" constant="32" id="RhG-2i-iIW"/>
+                                <constraint firstItem="CUt-yU-32W" firstAttribute="centerX" secondItem="NEz-W7-giu" secondAttribute="centerX" id="TtR-dW-zTM"/>
+                                <constraint firstItem="qAb-9J-z8G" firstAttribute="bottom" secondItem="i5l-Ls-YyV" secondAttribute="bottom" id="Vpq-W5-9GS"/>
+                                <constraint firstAttribute="trailing" secondItem="eSn-Nb-f4y" secondAttribute="trailing" constant="16" id="WTH-1z-lOo"/>
+                                <constraint firstItem="CUt-yU-32W" firstAttribute="width" secondItem="NEz-W7-giu" secondAttribute="width" multiplier="0.79" id="XWE-Jw-auY"/>
+                                <constraint firstItem="dmJ-Yf-27I" firstAttribute="top" secondItem="K0R-Xk-KaW" secondAttribute="bottom" constant="20" id="Yj8-wu-bsk"/>
+                                <constraint firstItem="JcX-dK-oOC" firstAttribute="centerX" secondItem="CUt-yU-32W" secondAttribute="centerX" id="aIW-zc-P8h"/>
+                                <constraint firstItem="i5l-Ls-YyV" firstAttribute="centerX" secondItem="NEz-W7-giu" secondAttribute="centerX" id="b1g-wt-ohw"/>
+                                <constraint firstItem="HNV-3I-3Dv" firstAttribute="leading" secondItem="NEz-W7-giu" secondAttribute="leading" constant="16" id="bIB-4t-PCT"/>
+                                <constraint firstItem="eSn-Nb-f4y" firstAttribute="top" secondItem="iBI-pM-XQP" secondAttribute="bottom" constant="45" id="c36-r7-fwO"/>
+                                <constraint firstAttribute="bottom" secondItem="i5l-Ls-YyV" secondAttribute="bottom" constant="90" id="gZn-gL-srU"/>
+                                <constraint firstItem="YVL-ND-WOt" firstAttribute="leading" secondItem="CUt-yU-32W" secondAttribute="leading" id="ggW-Q7-Bnv"/>
+                                <constraint firstItem="eSn-Nb-f4y" firstAttribute="leading" secondItem="NEz-W7-giu" secondAttribute="leading" constant="16" id="gpp-YS-M27"/>
+                                <constraint firstItem="K0R-Xk-KaW" firstAttribute="leading" secondItem="NEz-W7-giu" secondAttribute="leading" constant="16" id="he7-xO-lqc"/>
+                                <constraint firstItem="qAb-9J-z8G" firstAttribute="trailing" secondItem="i5l-Ls-YyV" secondAttribute="trailing" id="j4L-wW-chu"/>
+                                <constraint firstAttribute="trailing" secondItem="HNV-3I-3Dv" secondAttribute="trailing" constant="16" id="jJO-1r-6Pz"/>
+                                <constraint firstItem="qAb-9J-z8G" firstAttribute="leading" secondItem="i5l-Ls-YyV" secondAttribute="leading" id="lGu-Ij-vSU"/>
+                                <constraint firstItem="JcX-dK-oOC" firstAttribute="width" secondItem="CUt-yU-32W" secondAttribute="width" id="nrD-fr-And"/>
+                                <constraint firstItem="JcX-dK-oOC" firstAttribute="top" secondItem="813-lh-8nD" secondAttribute="bottom" constant="20" id="peq-bK-n9W"/>
+                                <constraint firstItem="i5l-Ls-YyV" firstAttribute="top" secondItem="JcX-dK-oOC" secondAttribute="bottom" constant="50" id="qr0-n1-yjQ"/>
+                                <constraint firstAttribute="trailing" secondItem="dmJ-Yf-27I" secondAttribute="trailing" constant="16" id="ryG-E2-LQO"/>
+                                <constraint firstItem="YVL-ND-WOt" firstAttribute="top" secondItem="CUt-yU-32W" secondAttribute="bottom" constant="20" id="sOj-8U-ft8"/>
+                                <constraint firstItem="HNV-3I-3Dv" firstAttribute="top" secondItem="dmJ-Yf-27I" secondAttribute="bottom" constant="20" id="vib-OC-GaB"/>
+                                <constraint firstItem="qAb-9J-z8G" firstAttribute="top" secondItem="i5l-Ls-YyV" secondAttribute="top" id="wId-BI-kOW"/>
+                                <constraint firstItem="K0R-Xk-KaW" firstAttribute="top" secondItem="eSn-Nb-f4y" secondAttribute="bottom" constant="20" id="wNF-Vu-pcB"/>
+                                <constraint firstItem="813-lh-8nD" firstAttribute="top" secondItem="CUt-yU-32W" secondAttribute="bottom" constant="20" id="wS4-Hg-9UV"/>
+                                <constraint firstItem="813-lh-8nD" firstAttribute="width" secondItem="CUt-yU-32W" secondAttribute="width" multiplier="0.46" id="zXZ-3L-2lw"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" name="scarlet"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="NEz-W7-giu" secondAttribute="trailing" id="1Vl-iM-DVP"/>
+                        <constraint firstItem="Y32-dm-4qJ" firstAttribute="top" secondItem="pzh-Hm-LXP" secondAttribute="top" constant="-53" id="2kX-aE-H3H"/>
+                        <constraint firstItem="NEz-W7-giu" firstAttribute="leading" secondItem="pzh-Hm-LXP" secondAttribute="leading" id="3kP-5D-nf5"/>
+                        <constraint firstAttribute="trailing" secondItem="Y32-dm-4qJ" secondAttribute="trailing" constant="-49" id="Afm-gE-Ap4"/>
+                        <constraint firstAttribute="bottom" secondItem="NEz-W7-giu" secondAttribute="bottom" id="s3N-bS-B6w"/>
+                        <constraint firstItem="NEz-W7-giu" firstAttribute="top" secondItem="pzh-Hm-LXP" secondAttribute="top" constant="99" id="yvP-WQ-l3K"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="pzh-Hm-LXP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3wq-j3-a7Q"/>
+                <constraint firstAttribute="bottom" secondItem="pzh-Hm-LXP" secondAttribute="bottom" id="FQL-ad-YSP"/>
+                <constraint firstItem="NEz-W7-giu" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Jr5-ae-qAN"/>
+                <constraint firstItem="pzh-Hm-LXP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RYE-zo-9Cw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pzh-Hm-LXP" secondAttribute="trailing" id="ene-Cg-NqR"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="odiggo logo" width="133" height="52"/>
+        <image name="zero-icon" width="153" height="227"/>
+        <namedColor name="denim">
+            <color red="0.20392156862745098" green="0.30588235294117649" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="pinkishRed">
+            <color red="0.89411764705882357" green="0.062745098039215685" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="scarlet">
+            <color red="0.79607843137254897" green="0.0" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

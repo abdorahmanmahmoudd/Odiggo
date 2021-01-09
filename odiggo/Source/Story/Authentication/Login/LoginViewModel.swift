@@ -20,3 +20,26 @@ final class LoginViewModel: BaseStateController {
         self.authAPI = authAPI
     }
 }
+
+// MARK: APIs
+extension LoginViewModel {
+    
+    func login(username: String, password: String) {
+        
+        loadingState()
+        
+        authAPI.login(username: username, password: password).subscribe(onSuccess: { [weak self] response in
+            
+            guard let self = self else {
+                return
+            }
+            self.resultState()
+            
+        }, onError: { [weak self] error in
+            
+            self?.errorState(error)
+
+        }).disposed(by: disposeBag)
+    }
+
+}

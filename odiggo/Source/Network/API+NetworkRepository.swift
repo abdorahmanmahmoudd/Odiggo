@@ -69,7 +69,10 @@ extension API {
         
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
-        request.httpBody = urlComponents.percentEncodedQuery?.data(using: .utf8)
+        
+        if method == .post {
+            request.httpBody = urlComponents.percentEncodedQuery?.data(using: .utf8)
+        }
         
 //        if let accessToken = accessToken {
 //            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
@@ -89,29 +92,29 @@ extension API {
             
             let task = self.sharedSession.dataTask(with: request) { data, response, error in
                 
-                // Validate Response
+                /// Validate Response
                 guard let response = response, let data = data else {
-                    single(.error(error ?? API.Error.unknown))
+                    single(.error(error ?? APIError.unknown))
                     return
                 }
                 
                 guard let httpResponse = response as? HTTPURLResponse else {
-                    single(.error(API.Error.nonHTTPResponse))
+                    single(.error(APIError.nonHTTPResponse))
                     return
                 }
                 
                 guard (200 ..< 300) ~= httpResponse.statusCode, error == nil else {
-                    return single(.error(API.Error.networkError(httpResponse.statusCode)))
+                    return single(.error(APIError.networkError(httpResponse.statusCode)))
                 }
                 
-                // Decode data into a model
+                /// Decode data into a model
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .iso8601
                 do {
                     let model = try decoder.decode(T.self, from: data)
                     single(.success(model))
                 } catch {
-                    single(.error(API.Error.decodingError(error)))
+                    single(.error(APIError.decodingError(error)))
                 }
             }
             
