@@ -20,7 +20,7 @@
 "BUY_AND_FIX" = "BUY AND FIX";
 "ONBOARDING_SUBTITLE" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporLorem";
 
-// MARK: Login
+// MARK: Login & Sign up
 "WELCOME_BACK" = "Welcome Back";
 "LOGIN_SUBTITLE" = "Stay Logged in With Your Account to get a Better experience";
 "FORGET_PASSWORD_Q" = "Forgot Password?";
@@ -44,3 +44,9 @@
 "PASSWORD_HINT" = "Enter a valid password";
 "PASSWORD_CONFIRMATION_HINT" = "Passwords does not match";
 "INVALID_CREDENTIALS_MSG" = "Incorrect username and/or password entered";
+
+// MARK: Forget Password
+"FORGET_PASSWORD_TITLE" = "Forget your password !";
+"FORGET_PASSWORD_SUBTITLE" = "Reset your password easily with your Email";
+"RESET_PASSWORD_BUTTON" = "Reset Password";
+"RESET_CONFIRMATION" = "Check your mail you will found a link to reset your password";

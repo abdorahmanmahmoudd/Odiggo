@@ -26,6 +26,8 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         /// Enable swipe back gesture
         navigationController?.interactivePopGestureRecognizer?.delegate = self
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        
+        addBackButtonIfNeeded()
     }
 
     /// Disable pop gesture in one situation:
@@ -66,8 +68,8 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         view.endEditing(true)
     }
     
-    func addBackButton() {
-        coordinator?.navigationController.navigationItem.leftBarButtonItem = UIBarButtonItem.odiggoBackButton(target: self, selector: #selector(self.didPressBackButton))
+    func addBackButtonIfNeeded() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem.odiggoBackButton(target: self, selector: #selector(self.didPressBackButton))
     }
     
     @objc private func didPressBackButton() {

@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -50,7 +49,7 @@
                     <rect key="frame" x="140.5" y="539" width="133" height="52"/>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="nw9-YI-UsF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5iw-iQ-AA6"/>
                 <constraint firstItem="num-rA-i7u" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6d9-qM-2Np"/>
@@ -83,8 +82,5 @@
         <namedColor name="pinkishRed">
             <color red="0.89411764705882357" green="0.062745098039215685" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

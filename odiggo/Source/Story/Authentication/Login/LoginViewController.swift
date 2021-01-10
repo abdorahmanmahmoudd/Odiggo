@@ -43,6 +43,11 @@ final class LoginViewController: BaseViewController {
     
     private func styleNavigationItem() {
         navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.barTintColor = .clear
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.hidesBarsOnSwipe = true
     }
     
     private func configureViews() {
@@ -119,7 +124,7 @@ final class LoginViewController: BaseViewController {
                 debugPrint("Result LoginViewController")
                 self.loginButton.status = .normal
                 self.showLoadingIndicator(visible: false)
-                (self.coordinator as? AuthenticationCoordinator)?.didFinish()
+                (self.coordinator as? AuthenticationCoordinator)?.didFinish(self)
             }
         }
     }
@@ -167,6 +172,10 @@ extension LoginViewController {
     
     @IBAction func appleButtonTapped(_ sender: OButton) {
         
+    }
+    
+    @IBAction func forgetPasswordTapped(_ sender: OButton) {
+        (coordinator as? AuthenticationCoordinator)?.startForgetPassword()
     }
 }
 
@@ -247,8 +256,8 @@ extension LoginViewController {
         /// username input validation
         usernameStackView.textField.rx.text.observeOn(MainScheduler.instance).map({ (input) -> Bool? in
             
-            guard let text = input, !text.isEmpty else { return false }
-            return text.hasContent()
+            guard let text = input else { return false }
+            return text.isValidEmail()
             
         }).subscribe(onNext: { [weak self] (valid) in
             

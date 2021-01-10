@@ -33,18 +33,12 @@ final class SignupViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        styleNavigationItem()
-        
+                
         configureViews()
         
         bindObservables()
     }
-    
-    private func styleNavigationItem() {
-        addBackButton()
-    }
-    
+
     private func configureViews() {
         
         configureTexts()
@@ -133,7 +127,7 @@ final class SignupViewController: BaseViewController {
                 debugPrint("Result SignupViewController")
                 self.signupButton.status = .normal
                 self.showLoadingIndicator(visible: false)
-                (self.coordinator as? AuthenticationCoordinator)?.didFinish()
+                (self.coordinator as? AuthenticationCoordinator)?.didFinish(self)
             }
         }
     }

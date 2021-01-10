@@ -41,6 +41,9 @@
 		288E8F1C25AA71BC0009BFC8 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288E8F1A25AA71BC0009BFC8 /* ProductsViewController.swift */; };
 		288E8F1D25AA71BC0009BFC8 /* ProductsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 288E8F1B25AA71BC0009BFC8 /* ProductsViewController.xib */; };
 		288E8F2125AA72080009BFC8 /* ProductsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288E8F2025AA72080009BFC8 /* ProductsCoordinator.swift */; };
+		288E8F2625AB26DD0009BFC8 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288E8F2425AB26DD0009BFC8 /* ForgetPasswordViewController.swift */; };
+		288E8F2725AB26DD0009BFC8 /* ForgetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 288E8F2525AB26DD0009BFC8 /* ForgetPasswordViewController.xib */; };
+		288E8F2A25AB2CC30009BFC8 /* ForgetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288E8F2925AB2CC30009BFC8 /* ForgetPasswordViewModel.swift */; };
 		2893A9CC25A7E57F0038BFA9 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893A9CB25A7E57F0038BFA9 /* UserManager.swift */; };
 		28945193259FC9B100FF77DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28945192259FC9B100FF77DD /* AppDelegate.swift */; };
 		2894519C259FC9B200FF77DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2894519B259FC9B200FF77DD /* Assets.xcassets */; };
@@ -110,6 +113,9 @@
 		288E8F1A25AA71BC0009BFC8 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		288E8F1B25AA71BC0009BFC8 /* ProductsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsViewController.xib; sourceTree = "<group>"; };
 		288E8F2025AA72080009BFC8 /* ProductsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCoordinator.swift; sourceTree = "<group>"; };
+		288E8F2425AB26DD0009BFC8 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		288E8F2525AB26DD0009BFC8 /* ForgetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordViewController.xib; sourceTree = "<group>"; };
+		288E8F2925AB2CC30009BFC8 /* ForgetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewModel.swift; sourceTree = "<group>"; };
 		2893A9CB25A7E57F0038BFA9 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		2894518F259FC9B100FF77DD /* odiggo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = odiggo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28945192259FC9B100FF77DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -469,6 +475,9 @@
 		28A8693F25A7693800987624 /* ForgetPassword */ = {
 			isa = PBXGroup;
 			children = (
+				288E8F2425AB26DD0009BFC8 /* ForgetPasswordViewController.swift */,
+				288E8F2525AB26DD0009BFC8 /* ForgetPasswordViewController.xib */,
+				288E8F2925AB2CC30009BFC8 /* ForgetPasswordViewModel.swift */,
 			);
 			path = ForgetPassword;
 			sourceTree = "<group>";
@@ -582,6 +591,7 @@
 				289451BC259FCC5900FF77DD /* Localizable.strings in Resources */,
 				281C454E25A0B3B700FD8C08 /* Montserrat-ExtraBold.ttf in Resources */,
 				2866737325A8B4D600A3227A /* SignupViewController.xib in Resources */,
+				288E8F2725AB26DD0009BFC8 /* ForgetPasswordViewController.xib in Resources */,
 				281C454C25A0B3B700FD8C08 /* OFL.txt in Resources */,
 				2894519C259FC9B200FF77DD /* Assets.xcassets in Resources */,
 				28A8694B25A76A7900987624 /* LoginViewController.xib in Resources */,
@@ -685,7 +695,9 @@
 				2874F00C25A3A97D00A05111 /* OButton+ContentAlignment.swift in Sources */,
 				289451DC259FD29700FF77DD /* API+NetworkRepository.swift in Sources */,
 				289451C9259FD13A00FF77DD /* Coordinator.swift in Sources */,
+				288E8F2625AB26DD0009BFC8 /* ForgetPasswordViewController.swift in Sources */,
 				28A8694125A7695300987624 /* AuthenticationCoordinator.swift in Sources */,
+				288E8F2A25AB2CC30009BFC8 /* ForgetPasswordViewModel.swift in Sources */,
 				289451D0259FD19D00FF77DD /* ReusableIdentifier.swift in Sources */,
 				289451EC259FD67000FF77DD /* BaseStateController.swift in Sources */,
 				289451E4259FD56F00FF77DD /* OnboardingViewController.swift in Sources */,
@@ -831,17 +843,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = T65M7C4DTK;
 				INFOPLIST_FILE = odiggo/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.netservex.odiggo-public";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Odiggo Public Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -853,17 +866,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = T65M7C4DTK;
 				INFOPLIST_FILE = odiggo/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.netservex.odiggo-public";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Odiggo Public Distribution";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

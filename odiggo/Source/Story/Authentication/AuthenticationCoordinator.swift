@@ -40,6 +40,14 @@ final class AuthenticationCoordinator: Coordinator {
         navigationController.pushViewController(signupVC, animated: true)
     }
     
+    func startForgetPassword() {
+        
+        let forgetPasswordVM = ForgetPasswordViewModel(api.authenticationRepository)
+        let forgetPasswordVC = ForgetPasswordViewController.create(payload: forgetPasswordVM)
+        forgetPasswordVC.coordinator = self
+        navigationController.pushViewController(forgetPasswordVC, animated: true)
+    }
+    
     func loginTapped() {
         navigationController.popViewController(animated: true)
     }
@@ -48,8 +56,15 @@ final class AuthenticationCoordinator: Coordinator {
 // MARK: Additional behaviour
 extension AuthenticationCoordinator {
     
-    /// After pop animation is done etc..
-    func didFinish() {
-        (parentCoordinator as? AppCoordinator)?.childDidFinish(self)
+    /// After finishing a ViewController journey
+    func didFinish(_ viewController: UIViewController) {
+                
+        switch viewController {
+        case is ForgetPasswordViewController:
+            navigationController.popViewController(animated: true)
+            
+        default:
+            (parentCoordinator as? AppCoordinator)?.childDidFinish(self)
+        }
     }
 }
