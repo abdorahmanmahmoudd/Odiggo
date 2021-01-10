@@ -26,8 +26,6 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         /// Enable swipe back gesture
         navigationController?.interactivePopGestureRecognizer?.delegate = self
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        
-        addBackButtonIfNeeded()
     }
 
     /// Disable pop gesture in one situation:

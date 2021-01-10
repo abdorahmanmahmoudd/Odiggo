@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -82,7 +83,7 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="ZaH-0M-dE4"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="AkS-0u-hGI" firstAttribute="top" secondItem="PQV-LQ-TvF" secondAttribute="top" id="0jr-jM-C5a"/>
                 <constraint firstItem="aPe-r8-oSX" firstAttribute="centerY" secondItem="VbT-cc-fUM" secondAttribute="centerY" id="2KU-gc-obU"/>
@@ -129,5 +130,8 @@
         <namedColor name="pinkishRed">
             <color red="0.89411764705882357" green="0.062745098039215685" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

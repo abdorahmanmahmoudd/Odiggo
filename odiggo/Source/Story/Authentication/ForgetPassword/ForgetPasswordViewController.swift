@@ -31,6 +31,12 @@ final class ForgetPasswordViewController: BaseViewController {
         bindObservables()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        addBackButtonIfNeeded()
+    }
+    
     private func configureViews() {
         
         configureTexts()
