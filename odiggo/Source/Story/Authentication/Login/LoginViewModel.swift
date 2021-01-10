@@ -10,25 +10,32 @@ import RxSwift
 
 final class LoginViewModel: BaseStateController {
     
-    /// Network requests
-    private let authAPI: AuthenticationRepository
+    /// Authentication and user related businsess.
+    private let userManager: UserManager
     
     /// RxSwift
     private let disposeBag = DisposeBag()
     
-    init(_ authAPI: AuthenticationRepository) {
-        self.authAPI = authAPI
+    var usernameIsValid = false
+    var passwordIsValid = false
+    
+    init(_ userManager: UserManager) {
+        self.userManager = userManager
+    }
+    
+    func isLoginEnabled() -> Bool {
+        return usernameIsValid && passwordIsValid
     }
 }
 
 // MARK: APIs
 extension LoginViewModel {
     
-    func login(username: String, password: String) {
+    func login(email: String, password: String) {
         
         loadingState()
         
-        authAPI.login(username: username, password: password).subscribe(onSuccess: { [weak self] response in
+        userManager.login(email: email, password: password).subscribe(onSuccess: { [weak self] response in
             
             guard let self = self else {
                 return

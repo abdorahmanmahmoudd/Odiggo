@@ -16,6 +16,7 @@ struct Constants {
     }
     
     struct UserManager {
-        static let onboardedKey = "Onboarded_key"
+        static let onboardingCompleted = "UserManager.Keys.OnboardingCompleted"
+        static let accessToken = "UserManager.Keys.AccessToken"
     }
 }

@@ -31,7 +31,6 @@ extension OnboardingCoordinator {
     
     /// After pop animation is done etc..
     func didFinish() {
-        UserManager.shared.onboardingCompleted = true
         (parentCoordinator as? AppCoordinator)?.childDidFinish(self)
     }
 }

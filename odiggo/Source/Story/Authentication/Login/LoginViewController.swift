@@ -30,9 +30,6 @@ final class LoginViewController: BaseViewController {
     let disposeBag = DisposeBag()
     
     private var viewModel: LoginViewModel!
-    
-    private var usernameIsValid = false
-    private var passwordIsValid = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +49,7 @@ final class LoginViewController: BaseViewController {
         
         configureTexts()
         
+        usernameStackView.textfieldType = .email
         usernameStackView.delegate = self
         usernameStackView.textfieldDelegate = self
         
@@ -64,7 +62,7 @@ final class LoginViewController: BaseViewController {
         subtitleLabel.font = .font(.primaryRegular, .medium)
         signupQuestionLabel.font = .font(.primaryRegular, .small)
         signupLabel.font = .font(.primaryRegular, .little)
-        containerView.layer.cornerRadius = 22
+        containerView.layer.cornerRadius = 22        
     }
     
     private func configureTexts() {
@@ -85,9 +83,9 @@ final class LoginViewController: BaseViewController {
         appleButton.config(title: "CONTINUE_WITH_APPLE".localized, image: UIImage(named: "error-icon"),
                            type: .outline, font: .systemFont(ofSize: 14), alignment:  .textTrailing)
         
-        usernameStackView.titleText = "USERNAME_TITLE".localized
-        usernameStackView.textField.setPlaceHolder(text: "USERNAME_TITLE".localized)
-        usernameStackView.attributedAccessoryText = NSAttributedString(string: "USERNAME_HINT".localized)
+        usernameStackView.titleText = "EMAIL_TITLE".localized
+        usernameStackView.textField.setPlaceHolder(text: "EMAIL_PLACEHOLDER".localized)
+        usernameStackView.attributedAccessoryText = NSAttributedString(string: "EMAIL_HINT".localized)
         
         passwordStackView.titleText = "PASSWORD_TITLE".localized
         passwordStackView.textField.setPlaceHolder(text: "PASSWORD_PLACEHOLDER".localized)
@@ -111,6 +109,7 @@ final class LoginViewController: BaseViewController {
                 
             case .loading:
                 debugPrint("loading LoginViewController")
+                self.loginButton.status = .disabled
                 self.showLoadingIndicator(visible: true)
                 
             case .error(let error):
@@ -118,29 +117,28 @@ final class LoginViewController: BaseViewController {
                 
             case .result:
                 debugPrint("Result LoginViewController")
+                self.loginButton.status = .normal
                 self.showLoadingIndicator(visible: false)
+                (self.coordinator as? AuthenticationCoordinator)?.didFinish()
             }
         }
     }
     
-    private func isLoginEnabled() -> Bool {
-        return usernameIsValid && passwordIsValid
-    }
-    
     private func login() {
-        guard let username = usernameStackView.textField.text,
+        guard let email = usernameStackView.textField.text,
               let password = passwordStackView.textField.text else { return }
         view.endEditing(true)
-        viewModel.login(username: username, password: password)
+        viewModel.login(email: email, password: password)
     }
     
     override func viewTapped(_ sender: UITapGestureRecognizer) {
         super.viewTapped(sender)
-        loginButton.status = isLoginEnabled() ? .normal : .disabled
+        loginButton.status = viewModel.isLoginEnabled() ? .normal : .disabled
     }
     
     override func handleError(_ error: Error?) {
         super.handleError(error)
+        loginButton.status = .normal
         
         if (error as? APIError)?.mapNetworkError() == .unauthorized {
             passwordStackView.showError(true)
@@ -191,7 +189,7 @@ extension LoginViewController: UITextFieldDelegate {
     
         textField.isActive = false
         passwordStackView.showError(false)
-        usernameStackView.showError(!usernameIsValid)
+        usernameStackView.showError(!viewModel.usernameIsValid)
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -204,8 +202,8 @@ extension LoginViewController: UITextFieldDelegate {
             
             switch textField {
             case passwordStackView.textField:
-                passwordIsValid = false
-                loginButton.status = isLoginEnabled() ? .normal : .disabled
+                viewModel.passwordIsValid = false
+                loginButton.status = viewModel.isLoginEnabled() ? .normal : .disabled
                 
             default:
                 break
@@ -220,11 +218,11 @@ extension LoginViewController: UITextFieldDelegate {
         
         guard let nextTextField = textField.superview?.superview?.viewWithTag(nextTag) else {
             /// reached last one
-            if isLoginEnabled() {
+            if viewModel.isLoginEnabled() {
                 textField.resignFirstResponder()
                 login()
             }
-            return isLoginEnabled()
+            return viewModel.isLoginEnabled()
         }
         
         nextTextField.becomeFirstResponder()
@@ -256,8 +254,8 @@ extension LoginViewController {
             
             guard let self = self, let valid = valid else { return }
             self.usernameStackView.showError(!valid)
-            self.usernameIsValid = valid
-            self.loginButton.status = self.isLoginEnabled() ? .normal : .disabled
+            self.viewModel.usernameIsValid = valid
+            self.loginButton.status = self.viewModel.isLoginEnabled() ? .normal : .disabled
             
         }).disposed(by: disposeBag)
         
@@ -270,8 +268,8 @@ extension LoginViewController {
         }).subscribe(onNext: { [weak self] (valid) in
             
             guard let self = self else { return }
-            self.passwordIsValid = valid
-            self.loginButton.status = self.isLoginEnabled() ? .normal : .disabled
+            self.viewModel.passwordIsValid = valid
+            self.loginButton.status = self.viewModel.isLoginEnabled() ? .normal : .disabled
             
         }).disposed(by: disposeBag)
     }

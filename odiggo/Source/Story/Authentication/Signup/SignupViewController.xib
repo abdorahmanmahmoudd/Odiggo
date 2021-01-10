@@ -103,7 +103,6 @@
                                         <userDefinedRuntimeAttribute type="number" keyPath="textfieldOrder">
                                             <integer key="value" value="3"/>
                                         </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="lastTextfield" value="YES"/>
                                     </userDefinedRuntimeAttributes>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUt-yU-32W" customClass="OButton" customModule="odiggo" customModuleProvider="target">
@@ -113,18 +112,30 @@
                                         <constraint firstAttribute="height" constant="50" id="RaN-2q-Jco"/>
                                     </constraints>
                                     <state key="normal" title="sign up"/>
+                                    <connections>
+                                        <action selector="signupButtonTapped:" destination="-1" eventType="touchUpInside" id="Dhe-7K-Tk3"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVL-ND-WOt" customClass="OButton" customModule="odiggo" customModuleProvider="target">
                                     <rect key="frame" x="43.333333333333329" y="539.66666666666663" width="150.66666666666669" height="50"/>
                                     <state key="normal" title="google sign up"/>
+                                    <connections>
+                                        <action selector="googleTapped:" destination="-1" eventType="touchUpInside" id="can-A1-cFP"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="813-lh-8nD" customClass="OButton" customModule="odiggo" customModuleProvider="target">
                                     <rect key="frame" x="220" y="539.66666666666663" width="150.66666666666663" height="50"/>
                                     <state key="normal" title="google sign up"/>
+                                    <connections>
+                                        <action selector="facebookTapped:" destination="-1" eventType="touchUpInside" id="6oi-er-i2Y"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JcX-dK-oOC" customClass="OButton" customModule="odiggo" customModuleProvider="target">
                                     <rect key="frame" x="43.333333333333343" y="609.66666666666663" width="327.33333333333326" height="50"/>
                                     <state key="normal" title="apple sign up"/>
+                                    <connections>
+                                        <action selector="appleTapped:" destination="-1" eventType="touchUpInside" id="HRC-Lu-OiH"/>
+                                    </connections>
                                 </button>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="i5l-Ls-YyV">
                                     <rect key="frame" x="113.66666666666669" y="709.66666666666663" width="187" height="30"/>
@@ -210,6 +221,7 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="pzh-Hm-LXP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3wq-j3-a7Q"/>
                 <constraint firstAttribute="bottom" secondItem="pzh-Hm-LXP" secondAttribute="bottom" id="FQL-ad-YSP"/>
@@ -217,8 +229,16 @@
                 <constraint firstItem="pzh-Hm-LXP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RYE-zo-9Cw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pzh-Hm-LXP" secondAttribute="trailing" id="ene-Cg-NqR"/>
             </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="QsK-RW-tL8" appends="YES" id="10i-Yi-tVF"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </view>
+        <tapGestureRecognizer id="QsK-RW-tL8">
+            <connections>
+                <action selector="viewTapped:" destination="-1" id="Z7R-1d-xMf"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="odiggo logo" width="133" height="52"/>

@@ -16,14 +16,17 @@ final class AuthenticationCoordinator: Coordinator {
     
     var api: NetworkRepository
     
-    init(_ navigationController: UINavigationController, _ api: NetworkRepository) {
+    var userManager: UserManager
+    
+    init(_ navigationController: UINavigationController, _ api: NetworkRepository, _ userManager: UserManager) {
         self.navigationController = navigationController
         self.api = api
+        self.userManager = userManager
     }
     
     func start() {
         
-        let loginVM = LoginViewModel(api.authenticationRepository)
+        let loginVM = LoginViewModel(userManager)
         let LoginVC = LoginViewController.create(payload: loginVM)
         LoginVC.coordinator = self
         navigationController.setViewControllers([LoginVC], animated: true)
@@ -31,7 +34,7 @@ final class AuthenticationCoordinator: Coordinator {
     
     func startSignup() {
         
-        let signupVM = SignupViewModel(api.authenticationRepository)
+        let signupVM = SignupViewModel(userManager)
         let signupVC = SignupViewController.create(payload: signupVM)
         signupVC.coordinator = self
         navigationController.pushViewController(signupVC, animated: true)

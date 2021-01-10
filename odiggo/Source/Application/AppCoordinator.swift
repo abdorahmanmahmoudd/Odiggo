@@ -16,6 +16,8 @@ final class AppCoordinator: Coordinator {
     /// App API shared client
     private(set) var api: API
     
+    private(set) var userManager: UserManager
+    
     /// Coordinator navigation controller
     var navigationController: UINavigationController
     
@@ -25,45 +27,55 @@ final class AppCoordinator: Coordinator {
     /// An array to track the childs coordinators
     var childCoordinators: [Coordinator] = []
     
-    init(_ window: UIWindow, _ apiClient: API = API()) {
+    init(_ window: UIWindow, _ apiClient: API = API(), _ userManager: UserManager? = nil) {
         
         navigationController = UINavigationController()
         navigationController.navigationBar.isHidden = true
         navigationController.navigationBar.isTranslucent = true
+        
+        tabbarController = UITabBarController()
         
         self.window = window
         self.window.rootViewController = navigationController
         self.window.makeKeyAndVisible()
         
         self.api = apiClient
+        self.userManager = UserManager(api: api)
     }
     
     /// Starting point
     func start() {
 
-        if UserManager.shared.onboardingCompleted {
-            startAuthentication()
+        if !userManager.onboardingCompleted {
+            startOnboarding()
+            
+        } else if userManager.isAuthenticated {
+            startTabbarController()
             
         } else {
-            startOnboarding()
+            startAuthentication()
         }
         
     }
     
-//    func startTabbarController() {
-//
-//        /// Setup `ProductsListCoordinator` & start it.
-//        let productsListCoordinator = ProductsListCoordinator(api)
-//        addChildCoordinator(productsListCoordinator)
-//        productsListCoordinator.start()
-//
-//        /// Configure TabbarController view controllers
-//        let viewControllers = [productsListCoordinator.navigationController]
-//        tabbarController.setViewControllers(viewControllers, animated: true)
-//
-//        /// Set navigationController root viewController
-//        navigationController.setViewControllers([tabbarController], animated: true)
-//    }
+    func startTabbarController() {
+
+        /// Setup `ProductsCoordinator` & start it.
+        let productsCoordinator = ProductsCoordinator(navigationController, api)
+        addChildCoordinator(productsCoordinator)
+        productsCoordinator.start()
+
+        /// Configure TabbarController view controllers
+        let viewControllers = [productsCoordinator.rootViewController].compactMap({ $0 })
+        tabbarController?.setViewControllers(viewControllers, animated: true)
+
+        guard let tabbarVC = tabbarController else {
+            fatalError("tabbarVC is not initialized")
+        }
+        
+        /// Set navigationController root viewController
+        navigationController.setViewControllers([tabbarVC], animated: true)
+    }
     
     func startOnboarding() {
         let onboardingCoordinator = OnboardingCoordinator(navigationController)
@@ -73,7 +85,7 @@ final class AppCoordinator: Coordinator {
     }
     
     func startAuthentication() {
-        let authenticationCoordiantor = AuthenticationCoordinator(navigationController, api)
+        let authenticationCoordiantor = AuthenticationCoordinator.init(navigationController, api, userManager)
         authenticationCoordiantor.parentCoordinator = self
         addChildCoordinator(authenticationCoordiantor)
         authenticationCoordiantor.start()
@@ -89,7 +101,11 @@ extension AppCoordinator {
         
         switch child.self {
         case is OnboardingCoordinator:
+            userManager.onboardingCompleted = true
             startAuthentication()
+            
+        case is AuthenticationCoordinator:
+            startTabbarController()
             
         default:
             debugPrint("childDidFinish not handling \(child)")

@@ -19,16 +19,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4E0AD3EA-D7A0-4EBB-A48D-75FF20006CEB"
+            uuid = "E3763C0A-7EDF-4D16-A65B-6DE1C5B4826C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "odiggo/Source/Story/Authentication/Signup/SignupViewController.swift"
+            filePath = "odiggo/Source/Story/Authentication/Signup/SignupViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
-            landmarkName = "errorButtonTapped()"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "signup(username:email:password:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

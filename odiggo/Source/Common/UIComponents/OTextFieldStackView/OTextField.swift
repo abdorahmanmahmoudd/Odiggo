@@ -11,7 +11,7 @@ final class OTextField: UITextField {
 
     private let box: UIView = UIView()
     private let accessoryButton = UIButton(frame: CGRect(x: 0, y: 0, width: 16, height: 16))
-    private let textInset: UIEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 30)
+    private let textInset: UIEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 38)
     var hideClearButton: Bool = true
     
     override var isEnabled: Bool {
@@ -134,12 +134,11 @@ extension OTextField {
         
         let indentView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         indentView.addSubview(accessoryButton)
-
         accessoryButton.translatesAutoresizingMaskIntoConstraints = false
-        accessoryButton.leftAnchor.constraint(equalTo: indentView.leftAnchor).isActive = true
-        accessoryButton.widthAnchor.constraint(equalToConstant: 16).isActive = true
+        accessoryButton.widthAnchor.constraint(lessThanOrEqualToConstant: indentView.bounds.width).isActive = true
         accessoryButton.heightAnchor.constraint(equalToConstant: 16).isActive = true
         accessoryButton.centerYAnchor.constraint(equalTo: indentView.centerYAnchor).isActive = true
+        accessoryButton.centerXAnchor.constraint(equalTo: indentView.centerXAnchor, constant: -8).isActive = true
         
         rightView = indentView
         accessoryButton.addTarget(self, action: #selector(clearView(_:)), for: .touchUpInside)

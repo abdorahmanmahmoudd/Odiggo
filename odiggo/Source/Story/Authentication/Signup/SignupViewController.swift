@@ -30,11 +30,6 @@ final class SignupViewController: BaseViewController {
     let disposeBag = DisposeBag()
     
     private var viewModel: SignupViewModel!
-    
-    private var usernameIsValid = false
-    private var passwordIsValid = false
-    private var emailIsValid = false
-    private var passwordConfirmationIsValid = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +42,7 @@ final class SignupViewController: BaseViewController {
     }
     
     private func styleNavigationItem() {
-
+        addBackButton()
     }
     
     private func configureViews() {
@@ -113,10 +108,43 @@ final class SignupViewController: BaseViewController {
     
     private func bindObservables() {
         configureValidators()
+        
+        /// Set view model state change callback
+        viewModel.refreshState = { [weak self] in
+            
+            guard let self = self else {
+                return
+            }
+            
+            switch self.viewModel.state {
+            
+            case .initial, .refreshing:
+                debugPrint("initial & refreshing SignupViewController")
+                
+            case .loading:
+                debugPrint("loading SignupViewController")
+                self.signupButton.status = .disabled
+                self.showLoadingIndicator(visible: true)
+                
+            case .error(let error):
+                self.handleError(error)
+                
+            case .result:
+                debugPrint("Result SignupViewController")
+                self.signupButton.status = .normal
+                self.showLoadingIndicator(visible: false)
+                (self.coordinator as? AuthenticationCoordinator)?.didFinish()
+            }
+        }
     }
     
-    private func isSignupEnabled() -> Bool {
-        return usernameIsValid && passwordIsValid && passwordConfirmationIsValid && emailIsValid
+    override func handleError(_ error: Error?) {
+        super.handleError(error)
+        self.signupButton.status = .normal
+        
+        if let networkError = (error as? APIError)?.mapNetworkError() {
+            debugPrint("\(networkError)")
+        }
     }
     
     private func signup() {
@@ -131,11 +159,32 @@ final class SignupViewController: BaseViewController {
     
     override func viewTapped(_ sender: UITapGestureRecognizer) {
         super.viewTapped(sender)
-        signupButton.status = isSignupEnabled() ? .normal : .disabled
+        signupButton.status = viewModel.isSignupEnabled() ? .normal : .disabled
     }
+
+}
+
+// MARK: - Actions
+extension SignupViewController {
     
     @IBAction func loginTapped(_ sender: Any) {
         (coordinator as? AuthenticationCoordinator)?.loginTapped()
+    }
+    
+    @IBAction func signupButtonTapped(_ sender: OButton) {
+        signup()
+    }
+    
+    @IBAction func googleTapped(_ sender: OButton) {
+        
+    }
+    
+    @IBAction func facebookTapped(_ sender: OButton) {
+        
+    }
+    
+    @IBAction func appleTapped(_ sender: OButton) {
+        
     }
 }
 
@@ -155,18 +204,52 @@ extension SignupViewController: UITextFieldDelegate {
             return
         }
         textField.isActive = false
+        
+        switch textField {
+        case passwordStackView.textField:
+            passwordStackView.showError(!viewModel.passwordIsValid)
+            
+        case usernameStackView.textField:
+            usernameStackView.showError(!viewModel.usernameIsValid)
+            
+        case passwordConfirmationStackView.textField:
+            passwordConfirmationStackView.showError(!viewModel.passwordConfirmationIsValid)
+            
+        case emailStackView.textField:
+            emailStackView.showError(!viewModel.emailIsValid)
+        default:
+            break
+        }
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         
-        passwordConfirmationStackView.showError(false)
-        passwordStackView.showError(false)
-        usernameStackView.showError(false)
-        emailStackView.showError(false)
-        
-        if let textField = textField as? OTextField {
-            textField.isActive = true
+        guard let textField = textField as? OTextField else {
+            return true
         }
+        textField.isActive = true
+        
+        switch textField {
+        case passwordStackView.textField:
+            viewModel.passwordIsValid = false
+            passwordStackView.showError(false)
+            
+        case usernameStackView.textField:
+            viewModel.usernameIsValid = false
+            usernameStackView.showError(false)
+            
+        case passwordConfirmationStackView.textField:
+            viewModel.passwordConfirmationIsValid = false
+            passwordConfirmationStackView.showError(false)
+            
+        case emailStackView.textField:
+            viewModel.emailIsValid = false
+            emailStackView.showError(false)
+        default:
+            break
+        }
+        
+        signupButton.status = viewModel.isSignupEnabled() ? .normal : .disabled
 
         return true
     }
@@ -176,11 +259,11 @@ extension SignupViewController: UITextFieldDelegate {
         
         guard let nextTextField = textField.superview?.superview?.viewWithTag(nextTag) else {
             /// reached last one
-            if isSignupEnabled() {
+            if viewModel.isSignupEnabled() {
                 textField.resignFirstResponder()
                 signup()
             }
-            return isSignupEnabled()
+            return viewModel.isSignupEnabled()
         }
         
         nextTextField.becomeFirstResponder()
@@ -211,8 +294,8 @@ extension SignupViewController {
             
             guard let self = self else { return }
             self.usernameStackView.showError(!valid)
-            self.usernameIsValid = valid
-            self.signupButton.status = self.isSignupEnabled() ? .normal : .disabled
+            self.viewModel.usernameIsValid = valid
+            self.signupButton.status = self.viewModel.isSignupEnabled() ? .normal : .disabled
             
         }).disposed(by: disposeBag)
         
@@ -226,22 +309,23 @@ extension SignupViewController {
             
             guard let self = self else { return }
             self.emailStackView.showError(!valid)
-            self.emailIsValid = valid
-            self.signupButton.status = self.isSignupEnabled() ? .normal : .disabled
+            self.viewModel.emailIsValid = valid
+            self.signupButton.status = self.viewModel.isSignupEnabled() ? .normal : .disabled
             
         }).disposed(by: disposeBag)
         
         /// password validation
         passwordStackView.textField.rx.text.observeOn(MainScheduler.instance).map({ (input) -> Bool in
             
-            guard let inputLength = input?.count else { return false }
-            return inputLength >= Constants.Login.passwordMinimumLength
+            guard let input = input else { return false }
+            return input.isValidPassword()
             
         }).subscribe(onNext: { [weak self] (valid) in
             
             guard let self = self else { return }
-            self.passwordIsValid = valid
-            self.signupButton.status = self.isSignupEnabled() ? .normal : .disabled
+            self.passwordStackView.showError(!valid)
+            self.viewModel.passwordIsValid = valid
+            self.signupButton.status = self.viewModel.isSignupEnabled() ? .normal : .disabled
             
         }).disposed(by: disposeBag)
         
@@ -252,8 +336,9 @@ extension SignupViewController {
         }).subscribe(onNext: { [weak self] (valid) in
             
             guard let self = self else { return }
-            self.passwordConfirmationIsValid = valid
-            self.signupButton.status = self.isSignupEnabled() ? .normal : .disabled
+            self.passwordConfirmationStackView.showError(!valid)
+            self.viewModel.passwordConfirmationIsValid = valid
+            self.signupButton.status = self.viewModel.isSignupEnabled() ? .normal : .disabled
             
         }).disposed(by: disposeBag)
     }

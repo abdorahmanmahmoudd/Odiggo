@@ -65,6 +65,14 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func viewTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
+    
+    func addBackButton() {
+        coordinator?.navigationController.navigationItem.leftBarButtonItem = UIBarButtonItem.odiggoBackButton(target: self, selector: #selector(self.didPressBackButton))
+    }
+    
+    @objc private func didPressBackButton() {
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 //// MARK: Error View

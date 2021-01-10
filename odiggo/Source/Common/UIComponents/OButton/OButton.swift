@@ -50,6 +50,7 @@ final class OButton: UIButton {
         setTitleColor(type.titleColor(state: state), for: .normal)
         tintColor = type.titleColor(state: state)
         backgroundColor = type.backgroundColor(state: state)
+        isEnabled = state != .disabled
     }
 
     private func setInsets(alignment: ContentAlignment, image: UIImage?, type: ButtonStyle) {
