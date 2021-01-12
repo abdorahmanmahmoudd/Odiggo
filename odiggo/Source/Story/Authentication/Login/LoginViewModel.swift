@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import AuthenticationServices
 
 final class LoginViewModel: BaseStateController {
     
@@ -48,5 +49,29 @@ extension LoginViewModel {
 
         }).disposed(by: disposeBag)
     }
-
+    
+    // TODO: Needs to align with the BE about how to authenticate the user without a token.
+    func login(with appleCredential: ASAuthorizationAppleIDCredential) {
+        
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        
+        appleIDProvider.getCredentialState(forUserID: appleCredential.user) {  (credentialState, error) in
+            
+             switch credentialState {
+                case .authorized:
+                    /// The Apple ID credential is valid.
+                    debugPrint("getCredentialState authorized")
+                    break
+                case .revoked:
+                    /// The Apple ID credential is revoked.
+                    debugPrint("getCredentialState revoked")
+                    break
+                case .notFound:
+                    /// No credential was found, so show the sign-in UI.
+                debugPrint("getCredentialState notFound")
+                default:
+                    break
+             }
+        }
+    }
 }

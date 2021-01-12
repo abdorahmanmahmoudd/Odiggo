@@ -64,6 +64,7 @@ final class OButton: UIButton {
             /// The functions returns depending on the alignment, so can return 0 if the image is not on the left or right side
             edgeInsets.left += alignment.imageLeftPadding()
             edgeInsets.right += alignment.imageRightPadding()
+            imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: horizontalEdgeInset)
         }
 
         switch type {

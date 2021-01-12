@@ -34,7 +34,7 @@ final class OnboardingView: UIView {
         subtitleLabel.font = .font(.primaryMedium, .medium)
         
         nextButton.config(title: "NEXT_BUTTON_TITLE".localized,
-                          type: .primary, font: .font(.primaryBold, .medium))
+                          type: .primary(), font: .font(.primaryBold, .medium))
         
         skipButton.config(title: "SKIP_BUTTON_TITLE".localized,
                           type: .text(titleColor: .greyish), font: .font(.primaryMedium, .medium))

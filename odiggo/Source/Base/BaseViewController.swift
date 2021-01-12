@@ -46,20 +46,15 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     /// Shared Error Handling functionality
     func handleError(_ error: Error?) {
         
-        debugPrint("error \(String(describing: error))")
-        self.showLoadingIndicator(visible: false)
         
+        self.showLoadingIndicator(visible: false)
+        guard let error = error as? APIError else {
+            return
+        }
         /// If there is an error then show error view with that error and try again button
-//        self.showError(with: "GENERAL_EMPTY_STATE_ERROR".localized, message: error?.localizedDescription, retry: {
-//            self.retry()
-//        })
-        retry()
+        showErrorAlert(with: nil, message: error.errorDescription)
+        
         return
-    }
-    
-    /// To be overrwitten by subclasses
-    func retry() {
-        debugPrint("Override by view controller subclass")
     }
     
     @IBAction func viewTapped(_ sender: UITapGestureRecognizer) {
@@ -73,11 +68,36 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     @objc private func didPressBackButton() {
         navigationController?.popViewController(animated: true)
     }
+    
+    /// To be overrwitten by subclasses
+    func retry() {
+        debugPrint("Override by view controller subclass")
+    }
 }
 
-//// MARK: Error View
-//extension BaseViewController {
-//
+// MARK: Error View
+extension BaseViewController {
+    
+    /// Present an Alert with preferred Style with a custom `retryAction` otherwise it will call the default `retry` function.
+    func showErrorAlert(with title: String?, message: String?,
+                        preferredStyle: UIAlertController.Style = .alert, retryAction: (() -> Void)? = nil) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
+        
+        alert.addAction(UIAlertAction(title: "RETRY".localized, style: .default, handler: { [weak self] _ in
+
+            guard let retryAction = retryAction else {
+                self?.retry()
+                return
+            }
+            retryAction()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "DISMISS".localized, style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+
 //    /// Present error  view with title, message and callback
 //    func showError(with title: String? = "", message: String? = "", retry: @escaping () -> ()) {
 //        errorViewController.loadViewIfNeeded()
@@ -112,7 +132,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
 //            errorViewController.didMove(toParent: nil)
 //        }
 //    }
-//}
+}
 
 
 

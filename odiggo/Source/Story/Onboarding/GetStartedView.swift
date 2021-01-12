@@ -32,7 +32,7 @@ final class GetStartedView: UIView {
         subtitleLabel.font = .font(.primaryMedium, .medium)
         
         getStartedButton.config(title: "GET_STARTED_BUTTON_TITLE".localized,
-                          type: .primary, font: .font(.primaryBold, .medium))
+                                type: .primary(), font: .font(.primaryBold, .medium))
     }
     
     func configure(title: String?, subtitle: String?, coverImage: String) {

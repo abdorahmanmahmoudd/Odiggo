@@ -28,7 +28,7 @@ final class WelcomeView: UIView {
         subtitleLabel.font = .font(.primaryMedium, .medium)
         
         getStartedButton.config(title: "GET_STARTED_BUTTON_TITLE".localized,
-                                type: .primary, font: .font(.primaryBold, .medium))
+                                type: .primary(), font: .font(.primaryBold, .medium))
     }
     
     func configure(withSubtitle subtitle: String?, coverImage: String) {

@@ -20,7 +20,6 @@ final class SignupViewController: BaseViewController {
     @IBOutlet private weak var signupButton: OButton!
     @IBOutlet private weak var googleButton: OButton!
     @IBOutlet private weak var facebookButton: OButton!
-    @IBOutlet private weak var appleButton: OButton!
     @IBOutlet private weak var accountQuestionLabel: UILabel!
     @IBOutlet private weak var loginLabel: UILabel!
     @IBOutlet private weak var containerView: UIView!
@@ -78,16 +77,14 @@ final class SignupViewController: BaseViewController {
         accountQuestionLabel.text = "LOGIN_Q".localized
         loginLabel.text = "LOGIN".localized
 
-        signupButton.config(title: "SIGNUP_BUTTON".localized, type: .primary, font: .font(.primaryBold, .medium))
+        signupButton.config(title: "SIGNUP_BUTTON".localized, type: .primary(), font: .font(.primaryBold, .medium))
         
-        googleButton.config(title: "GOOGLE".localized, image: UIImage(named: "error-icon"),
+        googleButton.config(title: "GOOGLE".localized, image: UIImage(named: "google-icon"),
                             type: .outline, font: .systemFont(ofSize: 14), alignment:  .textTrailing)
         
-        facebookButton.config(title: "FACEBOOK".localized, image: UIImage(named: "error-icon"),
-                              type: .outline, font: .systemFont(ofSize: 14), alignment:  .textTrailing)
-        
-        appleButton.config(title: "APPLE".localized, image: UIImage(named: "error-icon"),
-                           type: .outline, font: .systemFont(ofSize: 14), alignment:  .textTrailing)
+        facebookButton.config(title: "FACEBOOK".localized, image: UIImage(named: "facebook-icon"),
+                              type: .primary(backgroundColor: .denimBlue), font: .systemFont(ofSize: 14),
+                              alignment:  .textTrailing)
         
         usernameStackView.titleText = "USERNAME_TITLE".localized
         usernameStackView.textField.setPlaceHolder(text: "USERNAME_TITLE".localized)
@@ -127,6 +124,7 @@ final class SignupViewController: BaseViewController {
                 self.showLoadingIndicator(visible: true)
                 
             case .error(let error):
+                self.signupButton.status = self.viewModel.isSignupEnabled() ? .normal : .disabled
                 self.handleError(error)
                 
             case .result:
@@ -135,15 +133,6 @@ final class SignupViewController: BaseViewController {
                 self.showLoadingIndicator(visible: false)
                 (self.coordinator as? AuthenticationCoordinator)?.didFinish(self)
             }
-        }
-    }
-    
-    override func handleError(_ error: Error?) {
-        super.handleError(error)
-        self.signupButton.status = .normal
-        
-        if let networkError = (error as? APIError)?.mapNetworkError() {
-            debugPrint("\(networkError)")
         }
     }
     
@@ -160,6 +149,10 @@ final class SignupViewController: BaseViewController {
     override func viewTapped(_ sender: UITapGestureRecognizer) {
         super.viewTapped(sender)
         signupButton.status = viewModel.isSignupEnabled() ? .normal : .disabled
+    }
+    
+    override func retry() {
+        signup()
     }
 
 }
@@ -180,10 +173,6 @@ extension SignupViewController {
     }
     
     @IBAction func facebookTapped(_ sender: OButton) {
-        
-    }
-    
-    @IBAction func appleTapped(_ sender: OButton) {
         
     }
 }
@@ -331,7 +320,9 @@ extension SignupViewController {
         
         /// password confirmation validation
         passwordConfirmationStackView.textField.rx.text.observeOn(MainScheduler.instance).map({ (input) -> Bool in
-            return input == self.passwordStackView.textField.text
+            
+            guard let input = input else { return false}
+            return input == self.passwordStackView.textField.text && input.isValidPassword()
             
         }).subscribe(onNext: { [weak self] (valid) in
             

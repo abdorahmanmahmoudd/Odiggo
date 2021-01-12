@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import AuthenticationServices
 
 final class LoginViewController: BaseViewController {
     
@@ -77,16 +78,16 @@ final class LoginViewController: BaseViewController {
         signupLabel.text = "SIGNUP".localized
         
         forgetPasswordButton.config(title: "FORGET_PASSWORD_Q".localized, type: .text(titleColor: .pinkishRed), font: .font(.primaryMedium, 13))
-        loginButton.config(title: "LOGIN_BUTTON".localized, type: .primary, font: .font(.primaryBold, .medium))
+        loginButton.config(title: "LOGIN_BUTTON".localized, type: .primary(), font: .font(.primaryBold, .medium))
         
-        googleButton.config(title: "CONTINUE_WITH_GOOGLE".localized, image: UIImage(named: "error-icon"),
+        googleButton.config(title: "GOOGLE".localized, image: UIImage(named: "google-icon"),
                             type: .outline, font: .systemFont(ofSize: 14), alignment:  .textTrailing)
         
-        facebookButton.config(title: "CONTINUE_WITH_FB".localized, image: UIImage(named: "error-icon"),
-                              type: .outline, font: .systemFont(ofSize: 14), alignment:  .textTrailing)
+        facebookButton.config(title: "FACEBOOK".localized, image: UIImage(named: "facebook-icon"),
+                              type: .primary(backgroundColor: .denimBlue), font: .systemFont(ofSize: 14), alignment:  .textTrailing)
         
-        appleButton.config(title: "CONTINUE_WITH_APPLE".localized, image: UIImage(named: "error-icon"),
-                           type: .outline, font: .systemFont(ofSize: 14), alignment:  .textTrailing)
+        appleButton.config(title: "APPLE".localized, image: UIImage(named: "apple-icon"),
+                           type: .primary(backgroundColor: .black), font: .systemFont(ofSize: 14), alignment:  .textTrailing)
         
         usernameStackView.titleText = "EMAIL_TITLE".localized
         usernameStackView.textField.setPlaceHolder(text: "EMAIL_PLACEHOLDER".localized)
@@ -122,7 +123,7 @@ final class LoginViewController: BaseViewController {
                 
             case .result:
                 debugPrint("Result LoginViewController")
-                self.loginButton.status = .normal
+                self.loginButton.status = self.viewModel.isLoginEnabled() ? .normal : .disabled
                 self.showLoadingIndicator(visible: false)
                 (self.coordinator as? AuthenticationCoordinator)?.didFinish(self)
             }
@@ -142,12 +143,19 @@ final class LoginViewController: BaseViewController {
     }
     
     override func handleError(_ error: Error?) {
-        super.handleError(error)
-        loginButton.status = .normal
+        
+        showLoadingIndicator(visible: false)
+        loginButton.status = viewModel.isLoginEnabled() ? .normal : .disabled
         
         if (error as? APIError)?.mapNetworkError() == .unauthorized {
             passwordStackView.showError(true)
+        } else {
+            super.handleError(error)
         }
+    }
+    
+    override func retry() {
+        login()
     }
 }
 
@@ -171,7 +179,7 @@ extension LoginViewController {
     }
     
     @IBAction func appleButtonTapped(_ sender: OButton) {
-        
+        handleAppleIdRequest()
     }
     
     @IBAction func forgetPasswordTapped(_ sender: OButton) {
@@ -245,7 +253,6 @@ extension LoginViewController: OTextFieldStackViewDelegate {
     func errorButtonTapped() {
         debugPrint("LoginViewController errorButtonTapped")
     }
-
 }
 
 // MARK: - Validators
@@ -281,6 +288,37 @@ extension LoginViewController {
             self.loginButton.status = self.viewModel.isLoginEnabled() ? .normal : .disabled
             
         }).disposed(by: disposeBag)
+    }
+}
+
+// MARK: ASAuthorizationControllerDelegate
+extension LoginViewController: ASAuthorizationControllerDelegate {
+    
+    func handleAppleIdRequest() {
+        
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.email, .fullName]
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.performRequests()
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        
+        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            
+            let userIdentifier = appleIDCredential.user
+            let email = appleIDCredential.email ?? "n/a"
+            let fullName = appleIDCredential.fullName
+            debugPrint("User id is \(userIdentifier) Email id is \(email) Full name is \(String(describing: fullName))")
+            
+            viewModel.login(with: appleIDCredential)
+        }
+    }
+
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        debugPrint("authorizationController \(error.localizedDescription)")
     }
 }
 

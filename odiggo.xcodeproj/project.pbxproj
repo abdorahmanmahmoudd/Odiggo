@@ -99,6 +99,7 @@
 		281C456425A0C0F800FD8C08 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		281C456925A0C2FD00FD8C08 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		281C456F25A0C97200FD8C08 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		284CDEAF25ADC31500D45FEB /* odiggo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = odiggo.entitlements; sourceTree = "<group>"; };
 		2866737025A8B4D600A3227A /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		2866737125A8B4D600A3227A /* SignupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
 		2866737525A8B4E400A3227A /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
@@ -310,6 +311,7 @@
 		28945191259FC9B100FF77DD /* odiggo */ = {
 			isa = PBXGroup;
 			children = (
+				284CDEAF25ADC31500D45FEB /* odiggo.entitlements */,
 				289451B3259FCB8300FF77DD /* Source */,
 				289451B1259FCB7100FF77DD /* Resources */,
 			);
@@ -454,8 +456,8 @@
 		28A8693D25A768F400987624 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				28A8694825A76A7900987624 /* LoginViewController.swift */,
 				28A8694925A76A7900987624 /* LoginViewController.xib */,
+				28A8694825A76A7900987624 /* LoginViewController.swift */,
 				28A8694D25A79E8800987624 /* LoginViewModel.swift */,
 			);
 			path = Login;
@@ -465,8 +467,8 @@
 			isa = PBXGroup;
 			children = (
 				288E8F1125AA62500009BFC8 /* Models */,
-				2866737025A8B4D600A3227A /* SignupViewController.swift */,
 				2866737125A8B4D600A3227A /* SignupViewController.xib */,
+				2866737025A8B4D600A3227A /* SignupViewController.swift */,
 				2866737525A8B4E400A3227A /* SignupViewModel.swift */,
 			);
 			path = Signup;
@@ -475,8 +477,8 @@
 		28A8693F25A7693800987624 /* ForgetPassword */ = {
 			isa = PBXGroup;
 			children = (
-				288E8F2425AB26DD0009BFC8 /* ForgetPasswordViewController.swift */,
 				288E8F2525AB26DD0009BFC8 /* ForgetPasswordViewController.xib */,
+				288E8F2425AB26DD0009BFC8 /* ForgetPasswordViewController.swift */,
 				288E8F2925AB2CC30009BFC8 /* ForgetPasswordViewModel.swift */,
 			);
 			path = ForgetPassword;
@@ -772,7 +774,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -827,7 +829,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -843,6 +845,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = odiggo/odiggo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = T65M7C4DTK;
@@ -866,6 +869,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = odiggo/odiggo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = T65M7C4DTK;

@@ -34,7 +34,7 @@ enum APIError: Error {
     
     var errorDescription: String? {
         
-        let genericMessage = "\("GENERAL_ERROR_DESCRIPTION".localized)\(code)"
+        let genericMessage = "\("GENERAL_ERROR_DESCRIPTION".localized) \(code)"
         
         switch self {
         

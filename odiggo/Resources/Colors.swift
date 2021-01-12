@@ -22,5 +22,6 @@ extension UIColor {
         case warmGreyTwo
         case blackTwo
         case scarlet
+        case denimBlue
     }
 }

@@ -18,7 +18,7 @@ extension OButton {
     /// The different premade styles
     /// with colors depending on the state
     enum ButtonStyle {
-        case primary
+        case primary(backgroundColor: UIColor.Colors? = nil)
         case text(titleColor: UIColor.Colors)
         case outline
 
@@ -50,13 +50,19 @@ extension OButton {
 
         func backgroundColor(state: ButtonStates) -> UIColor {
             switch self {
-            case .primary:
+            case .primary(let color):
+                
                 switch state {
                 case .normal:
+                    if let color = color {
+                        return UIColor.color(color: color)
+                    }
                     return UIColor.color(color: .pinkishRed)
+                    
                 case .disabled:
                     return UIColor.color(color: .denim).withAlphaComponent(0.16)
                 }
+                
             case .text:
                 switch state {
                 case .normal:
@@ -64,6 +70,7 @@ extension OButton {
                 case .disabled:
                     return UIColor.color(color: .greyish)
                 }
+                
             case .outline:
                 switch state {
                 case .normal:

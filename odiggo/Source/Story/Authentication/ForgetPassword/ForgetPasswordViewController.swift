@@ -60,7 +60,7 @@ final class ForgetPasswordViewController: BaseViewController {
         subtitleLabel.text = "FORGET_PASSWORD_SUBTITLE".localized
         resetConfirmationLabel.text = "RESET_CONFIRMATION".localized
         
-        actionButton.config(title: "RESET_PASSWORD_BUTTON".localized, type: .primary, font: .font(.primaryBold, .medium))
+        actionButton.config(title: "RESET_PASSWORD_BUTTON".localized, type: .primary(), font: .font(.primaryBold, .medium))
         
         emailStackView.titleText = "EMAIL_TITLE".localized
         emailStackView.textField.setPlaceHolder(text: "EMAIL_PLACEHOLDER".localized)
@@ -111,18 +111,25 @@ final class ForgetPasswordViewController: BaseViewController {
     }
     
     override func handleError(_ error: Error?) {
-        super.handleError(error)
-        actionButton.status = .normal
         
+        showLoadingIndicator(visible: false)
+        self.actionButton.status = self.viewModel.isResetPasswordEnabled() ? .normal : .disabled
+
         if (error as? APIError)?.mapNetworkError() == .unauthorized {
             emailStackView.showError(true)
+        } else {
+            super.handleError(error)
         }
+    }
+    
+    override func retry() {
+        passwordReset()
     }
     
     private func configureForResetConfirmation() {
         emailStackView.isHidden = true
         resetConfirmationLabel.isHidden = false
-        actionButton.config(title: "LOGIN_BUTTON".localized, type: .primary, font: .font(.primaryBold, .medium))
+        actionButton.config(title: "LOGIN_BUTTON".localized, type: .primary(), font: .font(.primaryBold, .medium))
     }
 }
 
