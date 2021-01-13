@@ -11,6 +11,7 @@ import RxSwift
 /// A protocol to group all of our app repositories so we have single and central dependency for network requests across the app.
 protocol NetworkRepository {
     var authenticationRepository: AuthenticationRepository { get }
+    var homeRepository: HomeRepository { get }
 }
 
 // MARK: - API shared client
@@ -47,6 +48,10 @@ extension API {
     
     var authenticationRepository: AuthenticationRepository {
         return AuthenticationAPI()
+    }
+    
+    var homeRepository: HomeRepository {
+        return HomeAPI()
     }
 }
 

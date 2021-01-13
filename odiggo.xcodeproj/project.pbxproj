@@ -38,9 +38,7 @@
 		288E8F0F25AA58310009BFC8 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288E8F0E25AA58310009BFC8 /* UIBarButtonItem.swift */; };
 		288E8F1325AA62770009BFC8 /* AuthenticationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288E8F1225AA62770009BFC8 /* AuthenticationResponse.swift */; };
 		288E8F1625AA64380009BFC8 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288E8F1525AA64380009BFC8 /* Keychain.swift */; };
-		288E8F1C25AA71BC0009BFC8 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288E8F1A25AA71BC0009BFC8 /* ProductsViewController.swift */; };
-		288E8F1D25AA71BC0009BFC8 /* ProductsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 288E8F1B25AA71BC0009BFC8 /* ProductsViewController.xib */; };
-		288E8F2125AA72080009BFC8 /* ProductsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288E8F2025AA72080009BFC8 /* ProductsCoordinator.swift */; };
+		288E8F2125AA72080009BFC8 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288E8F2025AA72080009BFC8 /* HomeCoordinator.swift */; };
 		288E8F2625AB26DD0009BFC8 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288E8F2425AB26DD0009BFC8 /* ForgetPasswordViewController.swift */; };
 		288E8F2725AB26DD0009BFC8 /* ForgetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 288E8F2525AB26DD0009BFC8 /* ForgetPasswordViewController.xib */; };
 		288E8F2A25AB2CC30009BFC8 /* ForgetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288E8F2925AB2CC30009BFC8 /* ForgetPasswordViewModel.swift */; };
@@ -73,6 +71,11 @@
 		28A8697D25A7BE6700987624 /* OTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8697C25A7BE6700987624 /* OTextField.swift */; };
 		28A8698025A7BF0400987624 /* OTextFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8697F25A7BF0400987624 /* OTextFieldType.swift */; };
 		28A8698325A7C89B00987624 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8698225A7C89B00987624 /* UITextField.swift */; };
+		28DCFE1425AFA04A00F8D854 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DCFE1325AFA04A00F8D854 /* TabBarCoordinator.swift */; };
+		28DCFE1B25AFB54900F8D854 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DCFE1925AFB54900F8D854 /* HomeViewController.swift */; };
+		28DCFE1C25AFB54900F8D854 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DCFE1A25AFB54900F8D854 /* HomeViewController.xib */; };
+		28DCFE1F25AFB70B00F8D854 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DCFE1E25AFB70B00F8D854 /* HomeViewModel.swift */; };
+		28DCFE2225AFB86200F8D854 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DCFE2125AFB86200F8D854 /* HomeRepository.swift */; };
 		28FD653125A3E9DB004C9F0F /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD653025A3E9DB004C9F0F /* Array.swift */; };
 		28FD653725A4C522004C9F0F /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD653625A4C522004C9F0F /* PageControl.swift */; };
 		D738663F8C403373C7658C95 /* Pods_odiggo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5009EA90518A495E603905DA /* Pods_odiggo.framework */; };
@@ -111,9 +114,7 @@
 		288E8F0E25AA58310009BFC8 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
 		288E8F1225AA62770009BFC8 /* AuthenticationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponse.swift; sourceTree = "<group>"; };
 		288E8F1525AA64380009BFC8 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
-		288E8F1A25AA71BC0009BFC8 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
-		288E8F1B25AA71BC0009BFC8 /* ProductsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsViewController.xib; sourceTree = "<group>"; };
-		288E8F2025AA72080009BFC8 /* ProductsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCoordinator.swift; sourceTree = "<group>"; };
+		288E8F2025AA72080009BFC8 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		288E8F2425AB26DD0009BFC8 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		288E8F2525AB26DD0009BFC8 /* ForgetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordViewController.xib; sourceTree = "<group>"; };
 		288E8F2925AB2CC30009BFC8 /* ForgetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewModel.swift; sourceTree = "<group>"; };
@@ -148,6 +149,11 @@
 		28A8697C25A7BE6700987624 /* OTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTextField.swift; sourceTree = "<group>"; };
 		28A8697F25A7BF0400987624 /* OTextFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTextFieldType.swift; sourceTree = "<group>"; };
 		28A8698225A7C89B00987624 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		28DCFE1325AFA04A00F8D854 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		28DCFE1925AFB54900F8D854 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		28DCFE1A25AFB54900F8D854 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		28DCFE1E25AFB70B00F8D854 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		28DCFE2125AFB86200F8D854 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
 		28FD653025A3E9DB004C9F0F /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		28FD653625A4C522004C9F0F /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		3A9292F249E3BC31F464EE25 /* Pods-odiggo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-odiggo.release.xcconfig"; path = "Target Support Files/Pods-odiggo/Pods-odiggo.release.xcconfig"; sourceTree = "<group>"; };
@@ -272,14 +278,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		288E8F1925AA70DA0009BFC8 /* ProductsViewController */ = {
+		288E8F1925AA70DA0009BFC8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				288E8F2025AA72080009BFC8 /* ProductsCoordinator.swift */,
-				288E8F1A25AA71BC0009BFC8 /* ProductsViewController.swift */,
-				288E8F1B25AA71BC0009BFC8 /* ProductsViewController.xib */,
+				288E8F2025AA72080009BFC8 /* HomeCoordinator.swift */,
+				28DCFE1A25AFB54900F8D854 /* HomeViewController.xib */,
+				28DCFE1925AFB54900F8D854 /* HomeViewController.swift */,
+				28DCFE1E25AFB70B00F8D854 /* HomeViewModel.swift */,
 			);
-			path = ProductsViewController;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		2893A9CA25A7E49A0038BFA9 /* Managers */ = {
@@ -365,7 +372,9 @@
 		289451B7259FCBCD00FF77DD /* Story */ = {
 			isa = PBXGroup;
 			children = (
-				288E8F1925AA70DA0009BFC8 /* ProductsViewController */,
+				28DCFE1125AF9FCF00F8D854 /* TabBar */,
+				28DCFE1225AFA01D00F8D854 /* Categories */,
+				288E8F1925AA70DA0009BFC8 /* Home */,
 				28A8693C25A768E800987624 /* Authentication */,
 				289451E1259FD48600FF77DD /* Onboarding */,
 			);
@@ -488,6 +497,7 @@
 			isa = PBXGroup;
 			children = (
 				28A8695125A79F3C00987624 /* AuthenticationRepository.swift */,
+				28DCFE2125AFB86200F8D854 /* HomeRepository.swift */,
 			);
 			name = Repositories;
 			sourceTree = "<group>";
@@ -500,6 +510,21 @@
 				28A8697F25A7BF0400987624 /* OTextFieldType.swift */,
 			);
 			path = OTextFieldStackView;
+			sourceTree = "<group>";
+		};
+		28DCFE1125AF9FCF00F8D854 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				28DCFE1325AFA04A00F8D854 /* TabBarCoordinator.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		28DCFE1225AFA01D00F8D854 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		28FD652825A3D946004C9F0F /* PageControl */ = {
@@ -599,9 +624,9 @@
 				28A8694B25A76A7900987624 /* LoginViewController.xib in Resources */,
 				281C454925A0B3B700FD8C08 /* Montserrat-Regular.ttf in Resources */,
 				281C455425A0B3B700FD8C08 /* Montserrat-ExtraLight.ttf in Resources */,
+				28DCFE1C25AFB54900F8D854 /* HomeViewController.xib in Resources */,
 				281C454525A0B3B700FD8C08 /* Montserrat-Bold.ttf in Resources */,
 				281C455525A0B3B700FD8C08 /* Montserrat-Light.ttf in Resources */,
-				288E8F1D25AA71BC0009BFC8 /* ProductsViewController.xib in Resources */,
 				289451E5259FD56F00FF77DD /* OnboardingViewController.xib in Resources */,
 				281C451F25A0972B00FD8C08 /* GetStartedView.xib in Resources */,
 				281C454825A0B3B700FD8C08 /* Montserrat-Thin.ttf in Resources */,
@@ -665,6 +690,7 @@
 				281C452B25A0AF0C00FD8C08 /* Colors.swift in Sources */,
 				289451DF259FD29F00FF77DD /* APIError.swift in Sources */,
 				289451CD259FD17000FF77DD /* Injectable.swift in Sources */,
+				28DCFE1B25AFB54900F8D854 /* HomeViewController.swift in Sources */,
 				2874F01E25A3BADC00A05111 /* UIViewController.swift in Sources */,
 				28A8694A25A76A7900987624 /* LoginViewController.swift in Sources */,
 				281C451925A0971700FD8C08 /* OnboardingView.swift in Sources */,
@@ -685,18 +711,20 @@
 				281C456A25A0C2FD00FD8C08 /* UIColor.swift in Sources */,
 				288E8F1325AA62770009BFC8 /* AuthenticationResponse.swift in Sources */,
 				281C457025A0C97200FD8C08 /* OnboardingCoordinator.swift in Sources */,
-				288E8F1C25AA71BC0009BFC8 /* ProductsViewController.swift in Sources */,
 				28A8695225A79F3C00987624 /* AuthenticationRepository.swift in Sources */,
 				281C451C25A0972400FD8C08 /* GetStartedView.swift in Sources */,
-				288E8F2125AA72080009BFC8 /* ProductsCoordinator.swift in Sources */,
+				288E8F2125AA72080009BFC8 /* HomeCoordinator.swift in Sources */,
 				2866737625A8B4E400A3227A /* SignupViewModel.swift in Sources */,
 				28945193259FC9B100FF77DD /* AppDelegate.swift in Sources */,
 				28FD653725A4C522004C9F0F /* PageControl.swift in Sources */,
 				28A8698325A7C89B00987624 /* UITextField.swift in Sources */,
+				28DCFE1425AFA04A00F8D854 /* TabBarCoordinator.swift in Sources */,
 				281C452825A0A9B600FD8C08 /* OnboardingFlow.swift in Sources */,
 				2874F00C25A3A97D00A05111 /* OButton+ContentAlignment.swift in Sources */,
 				289451DC259FD29700FF77DD /* API+NetworkRepository.swift in Sources */,
 				289451C9259FD13A00FF77DD /* Coordinator.swift in Sources */,
+				28DCFE1F25AFB70B00F8D854 /* HomeViewModel.swift in Sources */,
+				28DCFE2225AFB86200F8D854 /* HomeRepository.swift in Sources */,
 				288E8F2625AB26DD0009BFC8 /* ForgetPasswordViewController.swift in Sources */,
 				28A8694125A7695300987624 /* AuthenticationCoordinator.swift in Sources */,
 				288E8F2A25AB2CC30009BFC8 /* ForgetPasswordViewModel.swift in Sources */,

@@ -14,7 +14,7 @@ final class AppCoordinator: Coordinator {
     private(set) var window: UIWindow
     
     /// App API shared client
-    private(set) var api: API
+    private(set) var api: NetworkRepository
     
     private(set) var userManager: UserManager
     
@@ -27,7 +27,7 @@ final class AppCoordinator: Coordinator {
     /// An array to track the childs coordinators
     var childCoordinators: [Coordinator] = []
     
-    init(_ window: UIWindow, _ apiClient: API = API(), _ userManager: UserManager? = nil) {
+    init(_ window: UIWindow, _ apiClient: NetworkRepository = API(), _ userManager: UserManager? = nil) {
         
         navigationController = UINavigationController()
         navigationController.navigationBar.isHidden = true
@@ -59,22 +59,10 @@ final class AppCoordinator: Coordinator {
     }
     
     func startTabbarController() {
-
-        /// Setup `ProductsCoordinator` & start it.
-        let productsCoordinator = ProductsCoordinator(navigationController, api)
-        addChildCoordinator(productsCoordinator)
-        productsCoordinator.start()
-
-        /// Configure TabbarController view controllers
-        let viewControllers = [productsCoordinator.rootViewController].compactMap({ $0 })
-        tabbarController?.setViewControllers(viewControllers, animated: true)
-
-        guard let tabbarVC = tabbarController else {
-            fatalError("tabbarVC is not initialized")
-        }
-        
-        /// Set navigationController root viewController
-        navigationController.setViewControllers([tabbarVC], animated: true)
+        /// Setup `TabBarCoordinator` & start it.
+        let tabBarCoordinator = TabBarCoordinator(navigationController, api)
+        addChildCoordinator(tabBarCoordinator)
+        tabBarCoordinator.start()
     }
     
     func startOnboarding() {

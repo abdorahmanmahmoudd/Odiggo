@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductsViewController" customModule="odiggo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeaturedCategoriesViewController" customModule="odiggo" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -18,11 +18,22 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Find any part of your car" translatesAutoresizingMaskIntoConstraints="NO" id="cln-HZ-mLd">
+                    <rect key="frame" x="16" y="44" width="382" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="94" y="46"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cln-HZ-mLd" secondAttribute="trailing" constant="16" id="7Nx-Wk-6Xy"/>
+                <constraint firstItem="cln-HZ-mLd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hCx-wH-my4"/>
+                <constraint firstItem="cln-HZ-mLd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="mlp-29-1Hw"/>
+            </constraints>
+            <point key="canvasLocation" x="76.811594202898561" y="129.91071428571428"/>
         </view>
-        <navigationItem title="Home page" largeTitleDisplayMode="never" id="yZM-PZ-gYB"/>
+        <navigationItem title="Title" id="vXp-vC-afR"/>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">

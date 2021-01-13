@@ -166,8 +166,12 @@ extension UserManager {
         // Reset our authentication
         resetAuthentication()
 
+        guard let token = authenticationResponse.token else {
+            debugPrint("Token is nil")
+            return
+        }
         // Store the new token
-        store(value: accessToken ?? "", key: Constants.UserManager.accessToken)
+        store(value: token, key: Constants.UserManager.accessToken)
     }
 
     /// To reset our authentication
