@@ -40,7 +40,7 @@
                             <rect key="frame" x="314" y="-49" width="153" height="227"/>
                         </imageView>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5rq-Iw-jGe" userLabel="contentView">
-                            <rect key="frame" x="0.0" y="99" width="414" height="807.66666666666663"/>
+                            <rect key="frame" x="0.0" y="99" width="414" height="751.66666666666663"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="odiggo logo" translatesAutoresizingMaskIntoConstraints="NO" id="wCY-ih-blG">
                                     <rect key="frame" x="140.66666666666666" y="34" width="132.99999999999997" height="38"/>
@@ -61,7 +61,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fbV-n3-6jm" customClass="OTextFieldStackView" customModule="odiggo" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="203.66666666666669" width="382" height="72"/>
+                                    <rect key="frame" x="16" y="203.66666666666669" width="382" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="height" priority="750" constant="72" id="7IP-em-FTU"/>
                                     </constraints>
@@ -72,7 +72,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hEv-kp-oFI" customClass="OTextFieldStackView" customModule="odiggo" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="295.66666666666669" width="382" height="72"/>
+                                    <rect key="frame" x="16" y="267.66666666666669" width="382" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="height" priority="750" constant="72" id="Six-wQ-PYO"/>
                                     </constraints>
@@ -83,14 +83,14 @@
                                     </userDefinedRuntimeAttributes>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtc-kX-LlK" customClass="OButton" customModule="odiggo" customModuleProvider="target">
-                                    <rect key="frame" x="279" y="387.66666666666669" width="119" height="30"/>
+                                    <rect key="frame" x="279" y="331.66666666666669" width="119" height="30"/>
                                     <state key="normal" title="forget password?"/>
                                     <connections>
                                         <action selector="forgetPasswordTapped:" destination="-1" eventType="touchUpInside" id="1g3-jE-kBx"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cE-to-GPv" customClass="OButton" customModule="odiggo" customModuleProvider="target">
-                                    <rect key="frame" x="43.333333333333343" y="447.66666666666663" width="327.33333333333326" height="50"/>
+                                    <rect key="frame" x="43.333333333333343" y="391.66666666666669" width="327.33333333333326" height="50"/>
                                     <color key="backgroundColor" name="pinkishRed"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="e2f-aX-uUG"/>
@@ -101,28 +101,28 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQx-SV-bo0" customClass="OButton" customModule="odiggo" customModuleProvider="target">
-                                    <rect key="frame" x="43.333333333333343" y="517.66666666666663" width="157" height="50"/>
+                                    <rect key="frame" x="43.333333333333343" y="461.66666666666663" width="157" height="50"/>
                                     <state key="normal" title="google login"/>
                                     <connections>
                                         <action selector="googleButtonTapped:" destination="-1" eventType="touchUpInside" id="BIF-eU-9aR"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5op-gI-zg3" customClass="OButton" customModule="odiggo" customModuleProvider="target">
-                                    <rect key="frame" x="213.66666666666663" y="517.66666666666663" width="157" height="50"/>
+                                    <rect key="frame" x="213.66666666666663" y="461.66666666666663" width="157" height="50"/>
                                     <state key="normal" title="fb login"/>
                                     <connections>
                                         <action selector="facebookButtonTapped:" destination="-1" eventType="touchUpInside" id="z6V-8d-D7O"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnk-HR-Ri4" customClass="OButton" customModule="odiggo" customModuleProvider="target">
-                                    <rect key="frame" x="43.333333333333343" y="587.66666666666663" width="327.33333333333326" height="50"/>
+                                    <rect key="frame" x="43.333333333333343" y="531.66666666666663" width="327.33333333333326" height="50"/>
                                     <state key="normal" title="apple"/>
                                     <connections>
                                         <action selector="appleButtonTapped:" destination="-1" eventType="touchUpInside" id="YZk-nA-naQ"/>
                                     </connections>
                                 </button>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="oGh-iT-0th">
-                                    <rect key="frame" x="82.666666666666686" y="687.66666666666663" width="249" height="30"/>
+                                    <rect key="frame" x="82.666666666666686" y="631.66666666666663" width="249" height="30"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don’t Have an Account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5X-lA-kxp">
                                             <rect key="frame" x="0.0" y="0.0" width="187.33333333333334" height="30"/>
@@ -139,7 +139,7 @@
                                     </subviews>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivg-1x-i4a">
-                                    <rect key="frame" x="82.666666666666686" y="687.66666666666663" width="249" height="30"/>
+                                    <rect key="frame" x="82.666666666666686" y="631.66666666666663" width="249" height="30"/>
                                     <connections>
                                         <action selector="signupTapped:" destination="-1" eventType="touchUpInside" id="TUU-84-hpk"/>
                                     </connections>

@@ -29,7 +29,7 @@ final class AuthenticationCoordinator: Coordinator {
         let loginVM = LoginViewModel(userManager)
         let LoginVC = LoginViewController.create(payload: loginVM)
         LoginVC.coordinator = self
-        navigationController.setViewControllers([LoginVC], animated: true)
+        navigationController.setViewControllers([LoginVC], animated: false)
     }
     
     func startSignup() {

@@ -4,13 +4,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeaturedCategoriesViewController" customModule="odiggo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="odiggo" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="PWN-Nz-YPH" id="fYy-Jo-p21"/>
+                <outlet property="searchTextField" destination="vJU-bo-TcY" id="qEF-ju-hRF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,25 +21,52 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Find any part of your car" translatesAutoresizingMaskIntoConstraints="NO" id="cln-HZ-mLd">
-                    <rect key="frame" x="16" y="44" width="382" height="56"/>
+                <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vJU-bo-TcY" customClass="OTextField" customModule="odiggo" customModuleProvider="target">
+                    <rect key="frame" x="16" y="56" width="382" height="45"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="750" constant="45" id="tIi-jH-WyV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <textInputTraits key="textInputTraits"/>
-                </searchBar>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="Zsp-DA-VJF" appends="YES" id="QxR-Pp-ZLv"/>
+                    </connections>
+                </textField>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="PWN-Nz-YPH">
+                    <rect key="frame" x="12" y="113" width="390" height="749"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewLayout key="collectionViewLayout" id="Lra-qG-J1N" customClass="PinterestLayout" customModule="odiggo" customModuleProvider="target"/>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="whiteTwo"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cln-HZ-mLd" secondAttribute="trailing" constant="16" id="7Nx-Wk-6Xy"/>
-                <constraint firstItem="cln-HZ-mLd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hCx-wH-my4"/>
-                <constraint firstItem="cln-HZ-mLd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="mlp-29-1Hw"/>
+                <constraint firstItem="PWN-Nz-YPH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="8a9-PU-q4E"/>
+                <constraint firstItem="vJU-bo-TcY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="CO7-ta-Osb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vJU-bo-TcY" secondAttribute="trailing" constant="16" id="Wj6-Aw-loP"/>
+                <constraint firstItem="PWN-Nz-YPH" firstAttribute="top" secondItem="vJU-bo-TcY" secondAttribute="bottom" constant="12" id="XdL-09-3j7"/>
+                <constraint firstItem="vJU-bo-TcY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Y1i-Sg-089"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PWN-Nz-YPH" secondAttribute="trailing" constant="12" id="auf-Tl-yB0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="PWN-Nz-YPH" secondAttribute="bottom" id="pXZ-h9-rpC"/>
             </constraints>
             <point key="canvasLocation" x="76.811594202898561" y="129.91071428571428"/>
         </view>
-        <navigationItem title="Title" id="vXp-vC-afR"/>
+        <tapGestureRecognizer id="Zsp-DA-VJF">
+            <connections>
+                <action selector="searchTextFieldTapped:" destination="-1" id="DPo-hh-Pgk"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
+    <designables>
+        <designable name="vJU-bo-TcY">
+            <size key="intrinsicContentSize" width="72" height="34"/>
+        </designable>
+    </designables>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="whiteTwo">
+            <color red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

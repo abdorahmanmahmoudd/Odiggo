@@ -11,6 +11,8 @@ final class TabBarCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     
+    var tabbarController: TabbarViewController?
+    
     var childCoordinators: [Coordinator] = []
     
     var api: NetworkRepository
@@ -22,41 +24,40 @@ final class TabBarCoordinator: Coordinator {
     
     func start() {
         
-        let tabBarController = UITabBarController()
+        self.tabbarController = TabbarViewController.loadFromStoryboard()
         
         let homeNavC = UINavigationController()
-        homeNavC.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
+        homeNavC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "home.icon"), tag: 0)
         let homeCoordinator = HomeCoordinator(homeNavC, api)
+        homeCoordinator.parentCoordinator = self
         
         let categoriesNavC = UINavigationController()
-        categoriesNavC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
-        let categoriesCoordinator = HomeCoordinator(categoriesNavC, api)
+        categoriesNavC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "categories.icon"), tag: 1)
+        let categoriesCoordinator = CategoriesCoordinator(categoriesNavC, api)
+        categoriesCoordinator.parentCoordinator = self
         
         let cartNavC = UINavigationController()
-        cartNavC.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 2)
-        let cartCoordinator = HomeCoordinator(cartNavC, api)
+        cartNavC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "cart.icon"), tag: 2)
+        let cartCoordinator = DummyCoordinator(cartNavC, api)
+        cartCoordinator.parentCoordinator = self
         
         let moreNavC = UINavigationController()
-        moreNavC.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 3)
-        let moreCoordinator = HomeCoordinator(moreNavC, api)
+        moreNavC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "more.icon"), tag: 3)
+        let moreCoordinator = DummyCoordinator(moreNavC, api)
+        moreCoordinator.parentCoordinator = self
         
-        tabBarController.viewControllers = [homeNavC,
+        tabbarController?.viewControllers = [homeNavC,
                                             categoriesNavC,
                                             cartNavC,
                                             moreNavC]
-        
-        tabBarController.modalPresentationStyle = .fullScreen
-        navigationController.present(tabBarController, animated: true, completion: nil)
+                
+        tabbarController?.modalPresentationStyle = .fullScreen
+        navigationController.present(tabbarController ?? UITabBarController(), animated: false, completion: nil)
         
         homeCoordinator.start()
         categoriesCoordinator.start()
         cartCoordinator.start()
         moreCoordinator.start()
-        
-        addChildCoordinator(homeCoordinator)
-        addChildCoordinator(categoriesCoordinator)
-        addChildCoordinator(cartCoordinator)
-        addChildCoordinator(moreCoordinator)
     }
 }
 
@@ -71,5 +72,23 @@ extension TabBarCoordinator {
         default:
             debugPrint("childDidFinish not handling \(child)")
         }
+    }
+}
+
+// MARK: Home-related
+extension TabBarCoordinator {
+    
+    func didSelectTopCategory(_ category: Category) {
+        
+        guard let categoriesCoordinatorIndex = childCoordinators.firstIndex(where: { (coordinator) -> Bool in
+            return coordinator as? CategoriesCoordinator != nil
+        }) else {
+            return
+        }
+        
+        let categoriesCoordinator = childCoordinators[categoriesCoordinatorIndex] as? CategoriesCoordinator
+        categoriesCoordinator?.selectCategory(category)
+        
+        tabbarController?.selectedIndex = categoriesCoordinatorIndex
     }
 }

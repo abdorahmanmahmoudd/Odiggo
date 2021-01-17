@@ -13,6 +13,7 @@ enum OTextFieldType {
     case disabled
     case email
     case username
+    case searchField
     
     var image: UIImage {
         switch self {
@@ -24,6 +25,8 @@ enum OTextFieldType {
             return UIImage(named: "username-icon") ?? UIImage()
         case .email:
             return UIImage(named: "email-icon") ?? UIImage()
+        case .searchField:
+            return UIImage(named: "searchField.icon") ?? UIImage()
         }
     }
     
@@ -37,6 +40,8 @@ enum OTextFieldType {
             return UIImage(named: "username-icon") ?? UIImage()
         case .email:
             return UIImage(named: "email-icon") ?? UIImage()
+        case .searchField:
+            return UIImage(named: "searchField.icon") ?? UIImage()
         }
     }
     

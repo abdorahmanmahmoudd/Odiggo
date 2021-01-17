@@ -25,4 +25,31 @@ extension UIBarButtonItem {
         backButton.width = 50
         return backButton
     }
+    
+    // This function is used to return 45 by 45 buttons
+    static func customBarButtonItem(image: UIImage?,
+                                    title: String?,
+                                    selector: Selector?,
+                                    target: Any? = nil) -> UIBarButtonItem {
+
+        let button = UIButton(type: .custom)
+        if let image = image {
+            button.setImage(image, for: .normal)
+        }
+
+        if let title = title, !title.isEmpty {
+            button.setTitle(title, for: .normal)
+        }
+
+        if let selector = selector {
+            button.addTarget(target, action: selector, for: .touchUpInside)
+        }
+
+        button.frame = CGRect(x: 0, y: 0, width: 45, height: 45)
+        button.widthAnchor.constraint(equalToConstant: 45).isActive = true
+        button.imageView?.clipsToBounds = false
+        button.imageView?.contentMode = .center
+    
+        return UIBarButtonItem(customView: button)
+    }
 }

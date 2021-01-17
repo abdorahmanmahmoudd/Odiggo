@@ -22,7 +22,7 @@ final class OnboardingCoordinator: Coordinator {
     
         let onboardingVC = OnboardingViewController.init()
         onboardingVC.coordinator = self
-        navigationController.setViewControllers([onboardingVC], animated: true)
+        navigationController.setViewControllers([onboardingVC], animated: false)
     }
 }
 

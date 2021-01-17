@@ -26,16 +26,21 @@ final class HomeCoordinator: Coordinator {
         let homeVM = HomeViewModel(api.homeRepository)
         let homeVC = HomeViewController.create(payload: homeVM)
         homeVC.coordinator = self
-        navigationController.setViewControllers([homeVC], animated: true)
+        parentCoordinator?.addChildCoordinator(self)
+        navigationController.setViewControllers([homeVC], animated: false)
+    }
+    
+    func didSelectTopCategory(_ category: Category) {
+        (parentCoordinator as? TabBarCoordinator)?.didSelectTopCategory(category)
     }
 }
 
-//// MARK: Additional behaviour
-//extension HomeCoordinator {
-//    
-//    /// After pop animation is done etc..
-//    func didFinish() {
-//        (parentCoordinator as? TabBarCoordinator)?.childDidFinish(self)
-//    }
-//}
+// MARK: Additional behaviour
+extension HomeCoordinator {
+    
+    /// After pop animation is done etc..
+    func didFinish() {
+        (parentCoordinator as? TabBarCoordinator)?.childDidFinish(self)
+    }
+}
 

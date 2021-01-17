@@ -5,10 +5,14 @@
 //  Created by Abdelrahman Ali on 01/01/2021.
 //
 
-import Foundation
+import UIKit
 
 /// App Global constants
 struct Constants {
+    
+    struct Theme {
+        static let homeNavItemLogoHeight: CGFloat = 33
+    }
     
     struct Login {
         static let inputsMaxLength = 40

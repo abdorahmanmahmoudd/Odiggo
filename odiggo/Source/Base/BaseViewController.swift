@@ -16,6 +16,12 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     /// View controller's Coordinator
     weak var coordinator: Coordinator?
     
+    var navigationItemStyle: NavigationItemStyle? {
+        didSet {
+            configureNavBar()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -72,6 +78,36 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     /// To be overrwitten by subclasses
     func retry() {
         debugPrint("Override by view controller subclass")
+    }
+}
+
+// MARK: NavigationItem
+extension BaseViewController {
+    
+    private func configureNavBar() {
+        
+//        guard let navigation = navigationItem as? NavigationItem else {
+//            return assertionFailure("The Navigation item should be of type ONavigationItem!")
+//        }
+        
+        let backItem = UIBarButtonItem.odiggoBackButton(target: self, selector: #selector(self.didPressBackButton))
+        
+        switch navigationItemStyle {
+        case let .homePageStyle(items):
+            hideNavigationBar()
+            navigationItem.configure(with: .homePageStyle(items: items))
+            
+        case .none:
+            debugPrint("Navigation type not set for BaseViewController")
+        }
+    }
+    
+    private func hideNavigationBar() {
+        navigationController?.navigationBar.barStyle = .default
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.barTintColor = .white
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
 }
 

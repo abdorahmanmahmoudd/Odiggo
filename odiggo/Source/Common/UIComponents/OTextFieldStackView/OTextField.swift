@@ -7,11 +7,17 @@
 
 import UIKit
 
+@IBDesignable
 final class OTextField: UITextField {
 
     private let box: UIView = UIView()
     private let accessoryButton = UIButton(frame: CGRect(x: 0, y: 0, width: 16, height: 16))
-    private let textInset: UIEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 38)
+    private var textLeftPadding: CGFloat = 16
+    private var leftViewPadding: CGFloat = 0
+    private var textInset: UIEdgeInsets {
+        let leftSpace: CGFloat = textLeftPadding + leftViewPadding + (leftView?.frame.width ?? 0)
+        return UIEdgeInsets(top: 0, left: leftSpace, bottom: 0, right: 38)
+    }
     var hideClearButton: Bool = true
     
     override var isEnabled: Bool {
@@ -86,11 +92,17 @@ final class OTextField: UITextField {
         return CGRect(x: bounds.width - 30, y: 0, width: 30, height: bounds.height)
     }
     
+    override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
+        var newRect = super.leftViewRect(forBounds: bounds)
+        newRect.origin.x += leftViewPadding
+        return newRect
+    }
+    
     @objc func clearView(_ sender: UIButton) {
         switch textfieldType {
         case .disabled:
             return
-        case .username, .email:
+        case .username, .email, .searchField:
             text = ""
         case .password:
             sender.isSelected.toggle()
@@ -188,10 +200,32 @@ extension OTextField {
             backgroundColor = UIColor.clear
             isUserInteractionEnabled = false
             textColor = UIColor.color(color: .poleRose).withAlphaComponent(0.2)
+            
+        case .searchField:
+            leftViewMode = .always
+            rightViewMode = .never
+            leftView = leftIcon()
+            leftViewPadding = 10
+            textLeftPadding = 10
+            borderStyle = .none
         }
         
         accessoryButton.isSelected = false
         isSecureTextEntry = textfieldType == .password
+    }
+    
+    private func leftIcon() -> UIImageView? {
+        
+        switch textfieldType {
+        case .searchField:
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+            imageView.image = textfieldType.image
+            imageView.contentMode = .scaleAspectFit
+            return imageView
+            
+        default:
+            return nil
+        }
     }
     
     private func updateForActive() {

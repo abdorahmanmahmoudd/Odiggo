@@ -34,3 +34,6 @@ extension UIView {
         return xib
     }
 }
+
+// MARK: UIView+ReusableIdentifier
+extension UIView: ReusableIdentifier {}

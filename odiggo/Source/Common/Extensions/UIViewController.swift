@@ -26,4 +26,14 @@ extension UIViewController {
         }
         fatalError("Couldn't find storyboard named \(String(describing: Self.self))")
     }
+    
+    /// Helper method to load viewController from nib files
+    static func loadNib() -> Self {
+        
+        func instantiateFromNib<T: UIViewController>() -> T {
+            return T.init(nibName: String(describing: T.self), bundle: nil)
+        }
+        
+        return instantiateFromNib()
+    }
 }

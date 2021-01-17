@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		281455D225B31FAB0041DD6E /* TabbarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281455D125B31FAB0041DD6E /* TabbarViewController.storyboard */; };
 		281C450F25A096E400FD8C08 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C450E25A096E400FD8C08 /* WelcomeView.swift */; };
 		281C451225A096F300FD8C08 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 281C451125A096F300FD8C08 /* WelcomeView.xib */; };
 		281C451625A0970900FD8C08 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 281C451525A0970900FD8C08 /* OnboardingView.xib */; };
@@ -27,6 +28,19 @@
 		281C456525A0C0F800FD8C08 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 281C456425A0C0F800FD8C08 /* Colors.xcassets */; };
 		281C456A25A0C2FD00FD8C08 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C456925A0C2FD00FD8C08 /* UIColor.swift */; };
 		281C457025A0C97200FD8C08 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C456F25A0C97200FD8C08 /* OnboardingCoordinator.swift */; };
+		28276DA825B36ADB0027737C /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28276DA625B36ADB0027737C /* HomeCollectionViewCell.swift */; };
+		28276DA925B36ADB0027737C /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28276DA725B36ADB0027737C /* HomeCollectionViewCell.xib */; };
+		28276DAC25B3A1EB0027737C /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28276DAB25B3A1EB0027737C /* PinterestLayout.swift */; };
+		28276DB125B3AA640027737C /* HomeColorsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28276DB025B3AA640027737C /* HomeColorsCollection.swift */; };
+		28276DB625B3C3CE0027737C /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28276DB425B3C3CE0027737C /* DummyViewController.swift */; };
+		28276DB725B3C3CE0027737C /* DummyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28276DB525B3C3CE0027737C /* DummyViewController.xib */; };
+		28276DBA25B3C40B0027737C /* DummyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28276DB925B3C40B0027737C /* DummyCoordinator.swift */; };
+		284CBB3525B49B60004B1FF1 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284CBB3325B49B60004B1FF1 /* CategoriesViewController.swift */; };
+		284CBB3625B49B60004B1FF1 /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284CBB3425B49B60004B1FF1 /* CategoriesViewController.xib */; };
+		284CBB3925B49B6C004B1FF1 /* CategoriesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284CBB3825B49B6C004B1FF1 /* CategoriesCoordinator.swift */; };
+		284CBB3C25B49BDE004B1FF1 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284CBB3B25B49BDE004B1FF1 /* CategoriesViewModel.swift */; };
+		285C5D8B25B2798E007E13F0 /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C5D8A25B2798E007E13F0 /* Tabbar.swift */; };
+		285C5D8F25B27D3F007E13F0 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C5D8D25B27D3F007E13F0 /* TabbarViewController.swift */; };
 		2866737225A8B4D600A3227A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2866737025A8B4D600A3227A /* SignupViewController.swift */; };
 		2866737325A8B4D600A3227A /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2866737125A8B4D600A3227A /* SignupViewController.xib */; };
 		2866737625A8B4E400A3227A /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2866737525A8B4E400A3227A /* SignupViewModel.swift */; };
@@ -71,6 +85,12 @@
 		28A8697D25A7BE6700987624 /* OTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8697C25A7BE6700987624 /* OTextField.swift */; };
 		28A8698025A7BF0400987624 /* OTextFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8697F25A7BF0400987624 /* OTextFieldType.swift */; };
 		28A8698325A7C89B00987624 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8698225A7C89B00987624 /* UITextField.swift */; };
+		28D9733025B0E63800CE97A0 /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D9732F25B0E63700CE97A0 /* HomeResponse.swift */; };
+		28D9733425B0EC5100CE97A0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D9733325B0EC5100CE97A0 /* Product.swift */; };
+		28D9733725B0EC6300CE97A0 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D9733625B0EC6300CE97A0 /* Feedback.swift */; };
+		28D9733A25B0EC7300CE97A0 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D9733925B0EC7300CE97A0 /* Category.swift */; };
+		28D9733E25B0EEC700CE97A0 /* NavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D9733D25B0EEC700CE97A0 /* NavigationItem.swift */; };
+		28D9734125B0EFB900CE97A0 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D9734025B0EFB900CE97A0 /* UIImageView.swift */; };
 		28DCFE1425AFA04A00F8D854 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DCFE1325AFA04A00F8D854 /* TabBarCoordinator.swift */; };
 		28DCFE1B25AFB54900F8D854 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DCFE1925AFB54900F8D854 /* HomeViewController.swift */; };
 		28DCFE1C25AFB54900F8D854 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DCFE1A25AFB54900F8D854 /* HomeViewController.xib */; };
@@ -82,6 +102,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		281455D125B31FAB0041DD6E /* TabbarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabbarViewController.storyboard; sourceTree = "<group>"; };
 		281C450E25A096E400FD8C08 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		281C451125A096F300FD8C08 /* WelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
 		281C451525A0970900FD8C08 /* OnboardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
@@ -102,7 +123,20 @@
 		281C456425A0C0F800FD8C08 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		281C456925A0C2FD00FD8C08 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		281C456F25A0C97200FD8C08 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		28276DA625B36ADB0027737C /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		28276DA725B36ADB0027737C /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		28276DAB25B3A1EB0027737C /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
+		28276DB025B3AA640027737C /* HomeColorsCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeColorsCollection.swift; sourceTree = "<group>"; };
+		28276DB425B3C3CE0027737C /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
+		28276DB525B3C3CE0027737C /* DummyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DummyViewController.xib; sourceTree = "<group>"; };
+		28276DB925B3C40B0027737C /* DummyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyCoordinator.swift; sourceTree = "<group>"; };
+		284CBB3325B49B60004B1FF1 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		284CBB3425B49B60004B1FF1 /* CategoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesViewController.xib; sourceTree = "<group>"; };
+		284CBB3825B49B6C004B1FF1 /* CategoriesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCoordinator.swift; sourceTree = "<group>"; };
+		284CBB3B25B49BDE004B1FF1 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		284CDEAF25ADC31500D45FEB /* odiggo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = odiggo.entitlements; sourceTree = "<group>"; };
+		285C5D8A25B2798E007E13F0 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
+		285C5D8D25B27D3F007E13F0 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		2866737025A8B4D600A3227A /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		2866737125A8B4D600A3227A /* SignupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
 		2866737525A8B4E400A3227A /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
@@ -149,6 +183,12 @@
 		28A8697C25A7BE6700987624 /* OTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTextField.swift; sourceTree = "<group>"; };
 		28A8697F25A7BF0400987624 /* OTextFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTextFieldType.swift; sourceTree = "<group>"; };
 		28A8698225A7C89B00987624 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		28D9732F25B0E63700CE97A0 /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
+		28D9733325B0EC5100CE97A0 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		28D9733625B0EC6300CE97A0 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
+		28D9733925B0EC7300CE97A0 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		28D9733D25B0EEC700CE97A0 /* NavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItem.swift; sourceTree = "<group>"; };
+		28D9734025B0EFB900CE97A0 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		28DCFE1325AFA04A00F8D854 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		28DCFE1925AFB54900F8D854 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		28DCFE1A25AFB54900F8D854 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -260,6 +300,33 @@
 			name = Definitions;
 			sourceTree = "<group>";
 		};
+		28276DA525B36ABA0027737C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				28276DA625B36ADB0027737C /* HomeCollectionViewCell.swift */,
+				28276DA725B36ADB0027737C /* HomeCollectionViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		28276DB325B3C3B40027737C /* Dummy */ = {
+			isa = PBXGroup;
+			children = (
+				28276DB425B3C3CE0027737C /* DummyViewController.swift */,
+				28276DB525B3C3CE0027737C /* DummyViewController.xib */,
+				28276DB925B3C40B0027737C /* DummyCoordinator.swift */,
+			);
+			path = Dummy;
+			sourceTree = "<group>";
+		};
+		285C5D8925B2795A007E13F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				285C5D8A25B2798E007E13F0 /* Tabbar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2874F00625A3A8EA00A05111 /* OButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,9 +348,12 @@
 		288E8F1925AA70DA0009BFC8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				28276DA525B36ABA0027737C /* Views */,
+				28D9732E25B0E61D00CE97A0 /* Models */,
 				288E8F2025AA72080009BFC8 /* HomeCoordinator.swift */,
 				28DCFE1A25AFB54900F8D854 /* HomeViewController.xib */,
 				28DCFE1925AFB54900F8D854 /* HomeViewController.swift */,
+				28276DAB25B3A1EB0027737C /* PinterestLayout.swift */,
 				28DCFE1E25AFB70B00F8D854 /* HomeViewModel.swift */,
 			);
 			path = Home;
@@ -372,6 +442,7 @@
 		289451B7259FCBCD00FF77DD /* Story */ = {
 			isa = PBXGroup;
 			children = (
+				28276DB325B3C3B40027737C /* Dummy */,
 				28DCFE1125AF9FCF00F8D854 /* TabBar */,
 				28DCFE1225AFA01D00F8D854 /* Categories */,
 				288E8F1925AA70DA0009BFC8 /* Home */,
@@ -406,6 +477,7 @@
 		289451C5259FD0F300FF77DD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				28D9733D25B0EEC700CE97A0 /* NavigationItem.swift */,
 				289451D2259FD1F700FF77DD /* String.swift */,
 				289451D5259FD21600FF77DD /* UIView.swift */,
 				281C456925A0C2FD00FD8C08 /* UIColor.swift */,
@@ -414,6 +486,7 @@
 				28A8696225A7AAFB00987624 /* URLComponents.swift */,
 				28A8698225A7C89B00987624 /* UITextField.swift */,
 				288E8F0E25AA58310009BFC8 /* UIBarButtonItem.swift */,
+				28D9734025B0EFB900CE97A0 /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -512,10 +585,25 @@
 			path = OTextFieldStackView;
 			sourceTree = "<group>";
 		};
+		28D9732E25B0E61D00CE97A0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				28D9732F25B0E63700CE97A0 /* HomeResponse.swift */,
+				28D9733325B0EC5100CE97A0 /* Product.swift */,
+				28D9733625B0EC6300CE97A0 /* Feedback.swift */,
+				28D9733925B0EC7300CE97A0 /* Category.swift */,
+				28276DB025B3AA640027737C /* HomeColorsCollection.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		28DCFE1125AF9FCF00F8D854 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				285C5D8925B2795A007E13F0 /* Views */,
 				28DCFE1325AFA04A00F8D854 /* TabBarCoordinator.swift */,
+				285C5D8D25B27D3F007E13F0 /* TabbarViewController.swift */,
+				281455D125B31FAB0041DD6E /* TabbarViewController.storyboard */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -523,6 +611,10 @@
 		28DCFE1225AFA01D00F8D854 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				284CBB3825B49B6C004B1FF1 /* CategoriesCoordinator.swift */,
+				284CBB3425B49B60004B1FF1 /* CategoriesViewController.xib */,
+				284CBB3325B49B60004B1FF1 /* CategoriesViewController.swift */,
+				284CBB3B25B49BDE004B1FF1 /* CategoriesViewModel.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -623,13 +715,17 @@
 				2894519C259FC9B200FF77DD /* Assets.xcassets in Resources */,
 				28A8694B25A76A7900987624 /* LoginViewController.xib in Resources */,
 				281C454925A0B3B700FD8C08 /* Montserrat-Regular.ttf in Resources */,
+				28276DA925B36ADB0027737C /* HomeCollectionViewCell.xib in Resources */,
 				281C455425A0B3B700FD8C08 /* Montserrat-ExtraLight.ttf in Resources */,
 				28DCFE1C25AFB54900F8D854 /* HomeViewController.xib in Resources */,
 				281C454525A0B3B700FD8C08 /* Montserrat-Bold.ttf in Resources */,
 				281C455525A0B3B700FD8C08 /* Montserrat-Light.ttf in Resources */,
+				284CBB3625B49B60004B1FF1 /* CategoriesViewController.xib in Resources */,
 				289451E5259FD56F00FF77DD /* OnboardingViewController.xib in Resources */,
 				281C451F25A0972B00FD8C08 /* GetStartedView.xib in Resources */,
+				28276DB725B3C3CE0027737C /* DummyViewController.xib in Resources */,
 				281C454825A0B3B700FD8C08 /* Montserrat-Thin.ttf in Resources */,
+				281455D225B31FAB0041DD6E /* TabbarViewController.storyboard in Resources */,
 				281C456525A0C0F800FD8C08 /* Colors.xcassets in Resources */,
 				281C451625A0970900FD8C08 /* OnboardingView.xib in Resources */,
 			);
@@ -684,6 +780,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28276DAC25B3A1EB0027737C /* PinterestLayout.swift in Sources */,
 				28A8696325A7AAFB00987624 /* URLComponents.swift in Sources */,
 				289451D3259FD1F700FF77DD /* String.swift in Sources */,
 				2893A9CC25A7E57F0038BFA9 /* UserManager.swift in Sources */,
@@ -692,13 +789,20 @@
 				289451CD259FD17000FF77DD /* Injectable.swift in Sources */,
 				28DCFE1B25AFB54900F8D854 /* HomeViewController.swift in Sources */,
 				2874F01E25A3BADC00A05111 /* UIViewController.swift in Sources */,
+				28276DBA25B3C40B0027737C /* DummyCoordinator.swift in Sources */,
+				284CBB3C25B49BDE004B1FF1 /* CategoriesViewModel.swift in Sources */,
+				284CBB3925B49B6C004B1FF1 /* CategoriesCoordinator.swift in Sources */,
 				28A8694A25A76A7900987624 /* LoginViewController.swift in Sources */,
+				28D9733E25B0EEC700CE97A0 /* NavigationItem.swift in Sources */,
+				28276DA825B36ADB0027737C /* HomeCollectionViewCell.swift in Sources */,
 				281C451925A0971700FD8C08 /* OnboardingView.swift in Sources */,
 				2866737225A8B4D600A3227A /* SignupViewController.swift in Sources */,
+				28276DB125B3AA640027737C /* HomeColorsCollection.swift in Sources */,
 				2874F00F25A3A9A300A05111 /* OButton+Style.swift in Sources */,
 				288E8F0F25AA58310009BFC8 /* UIBarButtonItem.swift in Sources */,
 				28A8694E25A79E8800987624 /* LoginViewModel.swift in Sources */,
 				289451C2259FD0DD00FF77DD /* AppCoordinator.swift in Sources */,
+				28D9734125B0EFB900CE97A0 /* UIImageView.swift in Sources */,
 				28FD653125A3E9DB004C9F0F /* Array.swift in Sources */,
 				289451D6259FD21600FF77DD /* UIView.swift in Sources */,
 				28A8698025A7BF0400987624 /* OTextFieldType.swift in Sources */,
@@ -707,17 +811,23 @@
 				28A8697825A7B8F000987624 /* OTextFieldStackView.swift in Sources */,
 				2874F00425A39AFE00A05111 /* Fonts.swift in Sources */,
 				289451E9259FD59200FF77DD /* BaseViewController.swift in Sources */,
+				28D9733A25B0EC7300CE97A0 /* Category.swift in Sources */,
 				28A8697D25A7BE6700987624 /* OTextField.swift in Sources */,
 				281C456A25A0C2FD00FD8C08 /* UIColor.swift in Sources */,
+				28D9733425B0EC5100CE97A0 /* Product.swift in Sources */,
 				288E8F1325AA62770009BFC8 /* AuthenticationResponse.swift in Sources */,
+				285C5D8B25B2798E007E13F0 /* Tabbar.swift in Sources */,
 				281C457025A0C97200FD8C08 /* OnboardingCoordinator.swift in Sources */,
 				28A8695225A79F3C00987624 /* AuthenticationRepository.swift in Sources */,
 				281C451C25A0972400FD8C08 /* GetStartedView.swift in Sources */,
+				285C5D8F25B27D3F007E13F0 /* TabbarViewController.swift in Sources */,
 				288E8F2125AA72080009BFC8 /* HomeCoordinator.swift in Sources */,
+				28276DB625B3C3CE0027737C /* DummyViewController.swift in Sources */,
 				2866737625A8B4E400A3227A /* SignupViewModel.swift in Sources */,
 				28945193259FC9B100FF77DD /* AppDelegate.swift in Sources */,
 				28FD653725A4C522004C9F0F /* PageControl.swift in Sources */,
 				28A8698325A7C89B00987624 /* UITextField.swift in Sources */,
+				28D9733025B0E63800CE97A0 /* HomeResponse.swift in Sources */,
 				28DCFE1425AFA04A00F8D854 /* TabBarCoordinator.swift in Sources */,
 				281C452825A0A9B600FD8C08 /* OnboardingFlow.swift in Sources */,
 				2874F00C25A3A97D00A05111 /* OButton+ContentAlignment.swift in Sources */,
@@ -726,6 +836,7 @@
 				28DCFE1F25AFB70B00F8D854 /* HomeViewModel.swift in Sources */,
 				28DCFE2225AFB86200F8D854 /* HomeRepository.swift in Sources */,
 				288E8F2625AB26DD0009BFC8 /* ForgetPasswordViewController.swift in Sources */,
+				28D9733725B0EC6300CE97A0 /* Feedback.swift in Sources */,
 				28A8694125A7695300987624 /* AuthenticationCoordinator.swift in Sources */,
 				288E8F2A25AB2CC30009BFC8 /* ForgetPasswordViewModel.swift in Sources */,
 				289451D0259FD19D00FF77DD /* ReusableIdentifier.swift in Sources */,
@@ -733,6 +844,7 @@
 				289451E4259FD56F00FF77DD /* OnboardingViewController.swift in Sources */,
 				288E8F1625AA64380009BFC8 /* Keychain.swift in Sources */,
 				289451D9259FD24E00FF77DD /* Constants.swift in Sources */,
+				284CBB3525B49B60004B1FF1 /* CategoriesViewController.swift in Sources */,
 				281C450F25A096E400FD8C08 /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
