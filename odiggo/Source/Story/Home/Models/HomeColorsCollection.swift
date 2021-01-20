@@ -13,19 +13,10 @@ struct HomeColorsCollection {
                                 "Lorem ipsum dolor s"]
     
     private static let colors: [UIColor.Colors] = [.pinkishRed, .squash, .denim, .kelleyGreen, .blackThree]
-    private static var currentColorIndex = 0
     
-    static func getNextColor() -> UIColor.Colors {
-
-        defer {
-            currentColorIndex += 1
-        }
-        
-        if currentColorIndex == colors.count {
-            currentColorIndex = 0
-        }
-        
-        return colors[currentColorIndex]
+    static func getNextColor(indexedBy index: Int) -> UIColor.Colors {
+        let colorIndex = index % colors.count
+        return colors[safe: colorIndex] ?? .white
     }
     
     static func getDescription(_ index: Int) -> String {

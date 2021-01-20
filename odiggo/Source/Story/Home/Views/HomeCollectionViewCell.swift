@@ -54,5 +54,6 @@ final class HomeCollectionViewCell: UICollectionViewCell {
         } else {
             imageView.image = #imageLiteral(resourceName: "progress_circular")
         }
+        layoutIfNeeded()
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: Custom Errors
-enum APIError: Error {
+enum APIError: Error, LocalizedError {
     
     case decodingError(Swift.Error)
     case networkError(Int)

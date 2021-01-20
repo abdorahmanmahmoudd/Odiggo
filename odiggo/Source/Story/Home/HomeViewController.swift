@@ -15,6 +15,8 @@ final class HomeViewController: BaseViewController {
     
     /// Properties
     var viewModel: HomeViewModel!
+    
+    private var listIsFetched = false
         
     /// Prototype cell used to calculate the sizes
     private var prototypeCell: HomeCollectionViewCell?
@@ -25,7 +27,15 @@ final class HomeViewController: BaseViewController {
         configureViews()
         styleNavigationItem()
         bindObservables()
-        viewModel.fetchHome()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if !listIsFetched {
+            listIsFetched = true
+            viewModel.fetchHome()
+        }
     }
 
     private func styleNavigationItem() {
@@ -97,7 +107,9 @@ extension HomeViewController: UICollectionViewDataSource {
                                                             for: indexPath) as? HomeCollectionViewCell else {
             fatalError("Couldn't dequeue a cell of type \(HomeCollectionViewCell.self)")
         }
-        cell.configure(viewModel.itemForIndexPath(indexPath), HomeColorsCollection.getNextColor(), HomeColorsCollection.getDescription(indexPath.item))
+        cell.configure(viewModel.itemForIndexPath(indexPath),
+                       HomeColorsCollection.getNextColor(indexedBy: indexPath.row),
+                       HomeColorsCollection.getDescription(indexPath.item))
         return cell
     }
 }
@@ -135,7 +147,9 @@ extension HomeViewController: PinterestLayoutDelegate {
         }
         
         /// configure cell with data
-        cell.configure(viewModel.itemForIndexPath(indexPath), HomeColorsCollection.getNextColor(), HomeColorsCollection.getDescription(indexPath.item))
+        cell.configure(viewModel.itemForIndexPath(indexPath),
+                       HomeColorsCollection.getNextColor(indexedBy: indexPath.row),
+                       HomeColorsCollection.getDescription(indexPath.item))
         
         /// calculate cell size
         let cellSize = self.cellSize(cell)

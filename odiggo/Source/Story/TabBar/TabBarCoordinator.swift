@@ -27,22 +27,22 @@ final class TabBarCoordinator: Coordinator {
         self.tabbarController = TabbarViewController.loadFromStoryboard()
         
         let homeNavC = UINavigationController()
-        homeNavC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "home.icon"), tag: 0)
+        homeNavC.tabBarItem = UITabBarItem.odiggoItem(ofType: .home)
         let homeCoordinator = HomeCoordinator(homeNavC, api)
         homeCoordinator.parentCoordinator = self
         
         let categoriesNavC = UINavigationController()
-        categoriesNavC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "categories.icon"), tag: 1)
+        categoriesNavC.tabBarItem = UITabBarItem.odiggoItem(ofType: .categories)
         let categoriesCoordinator = CategoriesCoordinator(categoriesNavC, api)
         categoriesCoordinator.parentCoordinator = self
         
         let cartNavC = UINavigationController()
-        cartNavC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "cart.icon"), tag: 2)
+        cartNavC.tabBarItem = UITabBarItem.odiggoItem(ofType: .cart)
         let cartCoordinator = DummyCoordinator(cartNavC, api)
         cartCoordinator.parentCoordinator = self
         
         let moreNavC = UINavigationController()
-        moreNavC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "more.icon"), tag: 3)
+        moreNavC.tabBarItem = UITabBarItem.odiggoItem(ofType: .more)
         let moreCoordinator = DummyCoordinator(moreNavC, api)
         moreCoordinator.parentCoordinator = self
         

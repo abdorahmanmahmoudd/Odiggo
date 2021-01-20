@@ -35,6 +35,7 @@
 		28276DB625B3C3CE0027737C /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28276DB425B3C3CE0027737C /* DummyViewController.swift */; };
 		28276DB725B3C3CE0027737C /* DummyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28276DB525B3C3CE0027737C /* DummyViewController.xib */; };
 		28276DBA25B3C40B0027737C /* DummyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28276DB925B3C40B0027737C /* DummyCoordinator.swift */; };
+		284A003C25B7B13600B158EE /* UITabbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284A003B25B7B13600B158EE /* UITabbarItem.swift */; };
 		284CBB3525B49B60004B1FF1 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284CBB3325B49B60004B1FF1 /* CategoriesViewController.swift */; };
 		284CBB3625B49B60004B1FF1 /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284CBB3425B49B60004B1FF1 /* CategoriesViewController.xib */; };
 		284CBB3925B49B6C004B1FF1 /* CategoriesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284CBB3825B49B6C004B1FF1 /* CategoriesCoordinator.swift */; };
@@ -130,6 +131,7 @@
 		28276DB425B3C3CE0027737C /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		28276DB525B3C3CE0027737C /* DummyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DummyViewController.xib; sourceTree = "<group>"; };
 		28276DB925B3C40B0027737C /* DummyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyCoordinator.swift; sourceTree = "<group>"; };
+		284A003B25B7B13600B158EE /* UITabbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabbarItem.swift; sourceTree = "<group>"; };
 		284CBB3325B49B60004B1FF1 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		284CBB3425B49B60004B1FF1 /* CategoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesViewController.xib; sourceTree = "<group>"; };
 		284CBB3825B49B6C004B1FF1 /* CategoriesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCoordinator.swift; sourceTree = "<group>"; };
@@ -487,6 +489,7 @@
 				28A8698225A7C89B00987624 /* UITextField.swift */,
 				288E8F0E25AA58310009BFC8 /* UIBarButtonItem.swift */,
 				28D9734025B0EFB900CE97A0 /* UIImageView.swift */,
+				284A003B25B7B13600B158EE /* UITabbarItem.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -831,6 +834,7 @@
 				28DCFE1425AFA04A00F8D854 /* TabBarCoordinator.swift in Sources */,
 				281C452825A0A9B600FD8C08 /* OnboardingFlow.swift in Sources */,
 				2874F00C25A3A97D00A05111 /* OButton+ContentAlignment.swift in Sources */,
+				284A003C25B7B13600B158EE /* UITabbarItem.swift in Sources */,
 				289451DC259FD29700FF77DD /* API+NetworkRepository.swift in Sources */,
 				289451C9259FD13A00FF77DD /* Coordinator.swift in Sources */,
 				28DCFE1F25AFB70B00F8D854 /* HomeViewModel.swift in Sources */,
@@ -988,14 +992,14 @@
 				CODE_SIGN_ENTITLEMENTS = odiggo/odiggo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T65M7C4DTK;
 				INFOPLIST_FILE = odiggo/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.9.0;
+				MARKETING_VERSION = 2.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.netservex.odiggo-public";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Odiggo Public Development";
@@ -1013,14 +1017,14 @@
 				CODE_SIGN_ENTITLEMENTS = odiggo/odiggo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T65M7C4DTK;
 				INFOPLIST_FILE = odiggo/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.9.0;
+				MARKETING_VERSION = 2.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.netservex.odiggo-public";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Odiggo Public Distribution";

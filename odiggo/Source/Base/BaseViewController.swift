@@ -103,11 +103,11 @@ extension BaseViewController {
     }
     
     private func hideNavigationBar() {
-        navigationController?.navigationBar.barStyle = .default
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.barTintColor = .white
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.barStyle = .black
     }
 }
 
