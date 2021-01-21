@@ -64,6 +64,15 @@ extension UserManager {
             defaults.set(newValue, forKey: Constants.UserManager.onboardingCompleted)
         }
     }
+    
+    var preferredLanguage: String {
+        get {
+            return defaults.value(forKey: Constants.UserManager.preferredLanguage) as? String ?? "en"
+        }
+        set {
+            defaults.set(newValue, forKey: Constants.UserManager.preferredLanguage)
+        }
+    }
 }
 
 // MARK: - Observables

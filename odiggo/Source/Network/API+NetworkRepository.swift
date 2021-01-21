@@ -12,6 +12,7 @@ import RxSwift
 protocol NetworkRepository {
     var authenticationRepository: AuthenticationRepository { get }
     var homeRepository: HomeRepository { get }
+    var categoriesRepository: CategoriesRepository { get }
 }
 
 // MARK: - API shared client
@@ -52,6 +53,10 @@ extension API {
     
     var homeRepository: HomeRepository {
         return HomeAPI()
+    }
+    
+    var categoriesRepository: CategoriesRepository {
+        return CategoriesAPI()
     }
 }
 

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		280A02B725B8A26100318B6F /* CategoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A02B625B8A26100318B6F /* CategoriesRepository.swift */; };
+		280A02BB25B8A4BD00318B6F /* CategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A02BA25B8A4BD00318B6F /* CategoriesResponse.swift */; };
+		280A02BE25B8A55F00318B6F /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A02BD25B8A55F00318B6F /* Pagination.swift */; };
+		280A02C525B8ADBA00318B6F /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A02C325B8ADBA00318B6F /* CategoryCollectionViewCell.swift */; };
+		280A02C625B8ADBA00318B6F /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280A02C425B8ADBA00318B6F /* CategoryCollectionViewCell.xib */; };
 		281455D225B31FAB0041DD6E /* TabbarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281455D125B31FAB0041DD6E /* TabbarViewController.storyboard */; };
 		281C450F25A096E400FD8C08 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C450E25A096E400FD8C08 /* WelcomeView.swift */; };
 		281C451225A096F300FD8C08 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 281C451125A096F300FD8C08 /* WelcomeView.xib */; };
@@ -103,6 +108,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		280A02B625B8A26100318B6F /* CategoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepository.swift; sourceTree = "<group>"; };
+		280A02BA25B8A4BD00318B6F /* CategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesResponse.swift; sourceTree = "<group>"; };
+		280A02BD25B8A55F00318B6F /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		280A02C325B8ADBA00318B6F /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		280A02C425B8ADBA00318B6F /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		281455D125B31FAB0041DD6E /* TabbarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabbarViewController.storyboard; sourceTree = "<group>"; };
 		281C450E25A096E400FD8C08 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		281C451125A096F300FD8C08 /* WelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
@@ -215,6 +225,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		280A02B925B8A4AF00318B6F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				280A02BA25B8A4BD00318B6F /* CategoriesResponse.swift */,
+				280A02BD25B8A55F00318B6F /* Pagination.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		280A02C125B8AD9200318B6F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				280A02C225B8AD9700318B6F /* CategoryCollectionViewCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		280A02C225B8AD9700318B6F /* CategoryCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				280A02C325B8ADBA00318B6F /* CategoryCollectionViewCell.swift */,
+				280A02C425B8ADBA00318B6F /* CategoryCollectionViewCell.xib */,
+			);
+			path = CategoryCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		280A02D325B9BB3300318B6F /* CategoriesScreen */ = {
+			isa = PBXGroup;
+			children = (
+				280A02C125B8AD9200318B6F /* Views */,
+				284CBB3425B49B60004B1FF1 /* CategoriesViewController.xib */,
+				284CBB3325B49B60004B1FF1 /* CategoriesViewController.swift */,
+				284CBB3B25B49BDE004B1FF1 /* CategoriesViewModel.swift */,
+			);
+			path = CategoriesScreen;
+			sourceTree = "<group>";
+		};
+		280A02D425B9BB6100318B6F /* SubCategories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SubCategories;
+			sourceTree = "<group>";
+		};
 		281C450A25A0966300FD8C08 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -574,6 +628,7 @@
 			children = (
 				28A8695125A79F3C00987624 /* AuthenticationRepository.swift */,
 				28DCFE2125AFB86200F8D854 /* HomeRepository.swift */,
+				280A02B625B8A26100318B6F /* CategoriesRepository.swift */,
 			);
 			name = Repositories;
 			sourceTree = "<group>";
@@ -615,9 +670,9 @@
 			isa = PBXGroup;
 			children = (
 				284CBB3825B49B6C004B1FF1 /* CategoriesCoordinator.swift */,
-				284CBB3425B49B60004B1FF1 /* CategoriesViewController.xib */,
-				284CBB3325B49B60004B1FF1 /* CategoriesViewController.swift */,
-				284CBB3B25B49BDE004B1FF1 /* CategoriesViewModel.swift */,
+				280A02D425B9BB6100318B6F /* SubCategories */,
+				280A02D325B9BB3300318B6F /* CategoriesScreen */,
+				280A02B925B8A4AF00318B6F /* Models */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -712,6 +767,7 @@
 				281C451225A096F300FD8C08 /* WelcomeView.xib in Resources */,
 				289451BC259FCC5900FF77DD /* Localizable.strings in Resources */,
 				281C454E25A0B3B700FD8C08 /* Montserrat-ExtraBold.ttf in Resources */,
+				280A02C625B8ADBA00318B6F /* CategoryCollectionViewCell.xib in Resources */,
 				2866737325A8B4D600A3227A /* SignupViewController.xib in Resources */,
 				288E8F2725AB26DD0009BFC8 /* ForgetPasswordViewController.xib in Resources */,
 				281C454C25A0B3B700FD8C08 /* OFL.txt in Resources */,
@@ -802,6 +858,7 @@
 				2866737225A8B4D600A3227A /* SignupViewController.swift in Sources */,
 				28276DB125B3AA640027737C /* HomeColorsCollection.swift in Sources */,
 				2874F00F25A3A9A300A05111 /* OButton+Style.swift in Sources */,
+				280A02C525B8ADBA00318B6F /* CategoryCollectionViewCell.swift in Sources */,
 				288E8F0F25AA58310009BFC8 /* UIBarButtonItem.swift in Sources */,
 				28A8694E25A79E8800987624 /* LoginViewModel.swift in Sources */,
 				289451C2259FD0DD00FF77DD /* AppCoordinator.swift in Sources */,
@@ -826,6 +883,7 @@
 				285C5D8F25B27D3F007E13F0 /* TabbarViewController.swift in Sources */,
 				288E8F2125AA72080009BFC8 /* HomeCoordinator.swift in Sources */,
 				28276DB625B3C3CE0027737C /* DummyViewController.swift in Sources */,
+				280A02B725B8A26100318B6F /* CategoriesRepository.swift in Sources */,
 				2866737625A8B4E400A3227A /* SignupViewModel.swift in Sources */,
 				28945193259FC9B100FF77DD /* AppDelegate.swift in Sources */,
 				28FD653725A4C522004C9F0F /* PageControl.swift in Sources */,
@@ -837,6 +895,7 @@
 				284A003C25B7B13600B158EE /* UITabbarItem.swift in Sources */,
 				289451DC259FD29700FF77DD /* API+NetworkRepository.swift in Sources */,
 				289451C9259FD13A00FF77DD /* Coordinator.swift in Sources */,
+				280A02BE25B8A55F00318B6F /* Pagination.swift in Sources */,
 				28DCFE1F25AFB70B00F8D854 /* HomeViewModel.swift in Sources */,
 				28DCFE2225AFB86200F8D854 /* HomeRepository.swift in Sources */,
 				288E8F2625AB26DD0009BFC8 /* ForgetPasswordViewController.swift in Sources */,
@@ -848,6 +907,7 @@
 				289451E4259FD56F00FF77DD /* OnboardingViewController.swift in Sources */,
 				288E8F1625AA64380009BFC8 /* Keychain.swift in Sources */,
 				289451D9259FD24E00FF77DD /* Constants.swift in Sources */,
+				280A02BB25B8A4BD00318B6F /* CategoriesResponse.swift in Sources */,
 				284CBB3525B49B60004B1FF1 /* CategoriesViewController.swift in Sources */,
 				281C450F25A096E400FD8C08 /* WelcomeView.swift in Sources */,
 			);
@@ -992,7 +1052,7 @@
 				CODE_SIGN_ENTITLEMENTS = odiggo/odiggo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = T65M7C4DTK;
 				INFOPLIST_FILE = odiggo/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1017,7 +1077,7 @@
 				CODE_SIGN_ENTITLEMENTS = odiggo/odiggo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = T65M7C4DTK;
 				INFOPLIST_FILE = odiggo/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

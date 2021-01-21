@@ -208,7 +208,7 @@ extension SignupViewController: UITextFieldDelegate {
             emailStackView.showError(!viewModel.emailIsValid)
         default:
             break
-        }
+        }        
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {

@@ -5,22 +5,6 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "11F52261-2913-40D2-9D3B-1C85CF16B2F4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "odiggo/Source/Base/BaseViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "showErrorAlert(with:message:preferredStyle:retryAction:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             uuid = "C78140FC-C130-4D44-9AAB-D87411DB28E8"
@@ -35,16 +19,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F2DF7808-5556-43A7-8807-ED637A88C5DB"
+            uuid = "70E41EF8-A1F4-403D-9C1A-6C23D0EE866E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "odiggo/Source/Story/Home/HomeViewModel.swift"
+            filePath = "odiggo/Source/Story/Categories/CategoriesViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "fetchHome()"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "fetchCategories(_:isRefreshing:isFetchingNextPage:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

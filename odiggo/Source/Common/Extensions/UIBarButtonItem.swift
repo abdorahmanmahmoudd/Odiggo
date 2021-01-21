@@ -27,9 +27,10 @@ extension UIBarButtonItem {
     }
     
     // This function is used to return 45 by 45 buttons
-    static func customBarButtonItem(image: UIImage?,
-                                    title: String?,
-                                    selector: Selector?,
+    static func customBarButtonItem(image: UIImage? = nil,
+                                    title: String? = nil,
+                                    selector: Selector? = nil,
+                                    backgroundImage: UIImage? = nil,
                                     target: Any? = nil) -> UIBarButtonItem {
 
         let button = UIButton(type: .custom)
@@ -46,9 +47,9 @@ extension UIBarButtonItem {
         }
 
         button.frame = CGRect(x: 0, y: 0, width: 45, height: 45)
-        button.widthAnchor.constraint(equalToConstant: 45).isActive = true
         button.imageView?.clipsToBounds = false
         button.imageView?.contentMode = .center
+        button.setBackgroundImage(backgroundImage, for: .normal)
     
         return UIBarButtonItem(customView: button)
     }

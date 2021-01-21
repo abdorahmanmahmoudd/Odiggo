@@ -23,7 +23,7 @@ final class CategoriesCoordinator: Coordinator {
     
     func start() {
         
-        let categoriesVM = CategoriesViewModel(api.homeRepository)
+        let categoriesVM = CategoriesViewModel(api.categoriesRepository)
         let categoriesVC = CategoriesViewController.create(payload: categoriesVM)
         categoriesVC.coordinator = self
         parentCoordinator?.addChildCoordinator(self)

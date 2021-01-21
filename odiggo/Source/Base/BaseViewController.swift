@@ -32,6 +32,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         /// Enable swipe back gesture
         navigationController?.interactivePopGestureRecognizer?.delegate = self
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        setNeedsStatusBarAppearanceUpdate()
     }
 
     /// Disable pop gesture in one situation:
@@ -107,7 +108,7 @@ extension BaseViewController {
         navigationController?.navigationBar.barTintColor = .white
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.barStyle = .default
     }
 }
 

@@ -29,9 +29,8 @@ final class HomeViewController: BaseViewController {
         bindObservables()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         if !listIsFetched {
             listIsFetched = true
             viewModel.fetchHome()
@@ -90,6 +89,10 @@ final class HomeViewController: BaseViewController {
     
     @IBAction func searchTextFieldTapped(_ sender: Any) {
         debugPrint("searchTextFieldTapped")
+    }
+    
+    override func retry() {
+        viewModel.fetchHome()
     }
 
 }

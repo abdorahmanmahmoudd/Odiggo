@@ -72,20 +72,17 @@ class Tabbar: UITabBar {
     /// Setup Middle Image
     private func addMiddleImage() {
         
-        let logoImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 64, height: 64))
+        let logoImageView = UIImageView(frame: CGRect(x: 0, y: -28, width: 64, height: 64))
         logoImageView.image = logoImage
         logoImageView.contentMode = .center
         
         var imageFrame = logoImageView.frame
-        imageFrame.origin.y = bounds.height - imageFrame.height - (imageFrame.height / 1.5)
         imageFrame.origin.x = bounds.width / 2 - imageFrame.size.width / 2
         logoImageView.frame = imageFrame
 
         logoImageView.backgroundColor = UIColor.color(color: .scarlet)
         logoImageView.layer.cornerRadius = imageFrame.height / 2
         addSubview(logoImageView)
-
-        layoutIfNeeded()
     }
 }
 
