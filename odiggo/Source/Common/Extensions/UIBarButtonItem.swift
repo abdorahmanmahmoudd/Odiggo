@@ -9,7 +9,7 @@ import UIKit
 
 extension UIBarButtonItem {
     
-    static func odiggoBackButton(target: UIViewController, selector: Selector, tintColor: UIColor = .white) -> UIBarButtonItem? {
+    static func odiggoBackButton(target: UIViewController, action: Selector, tintColor: UIColor = .white) -> UIBarButtonItem? {
         
         guard (target.navigationController?.viewControllers.count ?? 0) > 1 else {
             return nil
@@ -19,13 +19,35 @@ extension UIBarButtonItem {
         backButton.setImage(UIImage(named: "back-icon"), for: .normal)
         backButton.tintColor = tintColor
         
-        backButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        backButton.addTarget(target, action: selector, for: .touchUpInside)
+        let widthConstraint = backButton.widthAnchor.constraint(equalToConstant: 40)
+        widthConstraint.priority = .defaultLow
+        widthConstraint.isActive = true
+        
+        backButton.addTarget(target, action: action, for: .touchUpInside)
         backButton.imageView?.contentMode = .center
 
         let barButtonItem = UIBarButtonItem(customView: backButton)
-        barButtonItem.customView?.frame.origin.x -= 16
         return barButtonItem
+    }
+    
+    static func searchPlaceholderItem(target: UIViewController, action: Selector) -> UIBarButtonItem? {
+        
+        /// Prepare text field
+        let searchTextField = OTextField()
+        searchTextField.textfieldType = .searchField
+        searchTextField.setPlaceHolder(text: "SEARCH_HERE_PLACEHOLDER".localized)
+        
+        /// Configure contraints
+        let viewWidth = UIScreen.main.bounds.width * 0.845
+        searchTextField.widthAnchor.constraint(equalToConstant: viewWidth).isActive = true
+        searchTextField.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        
+        /// Register tap gesture action
+        let tapGesture = UITapGestureRecognizer(target: target, action: action)
+        searchTextField.addGestureRecognizer(tapGesture)
+        tapGesture.cancelsTouchesInView = true
+        
+        return UIBarButtonItem(customView: searchTextField)
     }
     
     // This function is used to return 45 by 45 buttons

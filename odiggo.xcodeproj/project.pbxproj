@@ -1085,7 +1085,7 @@
 				CODE_SIGN_ENTITLEMENTS = odiggo/odiggo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = T65M7C4DTK;
 				INFOPLIST_FILE = odiggo/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1110,7 +1110,7 @@
 				CODE_SIGN_ENTITLEMENTS = odiggo/odiggo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = T65M7C4DTK;
 				INFOPLIST_FILE = odiggo/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

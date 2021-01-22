@@ -69,11 +69,11 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func addBackButtonIfNeeded(_ tintColor: UIColor = .white) {
         navigationItem.leftBarButtonItem = UIBarButtonItem.odiggoBackButton(target: self,
-                                                                            selector: #selector(self.didPressBackButton),
+                                                                            action: #selector(self.didPressBackButton),
                                                                             tintColor: tintColor)
     }
     
-    @objc private func didPressBackButton() {
+    @objc func didPressBackButton() {
         navigationController?.popViewController(animated: true)
     }
     
@@ -97,10 +97,9 @@ extension BaseViewController {
             hideNavigationBar()
             navigationItem.configure(with: .homePageStyle(items: items))
             
-        case .searchPlaceHolderStyle(let target, let action):
+        case .searchPlaceHolderStyle(let items):
             hideNavigationBar()
-            navigationItem.configure(with: .searchPlaceHolderStyle(target, action))
-            addBackButtonIfNeeded(UIColor.color(color: .denim))
+            navigationItem.configure(with: .searchPlaceHolderStyle(items: items))
             
         case .none:
             debugPrint("Navigation type not set for BaseViewController")
@@ -112,7 +111,7 @@ extension BaseViewController {
         navigationController?.navigationBar.barTintColor = .white
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
-//        navigationController?.navigationBar.barStyle = .default
+        navigationController?.navigationBar.barStyle = .default
     }
 }
 

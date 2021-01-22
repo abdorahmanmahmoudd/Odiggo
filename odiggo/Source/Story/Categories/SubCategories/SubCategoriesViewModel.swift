@@ -108,4 +108,8 @@ extension SubCategoriesViewModel {
         }
         return false
     }
+    
+    func sectionTitle() -> String {
+        return selectedCategory.name ?? ""
+    }
 }

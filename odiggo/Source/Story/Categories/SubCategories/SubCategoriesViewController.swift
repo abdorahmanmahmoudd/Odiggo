@@ -33,7 +33,13 @@ final class SubCategoriesViewController: BaseViewController {
     }
     
     private func styleNavigationItem() {
-        navigationItemStyle = NavigationItemStyle.searchPlaceHolderStyle(self, #selector(searchPlaceholderTapped))
+        let backButton = UIBarButtonItem.odiggoBackButton(target: self,
+                                                          action: #selector(self.didPressBackButton),
+                                                          tintColor: UIColor.color(color: .denim))
+        
+        let searchPlaceholder = UIBarButtonItem.searchPlaceholderItem(target: self,
+                                                                      action: #selector(searchPlaceholderTapped))
+        navigationItemStyle = NavigationItemStyle.searchPlaceHolderStyle(items: [backButton, searchPlaceholder].compactMap({ $0 }))
     }
     
     private func configureViews() {
@@ -111,6 +117,25 @@ extension SubCategoriesViewController: UITableViewDelegate {
             return
         }
         debugPrint("did select subCategory \(category.name)")
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 55))
+        
+        let label = UILabel()
+        label.frame = CGRect(x: 16, y: 0, width: headerView.frame.width - 16, height: headerView.frame.height)
+        label.text = viewModel.sectionTitle()
+        label.font = UIFont.font(.primaryBold, .huge)
+        label.textColor = UIColor.color(color: .greyishBrown)
+        
+        headerView.addSubview(label)
+        
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 55
     }
 }
  
