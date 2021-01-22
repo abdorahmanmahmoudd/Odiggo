@@ -12,6 +12,12 @@
 		280A02BE25B8A55F00318B6F /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A02BD25B8A55F00318B6F /* Pagination.swift */; };
 		280A02C525B8ADBA00318B6F /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A02C325B8ADBA00318B6F /* CategoryCollectionViewCell.swift */; };
 		280A02C625B8ADBA00318B6F /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280A02C425B8ADBA00318B6F /* CategoryCollectionViewCell.xib */; };
+		280A02D925B9E5B200318B6F /* SubCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A02D725B9E5B200318B6F /* SubCategoriesViewController.swift */; };
+		280A02DA25B9E5B200318B6F /* SubCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280A02D825B9E5B200318B6F /* SubCategoriesViewController.xib */; };
+		280A02DD25B9E5BE00318B6F /* SubCategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A02DC25B9E5BE00318B6F /* SubCategoriesViewModel.swift */; };
+		280A02E225B9E97F00318B6F /* SubCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A02E025B9E97F00318B6F /* SubCategoryTableViewCell.swift */; };
+		280A02E325B9E97F00318B6F /* SubCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280A02E125B9E97F00318B6F /* SubCategoryTableViewCell.xib */; };
+		280A02EB25B9FA7A00318B6F /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A02EA25B9FA7A00318B6F /* UINavigationController.swift */; };
 		281455D225B31FAB0041DD6E /* TabbarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281455D125B31FAB0041DD6E /* TabbarViewController.storyboard */; };
 		281C450F25A096E400FD8C08 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C450E25A096E400FD8C08 /* WelcomeView.swift */; };
 		281C451225A096F300FD8C08 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 281C451125A096F300FD8C08 /* WelcomeView.xib */; };
@@ -113,6 +119,12 @@
 		280A02BD25B8A55F00318B6F /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		280A02C325B8ADBA00318B6F /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		280A02C425B8ADBA00318B6F /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		280A02D725B9E5B200318B6F /* SubCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoriesViewController.swift; sourceTree = "<group>"; };
+		280A02D825B9E5B200318B6F /* SubCategoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubCategoriesViewController.xib; sourceTree = "<group>"; };
+		280A02DC25B9E5BE00318B6F /* SubCategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoriesViewModel.swift; sourceTree = "<group>"; };
+		280A02E025B9E97F00318B6F /* SubCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		280A02E125B9E97F00318B6F /* SubCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubCategoryTableViewCell.xib; sourceTree = "<group>"; };
+		280A02EA25B9FA7A00318B6F /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		281455D125B31FAB0041DD6E /* TabbarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabbarViewController.storyboard; sourceTree = "<group>"; };
 		281C450E25A096E400FD8C08 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		281C451125A096F300FD8C08 /* WelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
@@ -254,6 +266,7 @@
 		280A02D325B9BB3300318B6F /* CategoriesScreen */ = {
 			isa = PBXGroup;
 			children = (
+				280A02B925B8A4AF00318B6F /* Models */,
 				280A02C125B8AD9200318B6F /* Views */,
 				284CBB3425B49B60004B1FF1 /* CategoriesViewController.xib */,
 				284CBB3325B49B60004B1FF1 /* CategoriesViewController.swift */,
@@ -265,8 +278,21 @@
 		280A02D425B9BB6100318B6F /* SubCategories */ = {
 			isa = PBXGroup;
 			children = (
+				280A02DF25B9E94900318B6F /* Views */,
+				280A02D725B9E5B200318B6F /* SubCategoriesViewController.swift */,
+				280A02D825B9E5B200318B6F /* SubCategoriesViewController.xib */,
+				280A02DC25B9E5BE00318B6F /* SubCategoriesViewModel.swift */,
 			);
 			path = SubCategories;
+			sourceTree = "<group>";
+		};
+		280A02DF25B9E94900318B6F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				280A02E025B9E97F00318B6F /* SubCategoryTableViewCell.swift */,
+				280A02E125B9E97F00318B6F /* SubCategoryTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		281C450A25A0966300FD8C08 /* Views */ = {
@@ -399,6 +425,7 @@
 				288E8F1225AA62770009BFC8 /* AuthenticationResponse.swift */,
 			);
 			name = Models;
+			path = Signup;
 			sourceTree = "<group>";
 		};
 		288E8F1925AA70DA0009BFC8 /* Home */ = {
@@ -544,6 +571,7 @@
 				288E8F0E25AA58310009BFC8 /* UIBarButtonItem.swift */,
 				28D9734025B0EFB900CE97A0 /* UIImageView.swift */,
 				284A003B25B7B13600B158EE /* UITabbarItem.swift */,
+				280A02EA25B9FA7A00318B6F /* UINavigationController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -585,6 +613,7 @@
 			isa = PBXGroup;
 			children = (
 				28A8694025A7695300987624 /* AuthenticationCoordinator.swift */,
+				288E8F1125AA62500009BFC8 /* Models */,
 				28A8693F25A7693800987624 /* ForgetPassword */,
 				28A8693E25A7691300987624 /* Signup */,
 				28A8693D25A768F400987624 /* Login */,
@@ -605,7 +634,6 @@
 		28A8693E25A7691300987624 /* Signup */ = {
 			isa = PBXGroup;
 			children = (
-				288E8F1125AA62500009BFC8 /* Models */,
 				2866737125A8B4D600A3227A /* SignupViewController.xib */,
 				2866737025A8B4D600A3227A /* SignupViewController.swift */,
 				2866737525A8B4E400A3227A /* SignupViewModel.swift */,
@@ -672,7 +700,6 @@
 				284CBB3825B49B6C004B1FF1 /* CategoriesCoordinator.swift */,
 				280A02D425B9BB6100318B6F /* SubCategories */,
 				280A02D325B9BB3300318B6F /* CategoriesScreen */,
-				280A02B925B8A4AF00318B6F /* Models */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -775,11 +802,13 @@
 				28A8694B25A76A7900987624 /* LoginViewController.xib in Resources */,
 				281C454925A0B3B700FD8C08 /* Montserrat-Regular.ttf in Resources */,
 				28276DA925B36ADB0027737C /* HomeCollectionViewCell.xib in Resources */,
+				280A02DA25B9E5B200318B6F /* SubCategoriesViewController.xib in Resources */,
 				281C455425A0B3B700FD8C08 /* Montserrat-ExtraLight.ttf in Resources */,
 				28DCFE1C25AFB54900F8D854 /* HomeViewController.xib in Resources */,
 				281C454525A0B3B700FD8C08 /* Montserrat-Bold.ttf in Resources */,
 				281C455525A0B3B700FD8C08 /* Montserrat-Light.ttf in Resources */,
 				284CBB3625B49B60004B1FF1 /* CategoriesViewController.xib in Resources */,
+				280A02E325B9E97F00318B6F /* SubCategoryTableViewCell.xib in Resources */,
 				289451E5259FD56F00FF77DD /* OnboardingViewController.xib in Resources */,
 				281C451F25A0972B00FD8C08 /* GetStartedView.xib in Resources */,
 				28276DB725B3C3CE0027737C /* DummyViewController.xib in Resources */,
@@ -856,6 +885,7 @@
 				28276DA825B36ADB0027737C /* HomeCollectionViewCell.swift in Sources */,
 				281C451925A0971700FD8C08 /* OnboardingView.swift in Sources */,
 				2866737225A8B4D600A3227A /* SignupViewController.swift in Sources */,
+				280A02D925B9E5B200318B6F /* SubCategoriesViewController.swift in Sources */,
 				28276DB125B3AA640027737C /* HomeColorsCollection.swift in Sources */,
 				2874F00F25A3A9A300A05111 /* OButton+Style.swift in Sources */,
 				280A02C525B8ADBA00318B6F /* CategoryCollectionViewCell.swift in Sources */,
@@ -876,6 +906,7 @@
 				281C456A25A0C2FD00FD8C08 /* UIColor.swift in Sources */,
 				28D9733425B0EC5100CE97A0 /* Product.swift in Sources */,
 				288E8F1325AA62770009BFC8 /* AuthenticationResponse.swift in Sources */,
+				280A02DD25B9E5BE00318B6F /* SubCategoriesViewModel.swift in Sources */,
 				285C5D8B25B2798E007E13F0 /* Tabbar.swift in Sources */,
 				281C457025A0C97200FD8C08 /* OnboardingCoordinator.swift in Sources */,
 				28A8695225A79F3C00987624 /* AuthenticationRepository.swift in Sources */,
@@ -888,6 +919,7 @@
 				28945193259FC9B100FF77DD /* AppDelegate.swift in Sources */,
 				28FD653725A4C522004C9F0F /* PageControl.swift in Sources */,
 				28A8698325A7C89B00987624 /* UITextField.swift in Sources */,
+				280A02EB25B9FA7A00318B6F /* UINavigationController.swift in Sources */,
 				28D9733025B0E63800CE97A0 /* HomeResponse.swift in Sources */,
 				28DCFE1425AFA04A00F8D854 /* TabBarCoordinator.swift in Sources */,
 				281C452825A0A9B600FD8C08 /* OnboardingFlow.swift in Sources */,
@@ -909,6 +941,7 @@
 				289451D9259FD24E00FF77DD /* Constants.swift in Sources */,
 				280A02BB25B8A4BD00318B6F /* CategoriesResponse.swift in Sources */,
 				284CBB3525B49B60004B1FF1 /* CategoriesViewController.swift in Sources */,
+				280A02E225B9E97F00318B6F /* SubCategoryTableViewCell.swift in Sources */,
 				281C450F25A096E400FD8C08 /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

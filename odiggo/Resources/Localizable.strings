@@ -55,3 +55,6 @@
 
 // MARK: Home
 "HOME_SEARCHBAR_PLACEHOLDER" = "Find Any Part of your Car";
+
+// MARK: Categories:
+"SEARCH_HERE_PLACEHOLDER" = "Search Here";

@@ -27,5 +27,7 @@ extension UIColor {
         case squash
         case kelleyGreen
         case blackThree
+        case vermillion12
+        case greyishBrown
     }
 }

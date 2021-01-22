@@ -14,8 +14,7 @@ final class HomeViewController: BaseViewController {
     @IBOutlet private weak var searchTextField: OTextField!
     
     /// Properties
-    var viewModel: HomeViewModel!
-    
+    private var viewModel: HomeViewModel!
     private var listIsFetched = false
         
     /// Prototype cell used to calculate the sizes

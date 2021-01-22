@@ -13,14 +13,14 @@ final class CategoriesViewController: BaseViewController {
     /// UI Outlets
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    let interSpacing: CGFloat = 15
-    let insets: UIEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 10, right: 16)
-    
     /// Refresh control
     private let refreshControl = UIRefreshControl()
     
     /// Properties
     private var viewModel: CategoriesViewModel!
+    
+    private let interSpacing: CGFloat = 15
+    private let insets: UIEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 10, right: 16)
         
     /// RxSwift
     private let disposeBag = DisposeBag()

@@ -30,8 +30,25 @@ final class CategoriesCoordinator: Coordinator {
         navigationController.setViewControllers([categoriesVC], animated: false)
     }
     
+    func startSubCategories(with category: Category) {
+        
+        let subCategoriesVM = SubCategoriesViewModel(api.categoriesRepository, category: category)
+        let subCategoriesVC = SubCategoriesViewController.create(payload: subCategoriesVM)
+        subCategoriesVC.coordinator = self
+        navigationController.pushViewController(subCategoriesVC, animated: false)
+    }
+    
     func selectCategory(_ category: Category) {
-        debugPrint("Abdo: selectCategory \(category.name)")
+        
+        if let subCategoriesVC = navigationController.visibleViewController as? SubCategoriesViewController {
+            subCategoriesVC.viewModel.updateCategory(with: category)
+        } else {
+            startSubCategories(with: category)
+        }
+    }
+    
+    func startSearch() {
+        debugPrint("Start Search started")
     }
 }
 

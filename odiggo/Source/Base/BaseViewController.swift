@@ -32,7 +32,6 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         /// Enable swipe back gesture
         navigationController?.interactivePopGestureRecognizer?.delegate = self
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        setNeedsStatusBarAppearanceUpdate()
     }
 
     /// Disable pop gesture in one situation:
@@ -68,8 +67,10 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         view.endEditing(true)
     }
     
-    func addBackButtonIfNeeded() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem.odiggoBackButton(target: self, selector: #selector(self.didPressBackButton))
+    func addBackButtonIfNeeded(_ tintColor: UIColor = .white) {
+        navigationItem.leftBarButtonItem = UIBarButtonItem.odiggoBackButton(target: self,
+                                                                            selector: #selector(self.didPressBackButton),
+                                                                            tintColor: tintColor)
     }
     
     @objc private func didPressBackButton() {
@@ -90,13 +91,16 @@ extension BaseViewController {
 //        guard let navigation = navigationItem as? NavigationItem else {
 //            return assertionFailure("The Navigation item should be of type ONavigationItem!")
 //        }
-        
-        let backItem = UIBarButtonItem.odiggoBackButton(target: self, selector: #selector(self.didPressBackButton))
-        
+                
         switch navigationItemStyle {
-        case let .homePageStyle(items):
+        case .homePageStyle(let items):
             hideNavigationBar()
             navigationItem.configure(with: .homePageStyle(items: items))
+            
+        case .searchPlaceHolderStyle(let target, let action):
+            hideNavigationBar()
+            navigationItem.configure(with: .searchPlaceHolderStyle(target, action))
+            addBackButtonIfNeeded(UIColor.color(color: .denim))
             
         case .none:
             debugPrint("Navigation type not set for BaseViewController")
@@ -108,7 +112,7 @@ extension BaseViewController {
         navigationController?.navigationBar.barTintColor = .white
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.barStyle = .default
+//        navigationController?.navigationBar.barStyle = .default
     }
 }
 

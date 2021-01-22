@@ -10,6 +10,14 @@ import UIKit
 final class TabbarViewController: UITabBarController, UITabBarControllerDelegate {
     
     private var middleImageIndex: Int = 0
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return selectedViewController?.preferredStatusBarStyle ?? .default
+    }
+    
+    override var childForStatusBarStyle: UIViewController? {
+        return selectedViewController
+    }
                 
     override func viewDidLoad() {
         super.viewDidLoad()

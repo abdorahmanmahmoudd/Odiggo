@@ -9,21 +9,23 @@ import UIKit
 
 extension UIBarButtonItem {
     
-    static func odiggoBackButton(target: UIViewController, selector: Selector) -> UIBarButtonItem? {
+    static func odiggoBackButton(target: UIViewController, selector: Selector, tintColor: UIColor = .white) -> UIBarButtonItem? {
         
         guard (target.navigationController?.viewControllers.count ?? 0) > 1 else {
             return nil
         }
-
-        let backButton = UIBarButtonItem(image: UIImage(named: "back-icon"),
-                                         style: .plain,
-                                         target: target,
-                                         action: selector)
-        backButton.tintColor = .white
         
-        /// Make width a big bigger than default 30 to make this easily tappable
-        backButton.width = 50
-        return backButton
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(UIImage(named: "back-icon"), for: .normal)
+        backButton.tintColor = tintColor
+        
+        backButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        backButton.addTarget(target, action: selector, for: .touchUpInside)
+        backButton.imageView?.contentMode = .center
+
+        let barButtonItem = UIBarButtonItem(customView: backButton)
+        barButtonItem.customView?.frame.origin.x -= 16
+        return barButtonItem
     }
     
     // This function is used to return 45 by 45 buttons
