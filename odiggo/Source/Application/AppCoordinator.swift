@@ -45,7 +45,14 @@ final class AppCoordinator: Coordinator {
     
     /// Starting point
     func start() {
+        
+        /// Clean authentication data stored in Keychain
+        if !userManager.isFirstTimeInstall {
+            userManager.isFirstTimeInstall = true
+            userManager.resetAuthentication()
+        }
 
+        /// App flow
         if !userManager.onboardingCompleted {
             startOnboarding()
             
@@ -55,7 +62,6 @@ final class AppCoordinator: Coordinator {
         } else {
             startAuthentication()
         }
-        
     }
     
     func startTabbarController() {

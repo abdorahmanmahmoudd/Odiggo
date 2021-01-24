@@ -108,6 +108,7 @@
 		28A8697D25A7BE6700987624 /* OTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8697C25A7BE6700987624 /* OTextField.swift */; };
 		28A8698025A7BF0400987624 /* OTextFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8697F25A7BF0400987624 /* OTextFieldType.swift */; };
 		28A8698325A7C89B00987624 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8698225A7C89B00987624 /* UITextField.swift */; };
+		28ABF01725BD7A9200F29ED0 /* ResetPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ABF01625BD7A9200F29ED0 /* ResetPasswordResponse.swift */; };
 		28D9733025B0E63800CE97A0 /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D9732F25B0E63700CE97A0 /* HomeResponse.swift */; };
 		28D9733425B0EC5100CE97A0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D9733325B0EC5100CE97A0 /* Product.swift */; };
 		28D9733725B0EC6300CE97A0 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D9733625B0EC6300CE97A0 /* Feedback.swift */; };
@@ -229,6 +230,7 @@
 		28A8697C25A7BE6700987624 /* OTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTextField.swift; sourceTree = "<group>"; };
 		28A8697F25A7BF0400987624 /* OTextFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTextFieldType.swift; sourceTree = "<group>"; };
 		28A8698225A7C89B00987624 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		28ABF01625BD7A9200F29ED0 /* ResetPasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordResponse.swift; sourceTree = "<group>"; };
 		28D9732F25B0E63700CE97A0 /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
 		28D9733325B0EC5100CE97A0 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		28D9733625B0EC6300CE97A0 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
@@ -509,6 +511,7 @@
 			isa = PBXGroup;
 			children = (
 				288E8F1225AA62770009BFC8 /* AuthenticationResponse.swift */,
+				28ABF01625BD7A9200F29ED0 /* ResetPasswordResponse.swift */,
 			);
 			name = Models;
 			path = Signup;
@@ -1011,6 +1014,7 @@
 				2818BDB525BC8E8C00310FEE /* SearchViewController.swift in Sources */,
 				281C451C25A0972400FD8C08 /* GetStartedView.swift in Sources */,
 				285C5D8F25B27D3F007E13F0 /* TabbarViewController.swift in Sources */,
+				28ABF01725BD7A9200F29ED0 /* ResetPasswordResponse.swift in Sources */,
 				288E8F2125AA72080009BFC8 /* HomeCoordinator.swift in Sources */,
 				28276DB625B3C3CE0027737C /* DummyViewController.swift in Sources */,
 				280A02B725B8A26100318B6F /* CategoriesRepository.swift in Sources */,

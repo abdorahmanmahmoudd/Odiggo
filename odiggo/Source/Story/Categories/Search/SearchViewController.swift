@@ -68,7 +68,7 @@ final class SearchViewController: BaseViewController {
     private func configureSearchHistoryTableView() {
         searchHistoryTableView.delegate = self
         searchHistoryTableView.dataSource = self
-        searchHistoryTableView.rowHeight = 30
+        searchHistoryTableView.rowHeight = 40
         
         let nib = UINib(nibName: SearchHistoryTableViewCell.identifier, bundle: Bundle.main)
         searchHistoryTableView.register(nib, forCellReuseIdentifier: SearchHistoryTableViewCell.identifier)
@@ -117,12 +117,6 @@ final class SearchViewController: BaseViewController {
 
 // MARK: - UITextFieldDelegate
 extension SearchViewController: UITextFieldDelegate {
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if let text = textField.text, !text.isEmpty {
-            viewModel.fetchKeywords(text)
-        }
-    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let text = textField.text, !text.isEmpty {

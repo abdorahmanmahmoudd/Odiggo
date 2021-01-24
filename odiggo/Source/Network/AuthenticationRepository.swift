@@ -12,7 +12,7 @@ import RxSwift
 protocol AuthenticationRepository {
     func login(email: String, password: String) -> Single<AuthenticationResponse?>
     func signup(username: String, email: String, password: String) -> Single<AuthenticationResponse?>
-    func resetPassword(email: String) -> Single<AuthenticationResponse?>
+    func resetPassword(email: String) -> Single<ResetPasswordResponse?>
 }
 
 /// Every repository implementation should subclass the `API`
@@ -56,7 +56,7 @@ extension AuthenticationAPI {
         return response(for: request).observeOn(MainScheduler.instance)
     }
     
-    func resetPassword(email: String) -> Single<AuthenticationResponse?> {
+    func resetPassword(email: String) -> Single<ResetPasswordResponse?> {
         
         let fullUrl = baseUrl(of: .production) + Endpoint.resetPassword.rawValue
         let httpBody = ["email": email]

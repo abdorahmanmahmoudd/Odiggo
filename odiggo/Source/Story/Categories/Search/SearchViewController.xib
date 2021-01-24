@@ -99,7 +99,7 @@
             </constraints>
             <point key="canvasLocation" x="44.927536231884062" y="124.55357142857142"/>
         </view>
-        <tapGestureRecognizer id="3GJ-yR-pKu">
+        <tapGestureRecognizer cancelsTouchesInView="NO" id="3GJ-yR-pKu">
             <connections>
                 <action selector="viewTapped:" destination="-1" id="ORh-0I-NMK"/>
             </connections>

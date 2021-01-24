@@ -32,7 +32,7 @@ extension SearchViewModel {
         loadingState()
         self.term = term
 
-        if !term.isEmpty {
+        if !term.isEmpty && term != searchHistory[safe: 0] {
             self.searchHistory.append(term)
             storeSearchHistory(with: searchHistory)
         }

@@ -73,6 +73,15 @@ extension UserManager {
             defaults.set(newValue, forKey: Constants.UserManager.preferredLanguage)
         }
     }
+    
+    var isFirstTimeInstall: Bool {
+        get {
+            return defaults.bool(forKey: Constants.UserManager.firstTimeInstall)
+        }
+        set {
+            defaults.set(newValue, forKey: Constants.UserManager.firstTimeInstall)
+        }
+    }
 }
 
 // MARK: - Observables

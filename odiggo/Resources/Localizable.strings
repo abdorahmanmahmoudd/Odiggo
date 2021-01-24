@@ -52,6 +52,7 @@
 "FORGET_PASSWORD_SUBTITLE" = "Reset your password easily with your Email";
 "RESET_PASSWORD_BUTTON" = "Reset Password";
 "RESET_CONFIRMATION" = "Check your mail you will found a link to reset your password";
+"EMAIL_NOT_FOUND" = "Email not found";
 
 // MARK: Home
 "HOME_SEARCHBAR_PLACEHOLDER" = "Find Any Part of your Car";

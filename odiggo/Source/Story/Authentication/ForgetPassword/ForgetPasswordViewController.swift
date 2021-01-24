@@ -64,7 +64,7 @@ final class ForgetPasswordViewController: BaseViewController {
         
         emailStackView.titleText = "EMAIL_TITLE".localized
         emailStackView.textField.setPlaceHolder(text: "EMAIL_PLACEHOLDER".localized)
-        emailStackView.attributedAccessoryText = NSAttributedString(string: "EMAIL_HINT".localized)
+        emailStackView.attributedAccessoryText = NSAttributedString(string: "EMAIL_NOT_FOUND".localized)
     }
     
     private func bindObservables() {
@@ -117,8 +117,12 @@ final class ForgetPasswordViewController: BaseViewController {
 
         if (error as? APIError)?.mapNetworkError() == .unauthorized {
             emailStackView.showError(true)
+            
+        } else if case .emailNotFound = error as? APIError {
+            emailStackView.showError(true)
+            
         } else {
-            super.handleError(error)
+            handleError(error)
         }
     }
     

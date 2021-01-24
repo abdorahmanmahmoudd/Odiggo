@@ -37,11 +37,13 @@ extension ForgetPasswordViewModel {
         
         api.resetPassword(email: email).subscribe(onSuccess: { [weak self] response in
             
-            guard let self = self else {
+            guard response?.status == true else {
+                self?.errorState(APIError.emailNotFound)
                 return
             }
-            self.isPasswordResetDone = true
-            self.resultState()
+            
+            self?.isPasswordResetDone = true
+            self?.resultState()
             
         }, onError: { [weak self] error in
             

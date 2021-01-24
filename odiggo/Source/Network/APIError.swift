@@ -15,6 +15,7 @@ enum APIError: Error, LocalizedError {
     case invalidRequest
     case nonHTTPResponse
     case unknown
+    case emailNotFound
     
     /// Custom error codes so that we recognize it quicker
     var code: Int {
@@ -29,6 +30,8 @@ enum APIError: Error, LocalizedError {
             return -11006
         case .unknown:
             return -11007
+        case .emailNotFound:
+            return -11008
         }
     }
     
@@ -38,7 +41,7 @@ enum APIError: Error, LocalizedError {
         
         switch self {
         
-        case .decodingError, .nonHTTPResponse, .unknown, .invalidRequest:
+        case .decodingError, .nonHTTPResponse, .unknown, .invalidRequest, .emailNotFound:
             return genericMessage
             
         case let .networkError(code):

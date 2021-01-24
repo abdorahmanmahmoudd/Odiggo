@@ -22,7 +22,8 @@ struct Constants {
     struct UserManager {
         static let onboardingCompleted = "UserManager.Keys.OnboardingCompleted"
         static let accessToken = "UserManager.Keys.AccessToken"
-        static let preferredLanguage = "Constants.UserManager.PreferredLanguage"
+        static let preferredLanguage = "UserManager.Keys.PreferredLanguage"
+        static let firstTimeInstall = "UserManager.Keys.FirstTimeInstall"
     }
     
     struct Search {
