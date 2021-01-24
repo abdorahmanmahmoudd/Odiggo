@@ -24,4 +24,8 @@ struct Constants {
         static let accessToken = "UserManager.Keys.AccessToken"
         static let preferredLanguage = "Constants.UserManager.PreferredLanguage"
     }
+    
+    struct Search {
+        static let searchHistoryLocalStorageKey = "Search.Keys.SearchHistory"
+    }
 }

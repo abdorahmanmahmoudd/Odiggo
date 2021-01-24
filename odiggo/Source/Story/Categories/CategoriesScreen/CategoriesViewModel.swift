@@ -22,6 +22,7 @@ final class CategoriesViewModel: BaseStateController {
     
     init(_ apiClient: CategoriesRepository) {
         self.apiClient = apiClient
+        super.init()
     }
 }
 

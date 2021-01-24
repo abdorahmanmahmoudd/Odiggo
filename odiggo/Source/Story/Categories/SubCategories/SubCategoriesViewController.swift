@@ -96,7 +96,7 @@ final class SubCategoriesViewController: BaseViewController {
     
     @objc
     private func searchPlaceholderTapped() {
-        (coordinator as? CategoriesCoordinator)?.startSearch()
+        (coordinator as? CategoriesCoordinator)?.gotoSearch()
     }
 }
 

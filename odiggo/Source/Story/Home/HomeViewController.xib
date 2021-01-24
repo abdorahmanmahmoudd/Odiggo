@@ -61,7 +61,7 @@
     </objects>
     <designables>
         <designable name="vJU-bo-TcY">
-            <size key="intrinsicContentSize" width="72" height="34"/>
+            <size key="intrinsicContentSize" width="32" height="34"/>
         </designable>
     </designables>
     <resources>

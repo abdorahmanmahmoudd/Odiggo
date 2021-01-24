@@ -35,20 +35,65 @@ final class CategoriesCoordinator: Coordinator {
         let subCategoriesVM = SubCategoriesViewModel(api.categoriesRepository, category: category)
         let subCategoriesVC = SubCategoriesViewController.create(payload: subCategoriesVM)
         subCategoriesVC.coordinator = self
-        navigationController.pushViewController(subCategoriesVC, animated: false)
+        navigationController.pushViewController(subCategoriesVC, animated: true)
+    }
+    
+    func startSaerch() {
+        
+        /// Otherwise open a new one
+        let searchVM = SearchViewModel(api.categoriesRepository)
+        let searchVC = SearchViewController.create(payload: searchVM)
+        searchVC.coordinator = self
+        navigationController.pushViewController(searchVC, animated: true)
     }
     
     func selectCategory(_ category: Category) {
         
         if let subCategoriesVC = navigationController.visibleViewController as? SubCategoriesViewController {
             subCategoriesVC.viewModel.updateCategory(with: category)
+            
         } else {
-            startSubCategories(with: category)
+            
+            var screenExists = false
+            /// Check for an existing screen
+            for viewController in navigationController.viewControllers {
+                if viewController is SubCategoriesViewController {
+                    (viewController as? SubCategoriesViewController)?.viewModel.updateCategory(with: category)
+                    navigationController.popToViewController(viewController, animated: true)
+                    screenExists = true
+                    break
+                }
+            }
+            
+            /// otheriwse start a new screen
+            if !screenExists {
+                startSubCategories(with: category)
+            }
         }
     }
     
-    func startSearch() {
-        debugPrint("Start Search started")
+    func gotoSearch() {
+        
+        if let searchVC = navigationController.visibleViewController as? SearchViewController {
+            debugPrint("\(searchVC) already presented")
+            
+        } else {
+            
+            var screenExists = false
+            /// Check for an existing screen
+            for viewController in navigationController.viewControllers {
+                if viewController is SearchViewController {
+                    navigationController.popToViewController(viewController, animated: true)
+                    screenExists = true
+                    break
+                }
+            }
+            
+            /// otheriwse start a new screen
+            if !screenExists {
+                startSaerch()
+            }
+        }
     }
 }
 

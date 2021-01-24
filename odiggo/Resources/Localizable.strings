@@ -58,3 +58,7 @@
 
 // MARK: Categories:
 "SEARCH_HERE_PLACEHOLDER" = "Search Here";
+
+// MARK: Search
+"KEYWORDS_TITLE" = "Key words";
+"SEARCHHISTORY_TITLE" = "Search history";

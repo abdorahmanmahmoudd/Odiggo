@@ -78,17 +78,41 @@ extension TabBarCoordinator {
 // MARK: Home-related
 extension TabBarCoordinator {
     
+    /// Helper method to find `CategoriesCoordinator` and the index.
+    private func getCategoriesCoordinator() -> (CategoriesCoordinator?, Int?) {
+        
+        if let index = childCoordinators.firstIndex(where: { (coordinator) -> Bool in
+            return coordinator as? CategoriesCoordinator != nil
+        }) {
+            let categoriesCoordinator = childCoordinators[index] as? CategoriesCoordinator
+            return (categoriesCoordinator, index)
+        }
+        return (nil, nil)
+    }
+    
     func didSelectTopCategory(_ category: Category) {
         
-        guard let categoriesCoordinatorIndex = childCoordinators.firstIndex(where: { (coordinator) -> Bool in
-            return coordinator as? CategoriesCoordinator != nil
-        }) else {
+        let (cooridantor, index) = getCategoriesCoordinator()
+        guard let unwrappedCoordinator = cooridantor,
+              let unwrappedIndex = index else {
+            debugPrint("Coudln't find Categories Coordinator")
             return
         }
         
-        let categoriesCoordinator = childCoordinators[categoriesCoordinatorIndex] as? CategoriesCoordinator
-        categoriesCoordinator?.selectCategory(category)
+        unwrappedCoordinator.selectCategory(category)
+        tabbarController?.selectedIndex = unwrappedIndex
+    }
+    
+    func openSearch() {
         
-        tabbarController?.selectedIndex = categoriesCoordinatorIndex
+        let (cooridantor, index) = getCategoriesCoordinator()
+        guard let unwrappedCoordinator = cooridantor,
+              let unwrappedIndex = index else {
+            debugPrint("Coudln't find Categories Coordinator")
+            return
+        }
+        
+        unwrappedCoordinator.gotoSearch()
+        tabbarController?.selectedIndex = unwrappedIndex
     }
 }

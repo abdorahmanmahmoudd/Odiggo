@@ -208,6 +208,7 @@ extension OTextField {
             leftViewPadding = 10
             textLeftPadding = 10
             borderStyle = .none
+            returnKeyType = .search
         }
         
         accessoryButton.isSelected = false

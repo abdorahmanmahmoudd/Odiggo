@@ -12,6 +12,7 @@ import RxSwift
 protocol CategoriesRepository {
     func fetchCategories(page: Int) -> Single<CategoriesResponse?>
     func fetchSubCategories(page: Int, categoryId: String) -> Single<CategoriesResponse?>
+    func fetchKeywords(_ term: String) -> Single<SearchAutoCompleteResponse?>
 }
 
 /// Every repository implementation should subclass the `API`
@@ -21,7 +22,7 @@ final class CategoriesAPI: API, CategoriesRepository {
     enum Endpoint: String {
         case fetchCategories = "/api/customer/categories"
         case fetchSubCategories = "/api/customer/sub-categories/"
-        
+        case searchAutoComplete = "/api/customer/product/searchautocomplete"
     }
 }
 
@@ -44,6 +45,18 @@ extension CategoriesAPI {
 
         let fullUrl = baseUrl(of: .production) + Endpoint.fetchSubCategories.rawValue + categoryId
         let httpBody = ["page": "\(page)"]
+
+        guard let request = request(fullUrl: fullUrl, method: .get, parameters: httpBody) else {
+            return .error(APIError.invalidRequest)
+        }
+
+        return response(for: request).observeOn(MainScheduler.instance)
+    }
+    
+    func fetchKeywords(_ term: String) -> Single<SearchAutoCompleteResponse?> {
+
+        let fullUrl = baseUrl(of: .production) + Endpoint.searchAutoComplete.rawValue
+        let httpBody = ["term": term]
 
         guard let request = request(fullUrl: fullUrl, method: .get, parameters: httpBody) else {
             return .error(APIError.invalidRequest)

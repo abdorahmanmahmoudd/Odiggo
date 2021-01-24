@@ -25,6 +25,7 @@ final class SubCategoriesViewModel: BaseStateController {
     init(_ apiClient: CategoriesRepository, category: Category) {
         self.apiClient = apiClient
         self.selectedCategory = category
+        super.init()
     }
 }
 

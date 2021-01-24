@@ -33,9 +33,7 @@ extension UIBarButtonItem {
     static func searchPlaceholderItem(target: UIViewController, action: Selector) -> UIBarButtonItem? {
         
         /// Prepare text field
-        let searchTextField = OTextField()
-        searchTextField.textfieldType = .searchField
-        searchTextField.setPlaceHolder(text: "SEARCH_HERE_PLACEHOLDER".localized)
+        let searchTextField = configuredSearchTextField()
         
         /// Configure contraints
         let viewWidth = UIScreen.main.bounds.width * 0.845
@@ -48,6 +46,29 @@ extension UIBarButtonItem {
         tapGesture.cancelsTouchesInView = true
         
         return UIBarButtonItem(customView: searchTextField)
+    }
+    
+    static func searchItem(delegate: UITextFieldDelegate) -> UIBarButtonItem {
+ 
+        /// Prepare text field
+        let searchTextField = configuredSearchTextField()
+        searchTextField.delegate = delegate
+        
+        /// Configure contraints
+        let viewWidth = UIScreen.main.bounds.width * 0.845
+        searchTextField.widthAnchor.constraint(equalToConstant: viewWidth).isActive = true
+        searchTextField.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        
+        return UIBarButtonItem(customView: searchTextField)
+    }
+    
+    /// Prepare searching text field
+    static private func configuredSearchTextField() -> OTextField {
+        
+        let searchTextField = OTextField()
+        searchTextField.textfieldType = .searchField
+        searchTextField.setPlaceHolder(text: "SEARCH_HERE_PLACEHOLDER".localized)
+        return searchTextField
     }
     
     // This function is used to return 45 by 45 buttons

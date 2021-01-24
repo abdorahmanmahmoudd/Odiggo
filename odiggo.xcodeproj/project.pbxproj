@@ -19,6 +19,14 @@
 		280A02E325B9E97F00318B6F /* SubCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280A02E125B9E97F00318B6F /* SubCategoryTableViewCell.xib */; };
 		280A02EB25B9FA7A00318B6F /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A02EA25B9FA7A00318B6F /* UINavigationController.swift */; };
 		281455D225B31FAB0041DD6E /* TabbarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281455D125B31FAB0041DD6E /* TabbarViewController.storyboard */; };
+		2818BDB525BC8E8C00310FEE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818BDB325BC8E8C00310FEE /* SearchViewController.swift */; };
+		2818BDB625BC8E8C00310FEE /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2818BDB425BC8E8C00310FEE /* SearchViewController.xib */; };
+		2818BDB925BC8E9700310FEE /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818BDB825BC8E9700310FEE /* SearchViewModel.swift */; };
+		2818BDC025BCBBFD00310FEE /* SearchAutoCompleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818BDBF25BCBBFD00310FEE /* SearchAutoCompleteResponse.swift */; };
+		2818BDC625BCBE0900310FEE /* KeywordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818BDC425BCBE0900310FEE /* KeywordCollectionViewCell.swift */; };
+		2818BDC725BCBE0900310FEE /* KeywordCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2818BDC525BCBE0900310FEE /* KeywordCollectionViewCell.xib */; };
+		2818BDCB25BCC34900310FEE /* AlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818BDCA25BCC34900310FEE /* AlignedCollectionViewFlowLayout.swift */; };
+		2818BDEE25BCC78700310FEE /* IntrinsicSizeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818BDED25BCC78700310FEE /* IntrinsicSizeCollectionView.swift */; };
 		281C450F25A096E400FD8C08 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C450E25A096E400FD8C08 /* WelcomeView.swift */; };
 		281C451225A096F300FD8C08 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 281C451125A096F300FD8C08 /* WelcomeView.xib */; };
 		281C451625A0970900FD8C08 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 281C451525A0970900FD8C08 /* OnboardingView.xib */; };
@@ -61,6 +69,9 @@
 		2874F00C25A3A97D00A05111 /* OButton+ContentAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2874F00B25A3A97D00A05111 /* OButton+ContentAlignment.swift */; };
 		2874F00F25A3A9A300A05111 /* OButton+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2874F00E25A3A9A300A05111 /* OButton+Style.swift */; };
 		2874F01E25A3BADC00A05111 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2874F01D25A3BADC00A05111 /* UIViewController.swift */; };
+		28807C7125BCF57E008A2396 /* SearchHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28807C6F25BCF57E008A2396 /* SearchHistoryTableViewCell.swift */; };
+		28807C7225BCF57E008A2396 /* SearchHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28807C7025BCF57E008A2396 /* SearchHistoryTableViewCell.xib */; };
+		28807C7625BCFCED008A2396 /* IntrinsicSizeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28807C7525BCFCED008A2396 /* IntrinsicSizeTableView.swift */; };
 		288E8F0F25AA58310009BFC8 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288E8F0E25AA58310009BFC8 /* UIBarButtonItem.swift */; };
 		288E8F1325AA62770009BFC8 /* AuthenticationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288E8F1225AA62770009BFC8 /* AuthenticationResponse.swift */; };
 		288E8F1625AA64380009BFC8 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288E8F1525AA64380009BFC8 /* Keychain.swift */; };
@@ -126,6 +137,14 @@
 		280A02E125B9E97F00318B6F /* SubCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubCategoryTableViewCell.xib; sourceTree = "<group>"; };
 		280A02EA25B9FA7A00318B6F /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		281455D125B31FAB0041DD6E /* TabbarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabbarViewController.storyboard; sourceTree = "<group>"; };
+		2818BDB325BC8E8C00310FEE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		2818BDB425BC8E8C00310FEE /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		2818BDB825BC8E9700310FEE /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		2818BDBF25BCBBFD00310FEE /* SearchAutoCompleteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAutoCompleteResponse.swift; sourceTree = "<group>"; };
+		2818BDC425BCBE0900310FEE /* KeywordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCollectionViewCell.swift; sourceTree = "<group>"; };
+		2818BDC525BCBE0900310FEE /* KeywordCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeywordCollectionViewCell.xib; sourceTree = "<group>"; };
+		2818BDCA25BCC34900310FEE /* AlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		2818BDED25BCC78700310FEE /* IntrinsicSizeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsicSizeCollectionView.swift; sourceTree = "<group>"; };
 		281C450E25A096E400FD8C08 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		281C451125A096F300FD8C08 /* WelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
 		281C451525A0970900FD8C08 /* OnboardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
@@ -169,6 +188,9 @@
 		2874F00B25A3A97D00A05111 /* OButton+ContentAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OButton+ContentAlignment.swift"; sourceTree = "<group>"; };
 		2874F00E25A3A9A300A05111 /* OButton+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OButton+Style.swift"; sourceTree = "<group>"; };
 		2874F01D25A3BADC00A05111 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		28807C6F25BCF57E008A2396 /* SearchHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		28807C7025BCF57E008A2396 /* SearchHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		28807C7525BCFCED008A2396 /* IntrinsicSizeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsicSizeTableView.swift; sourceTree = "<group>"; };
 		288E8F0E25AA58310009BFC8 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
 		288E8F1225AA62770009BFC8 /* AuthenticationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponse.swift; sourceTree = "<group>"; };
 		288E8F1525AA64380009BFC8 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
@@ -279,8 +301,8 @@
 			isa = PBXGroup;
 			children = (
 				280A02DF25B9E94900318B6F /* Views */,
-				280A02D725B9E5B200318B6F /* SubCategoriesViewController.swift */,
 				280A02D825B9E5B200318B6F /* SubCategoriesViewController.xib */,
+				280A02D725B9E5B200318B6F /* SubCategoriesViewController.swift */,
 				280A02DC25B9E5BE00318B6F /* SubCategoriesViewModel.swift */,
 			);
 			path = SubCategories;
@@ -293,6 +315,53 @@
 				280A02E125B9E97F00318B6F /* SubCategoryTableViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2818BDB225BC8E6A00310FEE /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				2818BDBD25BCB8F500310FEE /* Models */,
+				2818BDBC25BCB8F000310FEE /* Views */,
+				2818BDB425BC8E8C00310FEE /* SearchViewController.xib */,
+				2818BDB325BC8E8C00310FEE /* SearchViewController.swift */,
+				2818BDCA25BCC34900310FEE /* AlignedCollectionViewFlowLayout.swift */,
+				2818BDB825BC8E9700310FEE /* SearchViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		2818BDBC25BCB8F000310FEE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				28807C6E25BCF565008A2396 /* SearchHistoryTableViewCell */,
+				2818BDC325BCBDE800310FEE /* KeywordCollectionViewCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2818BDBD25BCB8F500310FEE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2818BDBF25BCBBFD00310FEE /* SearchAutoCompleteResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2818BDC325BCBDE800310FEE /* KeywordCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2818BDC425BCBE0900310FEE /* KeywordCollectionViewCell.swift */,
+				2818BDC525BCBE0900310FEE /* KeywordCollectionViewCell.xib */,
+			);
+			name = KeywordCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		2818BDE825BCC76A00310FEE /* IntrinsicSizeCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				2818BDED25BCC78700310FEE /* IntrinsicSizeCollectionView.swift */,
+			);
+			path = IntrinsicSizeCollectionView;
 			sourceTree = "<group>";
 		};
 		281C450A25A0966300FD8C08 /* Views */ = {
@@ -417,6 +486,23 @@
 				2874F00E25A3A9A300A05111 /* OButton+Style.swift */,
 			);
 			path = OButton;
+			sourceTree = "<group>";
+		};
+		28807C6E25BCF565008A2396 /* SearchHistoryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				28807C6F25BCF57E008A2396 /* SearchHistoryTableViewCell.swift */,
+				28807C7025BCF57E008A2396 /* SearchHistoryTableViewCell.xib */,
+			);
+			name = SearchHistoryTableViewCell;
+			sourceTree = "<group>";
+		};
+		28807C7425BCFCD4008A2396 /* IntrinsicSizeTableView */ = {
+			isa = PBXGroup;
+			children = (
+				28807C7525BCFCED008A2396 /* IntrinsicSizeTableView.swift */,
+			);
+			path = IntrinsicSizeTableView;
 			sourceTree = "<group>";
 		};
 		288E8F1125AA62500009BFC8 /* Models */ = {
@@ -590,6 +676,8 @@
 		289451C7259FD12500FF77DD /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				28807C7425BCFCD4008A2396 /* IntrinsicSizeTableView */,
+				2818BDE825BCC76A00310FEE /* IntrinsicSizeCollectionView */,
 				28A8697A25A7B8F600987624 /* OTextFieldStackView */,
 				28FD652825A3D946004C9F0F /* PageControl */,
 				2874F00625A3A8EA00A05111 /* OButton */,
@@ -698,8 +786,9 @@
 			isa = PBXGroup;
 			children = (
 				284CBB3825B49B6C004B1FF1 /* CategoriesCoordinator.swift */,
-				280A02D425B9BB6100318B6F /* SubCategories */,
 				280A02D325B9BB3300318B6F /* CategoriesScreen */,
+				280A02D425B9BB6100318B6F /* SubCategories */,
+				2818BDB225BC8E6A00310FEE /* Search */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -801,10 +890,13 @@
 				2894519C259FC9B200FF77DD /* Assets.xcassets in Resources */,
 				28A8694B25A76A7900987624 /* LoginViewController.xib in Resources */,
 				281C454925A0B3B700FD8C08 /* Montserrat-Regular.ttf in Resources */,
+				28807C7225BCF57E008A2396 /* SearchHistoryTableViewCell.xib in Resources */,
 				28276DA925B36ADB0027737C /* HomeCollectionViewCell.xib in Resources */,
+				2818BDC725BCBE0900310FEE /* KeywordCollectionViewCell.xib in Resources */,
 				280A02DA25B9E5B200318B6F /* SubCategoriesViewController.xib in Resources */,
 				281C455425A0B3B700FD8C08 /* Montserrat-ExtraLight.ttf in Resources */,
 				28DCFE1C25AFB54900F8D854 /* HomeViewController.xib in Resources */,
+				2818BDB625BC8E8C00310FEE /* SearchViewController.xib in Resources */,
 				281C454525A0B3B700FD8C08 /* Montserrat-Bold.ttf in Resources */,
 				281C455525A0B3B700FD8C08 /* Montserrat-Light.ttf in Resources */,
 				284CBB3625B49B60004B1FF1 /* CategoriesViewController.xib in Resources */,
@@ -879,7 +971,9 @@
 				2874F01E25A3BADC00A05111 /* UIViewController.swift in Sources */,
 				28276DBA25B3C40B0027737C /* DummyCoordinator.swift in Sources */,
 				284CBB3C25B49BDE004B1FF1 /* CategoriesViewModel.swift in Sources */,
+				2818BDEE25BCC78700310FEE /* IntrinsicSizeCollectionView.swift in Sources */,
 				284CBB3925B49B6C004B1FF1 /* CategoriesCoordinator.swift in Sources */,
+				2818BDC025BCBBFD00310FEE /* SearchAutoCompleteResponse.swift in Sources */,
 				28A8694A25A76A7900987624 /* LoginViewController.swift in Sources */,
 				28D9733E25B0EEC700CE97A0 /* NavigationItem.swift in Sources */,
 				28276DA825B36ADB0027737C /* HomeCollectionViewCell.swift in Sources */,
@@ -890,32 +984,38 @@
 				2874F00F25A3A9A300A05111 /* OButton+Style.swift in Sources */,
 				280A02C525B8ADBA00318B6F /* CategoryCollectionViewCell.swift in Sources */,
 				288E8F0F25AA58310009BFC8 /* UIBarButtonItem.swift in Sources */,
+				2818BDB925BC8E9700310FEE /* SearchViewModel.swift in Sources */,
 				28A8694E25A79E8800987624 /* LoginViewModel.swift in Sources */,
 				289451C2259FD0DD00FF77DD /* AppCoordinator.swift in Sources */,
 				28D9734125B0EFB900CE97A0 /* UIImageView.swift in Sources */,
 				28FD653125A3E9DB004C9F0F /* Array.swift in Sources */,
 				289451D6259FD21600FF77DD /* UIView.swift in Sources */,
 				28A8698025A7BF0400987624 /* OTextFieldType.swift in Sources */,
+				28807C7625BCFCED008A2396 /* IntrinsicSizeTableView.swift in Sources */,
 				28A8696025A7A4C100987624 /* HTTPMethod.swift in Sources */,
 				2874F00825A3A93800A05111 /* OButton.swift in Sources */,
 				28A8697825A7B8F000987624 /* OTextFieldStackView.swift in Sources */,
+				2818BDCB25BCC34900310FEE /* AlignedCollectionViewFlowLayout.swift in Sources */,
 				2874F00425A39AFE00A05111 /* Fonts.swift in Sources */,
 				289451E9259FD59200FF77DD /* BaseViewController.swift in Sources */,
 				28D9733A25B0EC7300CE97A0 /* Category.swift in Sources */,
 				28A8697D25A7BE6700987624 /* OTextField.swift in Sources */,
 				281C456A25A0C2FD00FD8C08 /* UIColor.swift in Sources */,
 				28D9733425B0EC5100CE97A0 /* Product.swift in Sources */,
+				2818BDC625BCBE0900310FEE /* KeywordCollectionViewCell.swift in Sources */,
 				288E8F1325AA62770009BFC8 /* AuthenticationResponse.swift in Sources */,
 				280A02DD25B9E5BE00318B6F /* SubCategoriesViewModel.swift in Sources */,
 				285C5D8B25B2798E007E13F0 /* Tabbar.swift in Sources */,
 				281C457025A0C97200FD8C08 /* OnboardingCoordinator.swift in Sources */,
 				28A8695225A79F3C00987624 /* AuthenticationRepository.swift in Sources */,
+				2818BDB525BC8E8C00310FEE /* SearchViewController.swift in Sources */,
 				281C451C25A0972400FD8C08 /* GetStartedView.swift in Sources */,
 				285C5D8F25B27D3F007E13F0 /* TabbarViewController.swift in Sources */,
 				288E8F2125AA72080009BFC8 /* HomeCoordinator.swift in Sources */,
 				28276DB625B3C3CE0027737C /* DummyViewController.swift in Sources */,
 				280A02B725B8A26100318B6F /* CategoriesRepository.swift in Sources */,
 				2866737625A8B4E400A3227A /* SignupViewModel.swift in Sources */,
+				28807C7125BCF57E008A2396 /* SearchHistoryTableViewCell.swift in Sources */,
 				28945193259FC9B100FF77DD /* AppDelegate.swift in Sources */,
 				28FD653725A4C522004C9F0F /* PageControl.swift in Sources */,
 				28A8698325A7C89B00987624 /* UITextField.swift in Sources */,

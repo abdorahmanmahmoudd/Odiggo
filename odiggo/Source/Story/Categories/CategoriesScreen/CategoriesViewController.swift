@@ -35,7 +35,10 @@ final class CategoriesViewController: BaseViewController {
     }
     
     private func styleNavigationItem() {
-        let searchBtn = UIBarButtonItem.customBarButtonItem(image: UIImage(named: "searchBtn.icon"))
+
+        let searchBtn = UIBarButtonItem.customBarButtonItem(image: UIImage(named: "searchBtn.icon"),
+                                                            selector: #selector(self.searchButtonTapped),
+                                                            target: self)
         
         let addYourCarBtn = UIBarButtonItem.customBarButtonItem(image: UIImage(named: "addCar.icon"))
         navigationItemStyle = NavigationItemStyle.homePageStyle(items: [addYourCarBtn, searchBtn])
@@ -91,6 +94,11 @@ final class CategoriesViewController: BaseViewController {
     
     override func retry() {
         viewModel.refreshCategories()
+    }
+    
+    @objc
+    private func searchButtonTapped() {
+        (coordinator as? CategoriesCoordinator)?.gotoSearch()
     }
 }
 

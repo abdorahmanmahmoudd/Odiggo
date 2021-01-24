@@ -88,12 +88,12 @@ final class HomeViewController: BaseViewController {
     
     @IBAction func searchTextFieldTapped(_ sender: Any) {
         debugPrint("searchTextFieldTapped")
+        (coordinator as? HomeCoordinator)?.searchTextFieldTapped()
     }
     
     override func retry() {
         viewModel.fetchHome()
     }
-
 }
 
 // MARK: UICollectionViewDataSource

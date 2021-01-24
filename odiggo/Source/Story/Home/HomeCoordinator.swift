@@ -33,6 +33,10 @@ final class HomeCoordinator: Coordinator {
     func didSelectTopCategory(_ category: Category) {
         (parentCoordinator as? TabBarCoordinator)?.didSelectTopCategory(category)
     }
+    
+    func searchTextFieldTapped() {
+        (parentCoordinator as? TabBarCoordinator)?.openSearch()
+    }
 }
 
 // MARK: Additional behaviour
