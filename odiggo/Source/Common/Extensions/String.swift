@@ -57,4 +57,21 @@ extension String {
                                             attributes: [.font: font], context: nil)
         return ceil(boundingBox.width)
     }
+    
+    /// A helper method to get a string in the pricing format -> `price`,Currency
+    func priceLabeled() -> NSAttributedString {
+        
+        let priceAttributes = [.font: UIFont.font(.primaryBold, 17),
+                               .foregroundColor: UIColor.color(color: .brownishGrey)] as [NSAttributedString.Key: Any]
+        let mutableAttributedPrice = NSMutableAttributedString(string: self, attributes: priceAttributes)
+        
+        let currentString = "CURRENCY_Abb".localized
+        let currencyAttributes = [.font: UIFont.font(.primaryMedium, .small),
+                                  .foregroundColor: UIColor.color(color: .brownishGrey)] as [NSAttributedString.Key: Any]
+        let attributedCurrency = NSAttributedString(string: currentString, attributes: currencyAttributes)
+        
+        mutableAttributedPrice.append(attributedCurrency)
+        
+        return mutableAttributedPrice
+    }
 }

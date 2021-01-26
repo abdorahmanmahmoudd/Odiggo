@@ -26,7 +26,6 @@ final class SearchViewController: BaseViewController {
         styleNavigationItem()
         bindObservables()
         configureViews()
-        viewModel.fetchKeywords()
         viewModel.fetchSearchHistory()
     }
     
@@ -106,7 +105,6 @@ final class SearchViewController: BaseViewController {
     
     override func retry() {
         viewModel.fetchKeywords()
-        viewModel.fetchSearchHistory()
     }
     
     override func viewTapped(_ sender: UITapGestureRecognizer) {
@@ -134,8 +132,8 @@ extension SearchViewController: UICollectionViewDelegate {
         guard let keyword = viewModel.keyword(for: indexPath) else {
             return
         }
-//        (coordinator as? CategoriesCoordinator)?.selectCategory(category)
         debugPrint("didSelectItemAt \(keyword)")
+        (coordinator as? CategoriesCoordinator)?.startSearchResult(with: keyword)
     }
 }
  
@@ -197,7 +195,12 @@ extension SearchViewController: UITableViewDataSource {
 extension SearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        debugPrint("didSelectRowAt \(viewModel.searchHistory(for: indexPath))")
+        
+        guard let searchItem = viewModel.searchHistory(for: indexPath) else {
+            return
+        }
+        searchTextField?.text = searchItem
+        viewModel.fetchKeywords(searchItem)
     }
 }
 

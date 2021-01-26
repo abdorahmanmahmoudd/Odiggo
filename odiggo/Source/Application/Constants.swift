@@ -29,4 +29,8 @@ struct Constants {
     struct Search {
         static let searchHistoryLocalStorageKey = "Search.Keys.SearchHistory"
     }
+    
+    struct FavouriteProductsManager {
+        static let repository = "FavouriteProductsManager.Keys.Repository"
+    }
 }

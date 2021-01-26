@@ -30,5 +30,6 @@ extension UIColor {
         case vermillion12
         case greyishBrown
         case blackFour
+        case brownishGrey
     }
 }

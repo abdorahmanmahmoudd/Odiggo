@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="SearchResultTableViewCell" customModule="odiggo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="121"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="121"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tire.placeholder.icon" translatesAutoresizingMaskIntoConstraints="NO" id="8en-5w-156">
+                        <rect key="frame" x="0.0" y="0.0" width="126" height="121"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="126" id="qfB-b3-d7a"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" ambiguous="YES" text="WINDA 155/70 R13 TIRE - WP15 - | CHINA" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1A-h2-BP2">
+                        <rect key="frame" x="142" y="16" width="169.5" height="34.5"/>
+                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
+                        <color key="textColor" name="blackThree"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="4.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qkp-2R-gWj">
+                        <rect key="frame" x="142" y="66.5" width="18.5" height="16"/>
+                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="13"/>
+                        <color key="textColor" name="blackThree"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="star.icon" translatesAutoresizingMaskIntoConstraints="NO" id="e55-hL-JCy">
+                        <rect key="frame" x="164.5" y="68.5" width="13" height="12"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="(9)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U37-cr-wUa">
+                        <rect key="frame" x="185.5" y="66.5" width="14" height="16"/>
+                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="13"/>
+                        <color key="textColor" name="warmGreyTwo"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcp-MF-2ZD">
+                        <rect key="frame" x="142" y="90.5" width="49" height="21"/>
+                        <attributedString key="attributedText">
+                            <fragment content="399">
+                                <attributes>
+                                    <color key="NSColor" name="greyishBrown"/>
+                                    <font key="NSFont" size="17" name="Montserrat-Bold"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content="egp">
+                                <attributes>
+                                    <color key="NSColor" name="greyishBrown"/>
+                                    <font key="NSFont" size="12" name="Montserrat-Medium"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXE-kM-YYP" customClass="FavouriteButton" customModule="odiggo" customModuleProvider="target">
+                        <rect key="frame" x="363" y="16" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="Tzv-mJ-dKn"/>
+                            <constraint firstAttribute="width" constant="35" id="ZDJ-eK-aHo"/>
+                        </constraints>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOB-Fb-3ik">
+                        <rect key="frame" x="278" y="79" width="136" height="42"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="42" id="P1Q-gr-4if"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="12" maxY="0.0"/>
+                        <state key="normal" title="Add to cart" image="cart.icon" backgroundImage="button.green.background">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="cartButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2r5-bP-qJK"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="w1A-h2-BP2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="3Hq-UR-cdJ"/>
+                    <constraint firstItem="QXE-kM-YYP" firstAttribute="centerY" secondItem="w1A-h2-BP2" secondAttribute="centerY" id="5Fh-U1-hOE"/>
+                    <constraint firstAttribute="bottom" secondItem="8en-5w-156" secondAttribute="bottom" id="6Rh-hp-bxu"/>
+                    <constraint firstItem="w1A-h2-BP2" firstAttribute="leading" secondItem="8en-5w-156" secondAttribute="trailing" constant="16" id="8FQ-Ju-Cwp"/>
+                    <constraint firstItem="8en-5w-156" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="FaC-yC-R3K"/>
+                    <constraint firstItem="QXE-kM-YYP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="w1A-h2-BP2" secondAttribute="trailing" constant="16" id="GkU-Rv-u4Q"/>
+                    <constraint firstItem="e55-hL-JCy" firstAttribute="centerY" secondItem="Qkp-2R-gWj" secondAttribute="centerY" id="I36-3a-VIx"/>
+                    <constraint firstAttribute="trailing" secondItem="QXE-kM-YYP" secondAttribute="trailing" constant="16" id="NDJ-JS-Wje"/>
+                    <constraint firstItem="Qkp-2R-gWj" firstAttribute="top" secondItem="w1A-h2-BP2" secondAttribute="bottom" constant="16" id="VxI-vK-IbU"/>
+                    <constraint firstItem="Qkp-2R-gWj" firstAttribute="leading" secondItem="w1A-h2-BP2" secondAttribute="leading" id="bt8-LJ-tCk"/>
+                    <constraint firstItem="fcp-MF-2ZD" firstAttribute="leading" secondItem="Qkp-2R-gWj" secondAttribute="leading" id="btb-P2-rsM"/>
+                    <constraint firstAttribute="trailing" secondItem="YOB-Fb-3ik" secondAttribute="trailing" id="gb3-xH-AEI"/>
+                    <constraint firstAttribute="bottom" secondItem="YOB-Fb-3ik" secondAttribute="bottom" id="gnN-WA-Pjr"/>
+                    <constraint firstAttribute="bottom" secondItem="fcp-MF-2ZD" secondAttribute="bottom" constant="9.5" id="m2V-xf-4pC"/>
+                    <constraint firstItem="e55-hL-JCy" firstAttribute="leading" secondItem="Qkp-2R-gWj" secondAttribute="trailing" constant="4" id="pf5-3T-OJd"/>
+                    <constraint firstItem="8en-5w-156" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="u0K-Yl-qdK"/>
+                    <constraint firstItem="U37-cr-wUa" firstAttribute="leading" secondItem="e55-hL-JCy" secondAttribute="trailing" constant="8" id="vla-td-KrG"/>
+                    <constraint firstItem="U37-cr-wUa" firstAttribute="centerY" secondItem="e55-hL-JCy" secondAttribute="centerY" id="wGP-cc-CJr"/>
+                    <constraint firstItem="fcp-MF-2ZD" firstAttribute="top" secondItem="Qkp-2R-gWj" secondAttribute="bottom" constant="8" id="wUX-l0-P7i"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="cartButton" destination="YOB-Fb-3ik" id="MJq-4m-xYs"/>
+                <outlet property="favouriteButton" destination="QXE-kM-YYP" id="0nQ-G6-hm6"/>
+                <outlet property="priceLabel" destination="fcp-MF-2ZD" id="pHV-jr-ceh"/>
+                <outlet property="productImageView" destination="8en-5w-156" id="cBO-jJ-mRc"/>
+                <outlet property="rateIcon" destination="e55-hL-JCy" id="Iy1-bh-4n2"/>
+                <outlet property="rateLabel" destination="Qkp-2R-gWj" id="t4K-8c-hN7"/>
+                <outlet property="reviewsLabel" destination="U37-cr-wUa" id="REf-fY-wqF"/>
+                <outlet property="titleLabel" destination="w1A-h2-BP2" id="0yP-T6-mZU"/>
+            </connections>
+            <point key="canvasLocation" x="-57.971014492753625" y="129.57589285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="button.green.background" width="136" height="42"/>
+        <image name="cart.icon" width="19" height="22"/>
+        <image name="star.icon" width="13" height="12"/>
+        <image name="tire.placeholder.icon" width="126" height="121"/>
+        <namedColor name="blackThree">
+            <color red="0.21176470588235294" green="0.21176470588235294" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greyishBrown">
+            <color red="0.29411764705882354" green="0.29411764705882354" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="warmGreyTwo">
+            <color red="0.61568627450980395" green="0.61568627450980395" blue="0.61568627450980395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

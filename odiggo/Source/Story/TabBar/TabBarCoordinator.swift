@@ -99,7 +99,7 @@ extension TabBarCoordinator {
             return
         }
         
-        unwrappedCoordinator.selectCategory(category)
+        unwrappedCoordinator.selectSubCategory(category)
         tabbarController?.selectedIndex = unwrappedIndex
     }
     

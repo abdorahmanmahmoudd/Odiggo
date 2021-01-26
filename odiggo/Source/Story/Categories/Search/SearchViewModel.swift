@@ -32,7 +32,7 @@ extension SearchViewModel {
         loadingState()
         self.term = term
 
-        if !term.isEmpty && term != searchHistory[safe: 0] {
+        if !term.isEmpty && term != searchHistory.last {
             self.searchHistory.append(term)
             storeSearchHistory(with: searchHistory)
         }
@@ -42,7 +42,6 @@ extension SearchViewModel {
             guard let self = self, let keywords = response?.data?.data else {
                 return
             }
-            debugPrint("\(keywords)")
             self.keywords = keywords
             self.resultState()
             
@@ -58,7 +57,7 @@ extension SearchViewModel {
             return
         }
         searchHistory = history
-        debugPrint("searchHistory \(searchHistory)")
+        fetchKeywords(searchHistory.last ?? "")
         resultState()
     }
 }

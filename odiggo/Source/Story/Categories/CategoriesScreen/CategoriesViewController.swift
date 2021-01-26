@@ -18,7 +18,7 @@ final class CategoriesViewController: BaseViewController {
     
     /// Properties
     private var viewModel: CategoriesViewModel!
-    
+    private var listIsFetched = false
     private let interSpacing: CGFloat = 15
     private let insets: UIEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 10, right: 16)
         
@@ -31,7 +31,14 @@ final class CategoriesViewController: BaseViewController {
         styleNavigationItem()
         bindObservables()
         configureViews()
-        viewModel.fetchCategories()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if !listIsFetched {
+            listIsFetched = true
+            viewModel.fetchCategories()
+        }
     }
     
     private func styleNavigationItem() {
@@ -118,7 +125,7 @@ extension CategoriesViewController: UICollectionViewDelegate {
         guard let category = viewModel.item(at: indexPath) else {
             return
         }
-        (coordinator as? CategoriesCoordinator)?.selectCategory(category)
+        (coordinator as? CategoriesCoordinator)?.selectSubCategory(category)
     }
     
 }

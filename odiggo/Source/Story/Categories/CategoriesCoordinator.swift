@@ -29,6 +29,19 @@ final class CategoriesCoordinator: Coordinator {
         parentCoordinator?.addChildCoordinator(self)
         navigationController.setViewControllers([categoriesVC], animated: false)
     }
+}
+
+// MARK: Additional behaviour
+extension CategoriesCoordinator {
+    
+    /// After pop animation is done etc..
+    func didFinish() {
+        (parentCoordinator as? TabBarCoordinator)?.childDidFinish(self)
+    }
+}
+
+// MARK: SubCategories
+extension CategoriesCoordinator {
     
     func startSubCategories(with category: Category) {
         
@@ -38,16 +51,7 @@ final class CategoriesCoordinator: Coordinator {
         navigationController.pushViewController(subCategoriesVC, animated: true)
     }
     
-    func startSaerch() {
-        
-        /// Otherwise open a new one
-        let searchVM = SearchViewModel(api.categoriesRepository)
-        let searchVC = SearchViewController.create(payload: searchVM)
-        searchVC.coordinator = self
-        navigationController.pushViewController(searchVC, animated: true)
-    }
-    
-    func selectCategory(_ category: Category) {
+    func selectSubCategory(_ category: Category) {
         
         if let subCategoriesVC = navigationController.visibleViewController as? SubCategoriesViewController {
             subCategoriesVC.viewModel.updateCategory(with: category)
@@ -64,12 +68,24 @@ final class CategoriesCoordinator: Coordinator {
                     break
                 }
             }
-            
             /// otheriwse start a new screen
             if !screenExists {
                 startSubCategories(with: category)
             }
         }
+    }
+}
+
+// MARK: Search
+extension CategoriesCoordinator {
+    
+    func startSaerch() {
+        
+        /// Otherwise open a new one
+        let searchVM = SearchViewModel(api.categoriesRepository)
+        let searchVC = SearchViewController.create(payload: searchVM)
+        searchVC.coordinator = self
+        navigationController.pushViewController(searchVC, animated: true)
     }
     
     func gotoSearch() {
@@ -97,11 +113,42 @@ final class CategoriesCoordinator: Coordinator {
     }
 }
 
-// MARK: Additional behaviour
+// MARK: SearchResult
 extension CategoriesCoordinator {
     
-    /// After pop animation is done etc..
-    func didFinish() {
-        (parentCoordinator as? TabBarCoordinator)?.childDidFinish(self)
+    func startSearchResult(with query: String) {
+        
+        /// Otherwise open a new one
+        let resultVM = SearchResultViewModel(api.categoriesRepository, searchQuery: query)
+        let resultVC = SearchResultViewController.create(payload: resultVM)
+        resultVC.coordinator = self
+        navigationController.pushViewController(resultVC, animated: true)
+    }
+    
+    func keywordSelected(_ keyword: String) {
+        
+        if let searchResultVC = navigationController.visibleViewController as? SearchResultViewController {
+            debugPrint("\(searchResultVC) already presented")
+            searchResultVC.viewModel.fetchSearchResult(keyword)
+            
+        } else {
+            
+            var screenExists = false
+            /// Check for an existing screen
+            for viewController in navigationController.viewControllers {
+                
+                if let resultVC = viewController as? SearchResultViewController {
+                    
+                    resultVC.viewModel.fetchSearchResult(keyword)
+                    navigationController.popToViewController(resultVC, animated: true)
+                    screenExists = true
+                    break
+                }
+            }
+            /// otheriwse start a new screen
+            if !screenExists {
+                startSearchResult(with: keyword)
+            }
+        }
     }
 }

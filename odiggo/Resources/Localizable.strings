@@ -63,3 +63,7 @@
 // MARK: Search
 "KEYWORDS_TITLE" = "Key words";
 "SEARCHHISTORY_TITLE" = "Search history";
+
+// MARK: Search Result
+"CURRENCY_Abb" = "egp";
+"SEARCH_RESULT" = "Search Results";
