@@ -121,6 +121,8 @@
 		28ABF0C225C0216A00F29ED0 /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28ABF0C025C0216A00F29ED0 /* SearchResultTableViewCell.xib */; };
 		28ABF2BE25C096E600F29ED0 /* FavouriteProductsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ABF2BD25C096E500F29ED0 /* FavouriteProductsManager.swift */; };
 		28ABF2C225C0A90800F29ED0 /* FavouriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ABF2C125C0A90800F29ED0 /* FavouriteButton.swift */; };
+		28ABF2D225C0D11000F29ED0 /* ResultEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ABF2D125C0D11000F29ED0 /* ResultEmptyView.swift */; };
+		28ABF2D525C0D12A00F29ED0 /* ResultEmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28ABF2D425C0D12A00F29ED0 /* ResultEmptyView.xib */; };
 		28D9733025B0E63800CE97A0 /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D9732F25B0E63700CE97A0 /* HomeResponse.swift */; };
 		28D9733425B0EC5100CE97A0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D9733325B0EC5100CE97A0 /* Product.swift */; };
 		28D9733725B0EC6300CE97A0 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D9733625B0EC6300CE97A0 /* Feedback.swift */; };
@@ -255,6 +257,8 @@
 		28ABF0C025C0216A00F29ED0 /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
 		28ABF2BD25C096E500F29ED0 /* FavouriteProductsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteProductsManager.swift; sourceTree = "<group>"; };
 		28ABF2C125C0A90800F29ED0 /* FavouriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteButton.swift; sourceTree = "<group>"; };
+		28ABF2D125C0D11000F29ED0 /* ResultEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultEmptyView.swift; sourceTree = "<group>"; };
+		28ABF2D425C0D12A00F29ED0 /* ResultEmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultEmptyView.xib; sourceTree = "<group>"; };
 		28D9732F25B0E63700CE97A0 /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
 		28D9733325B0EC5100CE97A0 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		28D9733625B0EC6300CE97A0 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
@@ -822,6 +826,7 @@
 		28ABF0BE25C020D100F29ED0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				28ABF2D025C0D0DC00F29ED0 /* ResultEmptyView */,
 				28ABF0C525C0217D00F29ED0 /* SearchResultTableViewCell */,
 			);
 			path = Views;
@@ -842,6 +847,15 @@
 				28ABF2C125C0A90800F29ED0 /* FavouriteButton.swift */,
 			);
 			path = FavouriteButton;
+			sourceTree = "<group>";
+		};
+		28ABF2D025C0D0DC00F29ED0 /* ResultEmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				28ABF2D125C0D11000F29ED0 /* ResultEmptyView.swift */,
+				28ABF2D425C0D12A00F29ED0 /* ResultEmptyView.xib */,
+			);
+			name = ResultEmptyView;
 			sourceTree = "<group>";
 		};
 		28D9732E25B0E61D00CE97A0 /* Models */ = {
@@ -991,6 +1005,7 @@
 				280A02E325B9E97F00318B6F /* SubCategoryTableViewCell.xib in Resources */,
 				289451E5259FD56F00FF77DD /* OnboardingViewController.xib in Resources */,
 				281C451F25A0972B00FD8C08 /* GetStartedView.xib in Resources */,
+				28ABF2D525C0D12A00F29ED0 /* ResultEmptyView.xib in Resources */,
 				28ABF0C225C0216A00F29ED0 /* SearchResultTableViewCell.xib in Resources */,
 				28276DB725B3C3CE0027737C /* DummyViewController.xib in Resources */,
 				281C454825A0B3B700FD8C08 /* Montserrat-Thin.ttf in Resources */,
@@ -1086,6 +1101,7 @@
 				2874F00825A3A93800A05111 /* OButton.swift in Sources */,
 				28ABF0B925C01B3C00F29ED0 /* ProductOrigin.swift in Sources */,
 				28A8697825A7B8F000987624 /* OTextFieldStackView.swift in Sources */,
+				28ABF2D225C0D11000F29ED0 /* ResultEmptyView.swift in Sources */,
 				28ABF0B625C01B2000F29ED0 /* PriceRange.swift in Sources */,
 				28ABF0AE25C017ED00F29ED0 /* SearchResultResponse.swift in Sources */,
 				2818BDCB25BCC34900310FEE /* AlignedCollectionViewFlowLayout.swift in Sources */,

@@ -60,5 +60,9 @@ extension SearchResultViewModel {
     func item(for index: IndexPath) -> Product? {
         return results[safe: index.row]
     }
+    
+    func isEmpty() -> Bool {
+        return results.isEmpty
+    }
 }
 

@@ -67,3 +67,5 @@
 // MARK: Search Result
 "CURRENCY_Abb" = "egp";
 "SEARCH_RESULT" = "Search Results";
+"NO_RESULT_TITLE" = "No Result Found";
+"NO_RESULT_DESC" = "Try Change the filters or search term";

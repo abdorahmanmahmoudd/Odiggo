@@ -70,12 +70,27 @@ final class SearchResultViewController: BaseViewController {
                 debugPrint("Result SearchResultViewController")
                 self.showLoadingIndicator(visible: false)
                 self.resultTableView.reloadData()
+                
+                if self.viewModel.isEmpty() {
+                    self.showEmptyView()
+                } else {
+                    self.resultTableView.backgroundView = nil
+                }
             }
         }
     }
     
     override func retry() {
         viewModel.fetchSearchResult()
+    }
+    
+    private func showEmptyView() {
+        
+        guard let emptyView = ResultEmptyView().loadNib() as? ResultEmptyView else {
+            return
+        }
+        emptyView.configure(with: "welcome", title: "NO_RESULT_TITLE".localized, description: "NO_RESULT_DESC".localized)
+        self.resultTableView.backgroundView = emptyView
     }
 }
 
