@@ -12,7 +12,7 @@ final class SubCategoriesViewModel: BaseStateController {
     
     private let apiClient: CategoriesRepository
     
-    private var selectedCategory: Category
+    private(set) var selectedCategory: Category
     
     private var subCategories: [Category] = []
     

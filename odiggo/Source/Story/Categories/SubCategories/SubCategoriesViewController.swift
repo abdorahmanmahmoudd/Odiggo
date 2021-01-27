@@ -93,11 +93,6 @@ final class SubCategoriesViewController: BaseViewController {
     override func retry() {
         viewModel.refreshCategories()
     }
-    
-    @objc
-    private func searchPlaceholderTapped() {
-        (coordinator as? CategoriesCoordinator)?.gotoSearch()
-    }
 }
 
 // MARK: UICollectionViewDelegate
@@ -113,10 +108,10 @@ extension SubCategoriesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let category = viewModel.item(at: indexPath) else {
+        guard let subCategory = viewModel.item(at: indexPath) else {
             return
         }
-        debugPrint("did select subCategory \(category.name)")
+        (coordinator as? CategoriesCoordinator)?.subCategorySelected(subCategory, ofParentCategory: viewModel.selectedCategory)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

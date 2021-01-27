@@ -30,10 +30,10 @@ extension UIBarButtonItem {
         return barButtonItem
     }
     
-    static func searchPlaceholderItem(target: UIViewController, action: Selector) -> UIBarButtonItem? {
+    static func searchPlaceholderItem(target: UIViewController, action: Selector, rightViewButton: UIButton? = nil) -> UIBarButtonItem? {
         
         /// Prepare text field
-        let searchTextField = configuredSearchTextField()
+        let searchTextField = configuredSearchTextField(with: rightViewButton)
         
         /// Configure contraints
         let viewWidth = UIScreen.main.bounds.width * 0.845
@@ -63,10 +63,10 @@ extension UIBarButtonItem {
     }
     
     /// Prepare searching text field
-    static private func configuredSearchTextField() -> OTextField {
+    static private func configuredSearchTextField(with button: UIButton? = nil) -> OTextField {
         
         let searchTextField = OTextField()
-        searchTextField.textfieldType = .searchField
+        searchTextField.textfieldType = .searchField(rightButton: button)
         searchTextField.setPlaceHolder(text: "SEARCH_HERE_PLACEHOLDER".localized)
         return searchTextField
     }

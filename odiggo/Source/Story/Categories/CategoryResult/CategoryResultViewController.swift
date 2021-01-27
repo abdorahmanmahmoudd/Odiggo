@@ -1,26 +1,28 @@
 //
-//  SearchResultViewController.swift
+//  CategoryResultViewController.swift
 //  odiggo
 //
-//  Created by Abdelrahman Ali on 25/01/2021.
+//  Created by Abdelrahman Ali on 27/01/2021.
 //
 
 import UIKit
 
-final class SearchResultViewController: BaseViewController {
-
+final class CategoryResultViewController: BaseViewController {
+    
     @IBOutlet private weak var resultTableView: UITableView!
+    @IBOutlet private weak var categoryNameLabel: UILabel!
+    @IBOutlet private weak var subCategoryNameLabel: UILabel!
     
     /// Properties
-    private(set) var viewModel: SearchResultViewModel!
+    private(set) var viewModel: CategoryResultViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         styleNavigationItem()
         bindObservables()
         configureViews()
-        viewModel.fetchSearchResult()
+        viewModel.fetchCategoryProducts()
     }
     
     private func styleNavigationItem() {
@@ -28,15 +30,25 @@ final class SearchResultViewController: BaseViewController {
                                                           action: #selector(self.didPressBackButton),
                                                           tintColor: UIColor.color(color: .denim))
         
-        navigationItemStyle = NavigationItemStyle.resultStyle(title: "SEARCH_RESULT".localized,
-                                                              items: [backButton].compactMap({ $0 }))
+        let filterationButton = OButton()
+        filterationButton.addTarget(self, action: #selector(self.filterationButtonTapped), for: .touchUpInside)
+        filterationButton.config(image: UIImage(named: "filter.icon.full"),
+                                 type: .filteration)
+        
+        let searchPlaceholderItem = UIBarButtonItem.searchPlaceholderItem(target: self,
+                                                                          action: #selector(self.searchPlaceholderTapped),
+                                                                          rightViewButton: filterationButton)
+        
+        navigationItemStyle = NavigationItemStyle.searchPlaceHolderStyle(items: [backButton, searchPlaceholderItem].compactMap({ $0 }))
     }
     
     private func configureViews() {
-        configureSearchResultTableView()
+        configureCategoryResultTableView()
+        categoryNameLabel.text = viewModel.categoryName()
+        subCategoryNameLabel.text = viewModel.subCategoryName()
     }
     
-    private func configureSearchResultTableView() {
+    private func configureCategoryResultTableView() {
         resultTableView.delegate = self
         resultTableView.dataSource = self
         resultTableView.rowHeight = 137
@@ -54,23 +66,26 @@ final class SearchResultViewController: BaseViewController {
                 return
             }
             
+            self.categoryNameLabel.text = self.viewModel.categoryName()
+            self.subCategoryNameLabel.text = self.viewModel.subCategoryName()
+            
             switch self.viewModel.state {
             
             case .initial, .refreshing:
-                debugPrint("initial & refreshing SearchResultViewController")
+                debugPrint("initial & refreshing CategoryResultViewController")
                 
             case .loading:
-                debugPrint("loading SearchResultViewController")
+                debugPrint("loading CategoryResultViewController")
                 self.showLoadingIndicator(visible: true)
                 
             case .error(let error):
                 self.handleError(error)
                 
             case .result:
-                debugPrint("Result SearchResultViewController")
+                debugPrint("Result CategoryResultViewController")
                 self.showLoadingIndicator(visible: false)
                 self.resultTableView.reloadData()
-                
+
                 if self.viewModel.isEmpty() {
                     self.showEmptyView()
                 } else {
@@ -81,7 +96,7 @@ final class SearchResultViewController: BaseViewController {
     }
     
     override func retry() {
-        viewModel.fetchSearchResult()
+        viewModel.fetchCategoryProducts()
     }
     
     private func showEmptyView() {
@@ -94,10 +109,15 @@ final class SearchResultViewController: BaseViewController {
                             description: "NO_RESULT_DESC".localized)
         self.resultTableView.backgroundView = emptyView
     }
+    
+    @objc
+    private func filterationButtonTapped() {
+        debugPrint("filterationButtonTapped")
+    }
 }
 
 // MARK: - UITableViewDataSource
-extension SearchResultViewController: UITableViewDataSource {
+extension CategoryResultViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numerOfRows()
@@ -105,18 +125,18 @@ extension SearchResultViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTableViewCell.identifier,
-                                                            for: indexPath) as? SearchResultTableViewCell else {
+                                                       for: indexPath) as? SearchResultTableViewCell else {
             
             fatalError("Couldn't dequeue a cell! \(SearchResultTableViewCell.description())")
         }
-
+        
         cell.configure(with: viewModel.item(for: indexPath))
         return cell
     }
 }
 
 // MARK: UITableViewDelegate
-extension SearchResultViewController: UITableViewDelegate {
+extension CategoryResultViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         debugPrint("didSelectRowAt \(String(describing: viewModel.item(for: indexPath)?.name))")
@@ -124,15 +144,16 @@ extension SearchResultViewController: UITableViewDelegate {
 }
 
 // MARK: - Injectable
-extension SearchResultViewController: Injectable {
+extension CategoryResultViewController: Injectable {
     
-    typealias Payload = SearchResultViewModel
+    typealias Payload = CategoryResultViewModel
     
     func inject(payload: Payload) {
         viewModel = payload
     }
-
+    
     func assertInjection() {
         assert(viewModel != nil)
     }
 }
+

@@ -152,3 +152,43 @@ extension CategoriesCoordinator {
         }
     }
 }
+
+// MARK: CategoryResult
+extension CategoriesCoordinator {
+    
+    func startCategoryResult(with subCategory: Category, ofParentCategory category: Category) {
+        
+        /// Otherwise open a new one
+        let resultVM = CategoryResultViewModel(api.categoriesRepository, subCategory: subCategory, parentCategory: category)
+        let resultVC = CategoryResultViewController.create(payload: resultVM)
+        resultVC.coordinator = self
+        navigationController.pushViewController(resultVC, animated: true)
+    }
+    
+    func subCategorySelected(_ subCategory: Category, ofParentCategory category: Category) {
+        
+        if let categoryResultVC = navigationController.visibleViewController as? CategoryResultViewController {
+            debugPrint("\(categoryResultVC) already presented")
+            categoryResultVC.viewModel.fetchCategoryProducts(subCategory)
+            
+        } else {
+            
+            var screenExists = false
+            /// Check for an existing screen
+            for viewController in navigationController.viewControllers {
+                
+                if let resultVC = viewController as? CategoryResultViewController {
+                    
+                    resultVC.viewModel.fetchCategoryProducts(subCategory)
+                    navigationController.popToViewController(resultVC, animated: true)
+                    screenExists = true
+                    break
+                }
+            }
+            /// otheriwse start a new screen
+            if !screenExists {
+                startCategoryResult(with: subCategory, ofParentCategory: category)
+            }
+        }
+    }
+}

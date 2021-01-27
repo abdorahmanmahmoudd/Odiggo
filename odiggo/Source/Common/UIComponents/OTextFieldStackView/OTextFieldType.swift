@@ -7,13 +7,13 @@
 
 import UIKit
 
-enum OTextFieldType {
+enum OTextFieldType: Equatable {
     
     case password
     case disabled
     case email
     case username
-    case searchField
+    case searchField(rightButton: UIButton? = nil)
     
     var image: UIImage {
         switch self {

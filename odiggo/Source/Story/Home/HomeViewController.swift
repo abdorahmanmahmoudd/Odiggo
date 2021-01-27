@@ -53,7 +53,7 @@ final class HomeViewController: BaseViewController {
             layout.delegate = self
         }
         
-        searchTextField.textfieldType = .searchField
+        searchTextField.textfieldType = .searchField()
         searchTextField.setPlaceHolder(text: "HOME_SEARCHBAR_PLACEHOLDER".localized)
     }
     

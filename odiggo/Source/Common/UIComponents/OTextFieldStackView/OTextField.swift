@@ -16,7 +16,7 @@ final class OTextField: UITextField {
     private var leftViewPadding: CGFloat = 0
     private var textInset: UIEdgeInsets {
         let leftSpace: CGFloat = textLeftPadding + leftViewPadding + (leftView?.frame.width ?? 0)
-        return UIEdgeInsets(top: 0, left: leftSpace, bottom: 0, right: 38)
+        return UIEdgeInsets(top: 0, left: leftSpace, bottom: 0, right: 44)
     }
     var hideClearButton: Bool = true
     
@@ -129,7 +129,11 @@ final class OTextField: UITextField {
         box.activateConstraints(for: self)
         
         updateForActive()
-        addAccessoryButton()
+        if case .searchField(let button) = textfieldType, let rightViewButton = button {
+            addRightButton(rightViewButton)
+        } else {
+            addAccessoryButton()
+        }
     }
 }
 
@@ -159,6 +163,24 @@ extension OTextField {
         clearButtonMode = .never
         
         accessoryButton.isHidden = false
+    }
+    
+    func addRightButton(_ button: UIButton) {
+        
+        let indentView = UIView(frame: CGRect(x: 0, y: 0, width: button.bounds.width,
+                                              height: button.bounds.height))
+        indentView.addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: indentView.bounds.height).isActive = true
+        button.widthAnchor.constraint(lessThanOrEqualToConstant: indentView.bounds.width).isActive = true
+        button.centerYAnchor.constraint(equalTo: indentView.centerYAnchor).isActive = true
+        button.centerXAnchor.constraint(equalTo: indentView.centerXAnchor).isActive = true
+        
+        rightView = indentView
+        rightViewMode = .always
+        clearButtonMode = .never
+        
+        accessoryButton.isHidden = true
     }
     
     private func updateForType() {
@@ -201,14 +223,18 @@ extension OTextField {
             isUserInteractionEnabled = false
             textColor = UIColor.color(color: .poleRose).withAlphaComponent(0.2)
             
-        case .searchField:
+        case .searchField(let button):
             leftViewMode = .always
-            rightViewMode = .never
             leftView = leftIcon()
             leftViewPadding = 10
             textLeftPadding = 10
             borderStyle = .none
             returnKeyType = .search
+            if let button = button {
+                addRightButton(button)
+            } else {
+                rightViewMode = .never
+            }
         }
         
         accessoryButton.isSelected = false

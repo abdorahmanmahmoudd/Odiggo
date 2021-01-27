@@ -20,15 +20,27 @@ final class OButton: UIButton {
         }
     }
 
-    func config(title: String? = nil, image: UIImage? = nil, type: ButtonStyle, font: UIFont,
-                alignment: ContentAlignment = .textLeading, state: ButtonStates = .normal) {
+    func config(title: String? = nil, image: UIImage? = nil, type: ButtonStyle,
+                font: UIFont = UIFont.systemFont(ofSize: 14),
+                alignment: ContentAlignment = .textLeading,
+                state: ButtonStates = .normal) {
         
         self.type = type
         setTitle(title, for: .normal)
         titleLabel?.font = font
-
-        setImage(image, for: .normal)
         imageView?.contentMode = .scaleAspectFit
+        
+        /// For now, only for filter button style
+        if case .filteration = type {
+            frame.size = CGSize(width: 44, height: 44)
+            layer.cornerRadius = bounds.height / 2
+            setBackgroundImage(image, for: .normal)
+            
+        } else {
+            
+            layer.cornerRadius = cornerRadius
+            setImage(image, for: .normal)
+        }
 
         switch alignment {
         case .textLeading:
@@ -37,7 +49,6 @@ final class OButton: UIButton {
             semanticContentAttribute = .forceLeftToRight
         }
 
-        layer.cornerRadius = cornerRadius
         layer.borderWidth = type.borderWidth()
         layer.borderColor = type.borderColor()
 
@@ -59,7 +70,7 @@ final class OButton: UIButton {
                                       bottom: verticalPadding, right: horizontalEdgeInset)
 
         /// If there is a image, we need custom constraints within the button
-        if image != nil {
+        if image != nil && type != .filteration {
             /// Set the spacing between the label and imageView
             /// The functions returns depending on the alignment, so can return 0 if the image is not on the left or right side
             edgeInsets.left += alignment.imageLeftPadding()

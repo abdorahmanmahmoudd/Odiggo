@@ -47,6 +47,14 @@
 		281C456525A0C0F800FD8C08 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 281C456425A0C0F800FD8C08 /* Colors.xcassets */; };
 		281C456A25A0C2FD00FD8C08 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C456925A0C2FD00FD8C08 /* UIColor.swift */; };
 		281C457025A0C97200FD8C08 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C456F25A0C97200FD8C08 /* OnboardingCoordinator.swift */; };
+		2823735125C187FE00D27044 /* CategoryResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2823734F25C187FE00D27044 /* CategoryResultViewController.swift */; };
+		2823735225C187FE00D27044 /* CategoryResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2823735025C187FE00D27044 /* CategoryResultViewController.xib */; };
+		2823735525C1880A00D27044 /* CategoryResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2823735425C1880A00D27044 /* CategoryResultViewModel.swift */; };
+		2823735A25C1C56700D27044 /* CategoryProductsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2823735925C1C56700D27044 /* CategoryProductsResponse.swift */; };
+		2823735E25C1C85B00D27044 /* CategoryProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2823735D25C1C85B00D27044 /* CategoryProducts.swift */; };
+		2823736125C1C88900D27044 /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2823736025C1C88900D27044 /* Selection.swift */; };
+		2823736425C1C89E00D27044 /* TireData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2823736325C1C89E00D27044 /* TireData.swift */; };
+		2823736725C1C8B900D27044 /* DataRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2823736625C1C8B900D27044 /* DataRecord.swift */; };
 		28276DA825B36ADB0027737C /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28276DA625B36ADB0027737C /* HomeCollectionViewCell.swift */; };
 		28276DA925B36ADB0027737C /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28276DA725B36ADB0027737C /* HomeCollectionViewCell.xib */; };
 		28276DAC25B3A1EB0027737C /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28276DAB25B3A1EB0027737C /* PinterestLayout.swift */; };
@@ -180,6 +188,14 @@
 		281C456425A0C0F800FD8C08 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		281C456925A0C2FD00FD8C08 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		281C456F25A0C97200FD8C08 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		2823734F25C187FE00D27044 /* CategoryResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryResultViewController.swift; sourceTree = "<group>"; };
+		2823735025C187FE00D27044 /* CategoryResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryResultViewController.xib; sourceTree = "<group>"; };
+		2823735425C1880A00D27044 /* CategoryResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryResultViewModel.swift; sourceTree = "<group>"; };
+		2823735925C1C56700D27044 /* CategoryProductsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryProductsResponse.swift; sourceTree = "<group>"; };
+		2823735D25C1C85B00D27044 /* CategoryProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryProducts.swift; sourceTree = "<group>"; };
+		2823736025C1C88900D27044 /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
+		2823736325C1C89E00D27044 /* TireData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TireData.swift; sourceTree = "<group>"; };
+		2823736625C1C8B900D27044 /* DataRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRecord.swift; sourceTree = "<group>"; };
 		28276DA625B36ADB0027737C /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		28276DA725B36ADB0027737C /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		28276DAB25B3A1EB0027737C /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
@@ -479,6 +495,18 @@
 				2874F00325A39AFE00A05111 /* Fonts.swift */,
 			);
 			name = Definitions;
+			sourceTree = "<group>";
+		};
+		2823735825C1C55300D27044 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2823735925C1C56700D27044 /* CategoryProductsResponse.swift */,
+				2823735D25C1C85B00D27044 /* CategoryProducts.swift */,
+				2823736025C1C88900D27044 /* Selection.swift */,
+				2823736325C1C89E00D27044 /* TireData.swift */,
+				2823736625C1C8B900D27044 /* DataRecord.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		28276DA525B36ABA0027737C /* Views */ = {
@@ -807,6 +835,10 @@
 		28ABF0A225BF300900F29ED0 /* CategoryResult */ = {
 			isa = PBXGroup;
 			children = (
+				2823735825C1C55300D27044 /* Models */,
+				2823735025C187FE00D27044 /* CategoryResultViewController.xib */,
+				2823734F25C187FE00D27044 /* CategoryResultViewController.swift */,
+				2823735425C1880A00D27044 /* CategoryResultViewModel.swift */,
 			);
 			path = CategoryResult;
 			sourceTree = "<group>";
@@ -1011,6 +1043,7 @@
 				281C454825A0B3B700FD8C08 /* Montserrat-Thin.ttf in Resources */,
 				281455D225B31FAB0041DD6E /* TabbarViewController.storyboard in Resources */,
 				281C456525A0C0F800FD8C08 /* Colors.xcassets in Resources */,
+				2823735225C187FE00D27044 /* CategoryResultViewController.xib in Resources */,
 				281C451625A0970900FD8C08 /* OnboardingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1093,6 +1126,7 @@
 				28A8694E25A79E8800987624 /* LoginViewModel.swift in Sources */,
 				289451C2259FD0DD00FF77DD /* AppCoordinator.swift in Sources */,
 				28D9734125B0EFB900CE97A0 /* UIImageView.swift in Sources */,
+				2823735125C187FE00D27044 /* CategoryResultViewController.swift in Sources */,
 				28FD653125A3E9DB004C9F0F /* Array.swift in Sources */,
 				289451D6259FD21600FF77DD /* UIView.swift in Sources */,
 				28A8698025A7BF0400987624 /* OTextFieldType.swift in Sources */,
@@ -1110,9 +1144,11 @@
 				28D9733A25B0EC7300CE97A0 /* Category.swift in Sources */,
 				28A8697D25A7BE6700987624 /* OTextField.swift in Sources */,
 				281C456A25A0C2FD00FD8C08 /* UIColor.swift in Sources */,
+				2823735E25C1C85B00D27044 /* CategoryProducts.swift in Sources */,
 				28D9733425B0EC5100CE97A0 /* Product.swift in Sources */,
 				2818BDC625BCBE0900310FEE /* KeywordCollectionViewCell.swift in Sources */,
 				288E8F1325AA62770009BFC8 /* AuthenticationResponse.swift in Sources */,
+				2823735A25C1C56700D27044 /* CategoryProductsResponse.swift in Sources */,
 				280A02DD25B9E5BE00318B6F /* SubCategoriesViewModel.swift in Sources */,
 				285C5D8B25B2798E007E13F0 /* Tabbar.swift in Sources */,
 				281C457025A0C97200FD8C08 /* OnboardingCoordinator.swift in Sources */,
@@ -1121,6 +1157,7 @@
 				28A8695225A79F3C00987624 /* AuthenticationRepository.swift in Sources */,
 				2818BDB525BC8E8C00310FEE /* SearchViewController.swift in Sources */,
 				281C451C25A0972400FD8C08 /* GetStartedView.swift in Sources */,
+				2823736425C1C89E00D27044 /* TireData.swift in Sources */,
 				285C5D8F25B27D3F007E13F0 /* TabbarViewController.swift in Sources */,
 				28ABF2C225C0A90800F29ED0 /* FavouriteButton.swift in Sources */,
 				28ABF01725BD7A9200F29ED0 /* ResetPasswordResponse.swift in Sources */,
@@ -1132,16 +1169,19 @@
 				28807C7125BCF57E008A2396 /* SearchHistoryTableViewCell.swift in Sources */,
 				28945193259FC9B100FF77DD /* AppDelegate.swift in Sources */,
 				28FD653725A4C522004C9F0F /* PageControl.swift in Sources */,
+				2823736725C1C8B900D27044 /* DataRecord.swift in Sources */,
 				28A8698325A7C89B00987624 /* UITextField.swift in Sources */,
 				280A02EB25B9FA7A00318B6F /* UINavigationController.swift in Sources */,
 				28D9733025B0E63800CE97A0 /* HomeResponse.swift in Sources */,
 				28DCFE1425AFA04A00F8D854 /* TabBarCoordinator.swift in Sources */,
 				28ABF0BC25C01B5400F29ED0 /* ProductManufaturer.swift in Sources */,
+				2823736125C1C88900D27044 /* Selection.swift in Sources */,
 				28ABF0B325C01B0800F29ED0 /* SearchResult.swift in Sources */,
 				281C452825A0A9B600FD8C08 /* OnboardingFlow.swift in Sources */,
 				2874F00C25A3A97D00A05111 /* OButton+ContentAlignment.swift in Sources */,
 				284A003C25B7B13600B158EE /* UITabbarItem.swift in Sources */,
 				289451DC259FD29700FF77DD /* API+NetworkRepository.swift in Sources */,
+				2823735525C1880A00D27044 /* CategoryResultViewModel.swift in Sources */,
 				289451C9259FD13A00FF77DD /* Coordinator.swift in Sources */,
 				280A02BE25B8A55F00318B6F /* Pagination.swift in Sources */,
 				28DCFE1F25AFB70B00F8D854 /* HomeViewModel.swift in Sources */,

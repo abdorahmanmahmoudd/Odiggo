@@ -81,6 +81,11 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     func retry() {
         debugPrint("Override by view controller subclass")
     }
+    
+    @objc
+    func searchPlaceholderTapped() {
+        (coordinator as? CategoriesCoordinator)?.gotoSearch()
+    }
 }
 
 // MARK: NavigationItem
