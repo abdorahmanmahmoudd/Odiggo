@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProductDetailsView" customModule="odiggo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXO-ux-gRp">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tcj-CK-vTa">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.icon" translatesAutoresizingMaskIntoConstraints="NO" id="QhT-Wb-x3I">
+                                    <rect key="frame" x="187.5" y="18" width="39" height="5"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="QhT-Wb-x3I" firstAttribute="top" secondItem="Tcj-CK-vTa" secondAttribute="top" constant="18" id="aOS-sQ-hJs"/>
+                                <constraint firstAttribute="bottom" secondItem="QhT-Wb-x3I" secondAttribute="bottom" constant="20" id="dB5-Pd-WFG"/>
+                                <constraint firstItem="QhT-Wb-x3I" firstAttribute="centerX" secondItem="Tcj-CK-vTa" secondAttribute="centerX" id="gxu-3o-uz5"/>
+                            </constraints>
+                        </view>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEu-uV-DZ9">
+                            <rect key="frame" x="0.0" y="43" width="414" height="809"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOW-tk-E5M">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="1240"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tkA-hU-xsh">
+                                            <rect key="frame" x="0.0" y="40" width="414" height="1200"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1200" id="0Nb-qy-u3U"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="tkA-hU-xsh" firstAttribute="top" secondItem="lOW-tk-E5M" secondAttribute="top" constant="40" id="01x-b7-HBO"/>
+                                        <constraint firstAttribute="bottom" secondItem="tkA-hU-xsh" secondAttribute="bottom" id="M8b-z0-1UT"/>
+                                        <constraint firstAttribute="trailing" secondItem="tkA-hU-xsh" secondAttribute="trailing" id="OcS-3e-Qdw"/>
+                                        <constraint firstItem="tkA-hU-xsh" firstAttribute="leading" secondItem="lOW-tk-E5M" secondAttribute="leading" id="Rhp-8j-4GO"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="lOW-tk-E5M" secondAttribute="bottom" id="1Xc-5S-34Z"/>
+                                <constraint firstAttribute="trailing" secondItem="lOW-tk-E5M" secondAttribute="trailing" id="Im9-bx-El8"/>
+                                <constraint firstItem="lOW-tk-E5M" firstAttribute="leading" secondItem="HEu-uV-DZ9" secondAttribute="leading" id="O44-ai-rcj"/>
+                                <constraint firstItem="lOW-tk-E5M" firstAttribute="top" secondItem="HEu-uV-DZ9" secondAttribute="top" id="nUh-2l-QnA"/>
+                            </constraints>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="HEu-uV-DZ9" firstAttribute="leading" secondItem="WXO-ux-gRp" secondAttribute="leading" id="2PO-uu-ong"/>
+                        <constraint firstAttribute="trailing" secondItem="Tcj-CK-vTa" secondAttribute="trailing" id="KfC-sD-3K7"/>
+                        <constraint firstItem="Tcj-CK-vTa" firstAttribute="leading" secondItem="WXO-ux-gRp" secondAttribute="leading" id="Kgf-lc-YYr"/>
+                        <constraint firstItem="Tcj-CK-vTa" firstAttribute="top" secondItem="WXO-ux-gRp" secondAttribute="top" id="Qms-Zt-c0I"/>
+                        <constraint firstAttribute="trailing" secondItem="HEu-uV-DZ9" secondAttribute="trailing" id="Ya4-bE-22R"/>
+                        <constraint firstItem="lOW-tk-E5M" firstAttribute="width" secondItem="WXO-ux-gRp" secondAttribute="width" id="dij-hj-QOY"/>
+                        <constraint firstItem="HEu-uV-DZ9" firstAttribute="top" secondItem="Tcj-CK-vTa" secondAttribute="bottom" id="eyb-fe-8uZ"/>
+                        <constraint firstAttribute="bottom" secondItem="HEu-uV-DZ9" secondAttribute="bottom" id="yXw-xn-niG"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="WXO-ux-gRp" secondAttribute="trailing" id="f7G-lu-VgU"/>
+                <constraint firstAttribute="bottom" secondItem="WXO-ux-gRp" secondAttribute="bottom" id="fn9-YY-ddT"/>
+                <constraint firstItem="WXO-ux-gRp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="one-KF-hMX"/>
+                <constraint firstItem="WXO-ux-gRp" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="qJs-NI-8tC"/>
+            </constraints>
+            <connections>
+                <outlet property="handleView" destination="Tcj-CK-vTa" id="Htd-OZ-gcx"/>
+                <outlet property="scrollView" destination="HEu-uV-DZ9" id="sCF-2z-tb7"/>
+            </connections>
+            <point key="canvasLocation" x="119" y="130"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="line.icon" width="39" height="5"/>
+    </resources>
+</document>

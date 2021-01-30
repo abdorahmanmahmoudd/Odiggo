@@ -89,7 +89,7 @@ final class OTextField: UITextField {
     }
     
     override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
-        return CGRect(x: bounds.width - 30, y: 0, width: 30, height: bounds.height)
+        return CGRect(x: bounds.width - 44, y: 0, width: 44, height: bounds.height)
     }
     
     override func leftViewRect(forBounds bounds: CGRect) -> CGRect {

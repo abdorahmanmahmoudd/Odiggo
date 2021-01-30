@@ -192,3 +192,41 @@ extension CategoriesCoordinator {
         }
     }
 }
+
+// MARK: ProductDetails
+extension CategoriesCoordinator {
+    
+    func startProductDetails(with product: Product) {
+        
+        /// Otherwise open a new one
+        let productVM = ProductDetailsViewModel(api.categoriesRepository, product: product)
+        let productVC = ProductDetailsViewController.create(payload: productVM)
+        productVC.coordinator = self
+        navigationController.pushViewController(productVC, animated: true)
+    }
+    
+    func productSelected(_ product: Product) {
+        
+        if let productVC = navigationController.visibleViewController as? ProductDetailsViewController {
+            debugPrint("\(productVC) already presented")
+            
+        } else {
+            
+            var screenExists = false
+            /// Check for an existing screen
+            for viewController in navigationController.viewControllers {
+                
+                if let productVC = viewController as? ProductDetailsViewController {
+                
+                    navigationController.popToViewController(productVC, animated: true)
+                    screenExists = true
+                    break
+                }
+            }
+            /// otheriwse start a new screen
+            if !screenExists {
+                startProductDetails(with: product)
+            }
+        }
+    }
+}

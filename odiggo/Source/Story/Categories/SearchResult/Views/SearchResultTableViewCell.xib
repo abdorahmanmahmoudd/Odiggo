@@ -30,34 +30,31 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tire.placeholder.icon" translatesAutoresizingMaskIntoConstraints="NO" id="8en-5w-156">
-                        <rect key="frame" x="0.0" y="0.0" width="126" height="121"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="126" id="qfB-b3-d7a"/>
-                        </constraints>
+                        <rect key="frame" x="0.0" y="0.0" width="124" height="121"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" ambiguous="YES" text="WINDA 155/70 R13 TIRE - WP15 - | CHINA" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1A-h2-BP2">
-                        <rect key="frame" x="142" y="16" width="169.5" height="34.5"/>
+                        <rect key="frame" x="140" y="16" width="207" height="34.5"/>
                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
                         <color key="textColor" name="blackThree"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="4.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qkp-2R-gWj">
-                        <rect key="frame" x="142" y="66.5" width="18.5" height="16"/>
+                        <rect key="frame" x="140" y="66.5" width="18.5" height="16"/>
                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="13"/>
                         <color key="textColor" name="blackThree"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="star.icon" translatesAutoresizingMaskIntoConstraints="NO" id="e55-hL-JCy">
-                        <rect key="frame" x="164.5" y="68.5" width="13" height="12"/>
+                        <rect key="frame" x="162.5" y="68.5" width="13" height="12"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="(9)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U37-cr-wUa">
-                        <rect key="frame" x="185.5" y="66.5" width="14" height="16"/>
+                        <rect key="frame" x="183.5" y="66.5" width="14" height="16"/>
                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="13"/>
                         <color key="textColor" name="warmGreyTwo"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcp-MF-2ZD">
-                        <rect key="frame" x="142" y="90.5" width="49" height="21"/>
+                        <rect key="frame" x="140" y="90.5" width="49" height="21"/>
                         <attributedString key="attributedText">
                             <fragment content="399">
                                 <attributes>
@@ -106,6 +103,7 @@
                     <constraint firstItem="QXE-kM-YYP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="w1A-h2-BP2" secondAttribute="trailing" constant="16" id="GkU-Rv-u4Q"/>
                     <constraint firstItem="e55-hL-JCy" firstAttribute="centerY" secondItem="Qkp-2R-gWj" secondAttribute="centerY" id="I36-3a-VIx"/>
                     <constraint firstAttribute="trailing" secondItem="QXE-kM-YYP" secondAttribute="trailing" constant="16" id="NDJ-JS-Wje"/>
+                    <constraint firstItem="8en-5w-156" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.3" id="UMM-9Z-avQ"/>
                     <constraint firstItem="Qkp-2R-gWj" firstAttribute="top" secondItem="w1A-h2-BP2" secondAttribute="bottom" constant="16" id="VxI-vK-IbU"/>
                     <constraint firstItem="Qkp-2R-gWj" firstAttribute="leading" secondItem="w1A-h2-BP2" secondAttribute="leading" id="bt8-LJ-tCk"/>
                     <constraint firstItem="fcp-MF-2ZD" firstAttribute="leading" secondItem="Qkp-2R-gWj" secondAttribute="leading" id="btb-P2-rsM"/>
@@ -136,7 +134,7 @@
     </objects>
     <resources>
         <image name="button.green.background" width="136" height="42"/>
-        <image name="cart.icon" width="19" height="22"/>
+        <image name="cart.icon" width="24" height="24"/>
         <image name="star.icon" width="13" height="12"/>
         <image name="tire.placeholder.icon" width="126" height="121"/>
         <namedColor name="blackThree">

@@ -110,8 +110,7 @@ extension HomeViewController: UICollectionViewDataSource {
             fatalError("Couldn't dequeue a cell of type \(HomeCollectionViewCell.self)")
         }
         cell.configure(viewModel.itemForIndexPath(indexPath),
-                       HomeColorsCollection.getNextColor(indexedBy: indexPath.row),
-                       HomeColorsCollection.getDescription(indexPath.item))
+                       HomeColorsCollection.getNextColor(indexedBy: indexPath.row))
         return cell
     }
 }
@@ -150,8 +149,7 @@ extension HomeViewController: PinterestLayoutDelegate {
         
         /// configure cell with data
         cell.configure(viewModel.itemForIndexPath(indexPath),
-                       HomeColorsCollection.getNextColor(indexedBy: indexPath.row),
-                       HomeColorsCollection.getDescription(indexPath.item))
+                       HomeColorsCollection.getNextColor(indexedBy: indexPath.row))
         
         /// calculate cell size
         let cellSize = self.cellSize(cell)

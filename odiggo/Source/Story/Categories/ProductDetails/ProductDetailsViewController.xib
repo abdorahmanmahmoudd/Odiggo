@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductDetailsViewController" customModule="odiggo" customModuleProvider="target">
+            <connections>
+                <outlet property="imageContainerHeightConstraint" destination="f4Y-7P-T0t" id="5te-qb-REU"/>
+                <outlet property="imagesCollectionView" destination="PUE-Zm-eSU" id="IBj-32-60D"/>
+                <outlet property="pageControlView" destination="JLE-qX-FLi" id="qQ5-eP-zeT"/>
+                <outlet property="pageControlViewHeightConstraint" destination="Eb2-ZH-5eR" id="uYR-Zx-Ee6"/>
+                <outlet property="productDetailsContainerView" destination="iKz-a9-L1x" id="cVe-5k-jHF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mfq-wa-PcT">
+                    <rect key="frame" x="0.0" y="24" width="414" height="457"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="PUE-Zm-eSU">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="411.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="KpQ-mX-wx5">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLE-qX-FLi" customClass="PageControl" customModule="odiggo" customModuleProvider="target">
+                            <rect key="frame" x="16" y="411.5" width="382" height="45.5"/>
+                            <color key="backgroundColor" systemColor="systemBlueColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="numberOfPages">
+                                    <integer key="value" value="0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="pageIndicatorTintColor">
+                                    <color key="value" name="paleRose"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="currentPageIndicatorTintColor">
+                                    <color key="value" name="pinkishRed"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="JLE-qX-FLi" firstAttribute="height" secondItem="mfq-wa-PcT" secondAttribute="height" multiplier="0.1" id="Eb2-ZH-5eR"/>
+                        <constraint firstAttribute="trailing" secondItem="JLE-qX-FLi" secondAttribute="trailing" constant="16" id="MrI-2P-XoA"/>
+                        <constraint firstAttribute="bottom" secondItem="JLE-qX-FLi" secondAttribute="bottom" id="Pq6-sQ-0RI"/>
+                        <constraint firstAttribute="trailing" secondItem="PUE-Zm-eSU" secondAttribute="trailing" id="aaP-2B-g44"/>
+                        <constraint firstItem="PUE-Zm-eSU" firstAttribute="leading" secondItem="mfq-wa-PcT" secondAttribute="leading" id="l3Q-hf-mPw"/>
+                        <constraint firstItem="JLE-qX-FLi" firstAttribute="top" secondItem="PUE-Zm-eSU" secondAttribute="bottom" id="lYq-Hr-Mbg"/>
+                        <constraint firstItem="JLE-qX-FLi" firstAttribute="leading" secondItem="mfq-wa-PcT" secondAttribute="leading" constant="16" id="mlv-CQ-lKg"/>
+                        <constraint firstItem="PUE-Zm-eSU" firstAttribute="top" secondItem="mfq-wa-PcT" secondAttribute="top" id="uB9-NZ-osS"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iKz-a9-L1x">
+                    <rect key="frame" x="0.0" y="481" width="414" height="381"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="whiteTwo"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mfq-wa-PcT" secondAttribute="trailing" id="BDc-PD-1wl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="iKz-a9-L1x" secondAttribute="bottom" id="MDO-WR-JaH"/>
+                <constraint firstItem="mfq-wa-PcT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cke-mS-GBY"/>
+                <constraint firstItem="iKz-a9-L1x" firstAttribute="top" secondItem="mfq-wa-PcT" secondAttribute="bottom" id="dlU-5I-i9C"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iKz-a9-L1x" secondAttribute="trailing" id="ePw-Ck-eJP"/>
+                <constraint firstItem="mfq-wa-PcT" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.51" id="f4Y-7P-T0t"/>
+                <constraint firstItem="mfq-wa-PcT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="24" id="jXi-RE-thC"/>
+                <constraint firstItem="iKz-a9-L1x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kde-ew-gqH"/>
+            </constraints>
+            <point key="canvasLocation" x="-113.04347826086958" y="14.732142857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="paleRose">
+            <color red="0.99607843137254903" green="0.74509803921568629" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="pinkishRed">
+            <color red="0.89411764705882357" green="0.062745098039215685" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="whiteTwo">
+            <color red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

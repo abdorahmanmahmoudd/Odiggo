@@ -11,6 +11,7 @@ enum NavigationItemStyle {
     case homePageStyle(items: [UIBarButtonItem])
     case searchPlaceHolderStyle(items: [UIBarButtonItem])
     case resultStyle(title: String, items: [UIBarButtonItem])
+    case detailsStyle(leftItems: [UIBarButtonItem], rightItems: [UIBarButtonItem])
 }
 
 extension UINavigationItem {
@@ -34,6 +35,10 @@ extension UINavigationItem {
             leftBarButtonItems = items
             configureTitleView(with: title)
             
+        case .detailsStyle(let leftItems, let rightItems):
+            setHidesBackButton(true, animated: false)
+            leftBarButtonItems = leftItems
+            rightBarButtonItems = rightItems
         }
     }
     

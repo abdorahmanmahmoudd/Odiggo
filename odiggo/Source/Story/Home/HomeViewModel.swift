@@ -37,7 +37,6 @@ extension HomeViewModel {
                 return
             }
             self.topCategories = data.top_categories ?? []
-            self.topCategories.append(contentsOf: data.top_categories ?? [])
             self.resultState()
             
         }, onError: { [weak self] error in

@@ -139,7 +139,12 @@ extension CategoryResultViewController: UITableViewDataSource {
 extension CategoryResultViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let product = viewModel.item(for: indexPath) else {
+            return
+        }
         debugPrint("didSelectRowAt \(String(describing: viewModel.item(for: indexPath)?.name))")
+        (coordinator as? CategoriesCoordinator)?.productSelected(product)
     }
 }
 

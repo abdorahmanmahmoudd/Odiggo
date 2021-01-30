@@ -110,6 +110,10 @@ extension BaseViewController {
             hideNavigationBar()
             navigationItem.configure(with: .resultStyle(title: title, items: items))
             
+        case .detailsStyle(let leftItems, let rightItems):
+            hideNavigationBar()
+            navigationItem.configure(with: .detailsStyle(leftItems: leftItems, rightItems: rightItems))
+            
         case .none:
             debugPrint("Navigation type not set for BaseViewController")
         }

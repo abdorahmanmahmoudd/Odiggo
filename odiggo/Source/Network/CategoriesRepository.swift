@@ -15,6 +15,7 @@ protocol CategoriesRepository {
     func fetchKeywords(_ term: String) -> Single<SearchAutoCompleteResponse?>
     func search(_ query: String) -> Single<SearchResultResponse?>
     func productsCategory(_ id: String) -> Single<CategoryProductsResponse?>
+    func productDetails(_ id: String) -> Single<ProductDetailsResponse?>
 }
 
 /// Every repository implementation should subclass the `API`
@@ -27,6 +28,7 @@ final class CategoriesAPI: API, CategoriesRepository {
         case searchAutoComplete = "/api/customer/product/searchautocomplete"
         case productSearch = "/api/customer/product/search"
         case categoryProducts = "/api/customer/products-by-category/"
+        case productById = "/api/customer/product/"
     }
 }
 
@@ -84,6 +86,17 @@ extension CategoriesAPI {
     func productsCategory(_ categoryId: String) -> Single<CategoryProductsResponse?> {
         
         let fullUrl = baseUrl(of: .production) + Endpoint.categoryProducts.rawValue + categoryId
+        
+        guard let request = request(fullUrl: fullUrl, method: .get, parameters: [:]) else {
+            return .error(APIError.invalidRequest)
+        }
+        
+        return response(for: request).observeOn(MainScheduler.instance)
+    }
+    
+    func productDetails(_ id: String) -> Single<ProductDetailsResponse?> {
+        
+        let fullUrl = baseUrl(of: .production) + Endpoint.productById.rawValue + id
         
         guard let request = request(fullUrl: fullUrl, method: .get, parameters: [:]) else {
             return .error(APIError.invalidRequest)

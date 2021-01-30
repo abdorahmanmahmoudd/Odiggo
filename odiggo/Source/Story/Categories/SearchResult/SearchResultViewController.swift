@@ -119,6 +119,11 @@ extension SearchResultViewController: UITableViewDataSource {
 extension SearchResultViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let product = viewModel.item(for: indexPath) else {
+            return
+        }
+        (coordinator as? CategoriesCoordinator)?.productSelected(product)
         debugPrint("didSelectRowAt \(String(describing: viewModel.item(for: indexPath)?.name))")
     }
 }
