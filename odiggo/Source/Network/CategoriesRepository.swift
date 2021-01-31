@@ -14,7 +14,7 @@ protocol CategoriesRepository {
     func fetchSubCategories(page: Int, categoryId: String) -> Single<CategoriesResponse?>
     func fetchKeywords(_ term: String) -> Single<SearchAutoCompleteResponse?>
     func search(_ query: String) -> Single<SearchResultResponse?>
-    func productsCategory(_ id: String) -> Single<CategoryProductsResponse?>
+    func categoryProducts(_ id: String, page: Int) -> Single<CategoryProductsResponse?>
     func productDetails(_ id: String) -> Single<ProductDetailsResponse?>
 }
 
@@ -83,11 +83,12 @@ extension CategoriesAPI {
         return response(for: request).observeOn(MainScheduler.instance)
     }
     
-    func productsCategory(_ categoryId: String) -> Single<CategoryProductsResponse?> {
+    func categoryProducts(_ id: String, page: Int) -> Single<CategoryProductsResponse?> {
         
-        let fullUrl = baseUrl(of: .production) + Endpoint.categoryProducts.rawValue + categoryId
+        let fullUrl = baseUrl(of: .production) + Endpoint.categoryProducts.rawValue + id
+        let httpBody = ["page": "\(page)"]
         
-        guard let request = request(fullUrl: fullUrl, method: .get, parameters: [:]) else {
+        guard let request = request(fullUrl: fullUrl, method: .get, parameters: httpBody) else {
             return .error(APIError.invalidRequest)
         }
         

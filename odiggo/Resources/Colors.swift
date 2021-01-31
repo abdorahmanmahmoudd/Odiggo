@@ -31,5 +31,6 @@ extension UIColor {
         case greyishBrown
         case blackFour
         case brownishGrey
+        case mediumGreen
     }
 }

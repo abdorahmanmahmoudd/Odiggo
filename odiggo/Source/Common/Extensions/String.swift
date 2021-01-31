@@ -59,19 +59,82 @@ extension String {
     }
     
     /// A helper method to get a string in the pricing format -> `price`,Currency
-    func priceLabeled() -> NSAttributedString {
+    func priceLabeled(_ priceSize: UIFont.FontSize = .medium, _ labelSize: UIFont.FontSize = .small,
+                      with priceColor: UIColor.Colors = .brownishGrey) -> NSAttributedString {
         
-        let priceAttributes = [.font: UIFont.font(.primaryBold, 17),
-                               .foregroundColor: UIColor.color(color: .brownishGrey)] as [NSAttributedString.Key: Any]
+        let priceAttributes = [.font: UIFont.font(.primaryBold, priceSize),
+                               .foregroundColor: UIColor.color(color: priceColor)] as [NSAttributedString.Key: Any]
         let mutableAttributedPrice = NSMutableAttributedString(string: self, attributes: priceAttributes)
         
         let currentString = "CURRENCY_Abb".localized
-        let currencyAttributes = [.font: UIFont.font(.primaryMedium, .small),
+        let currencyAttributes = [.font: UIFont.font(.primaryMedium, labelSize),
                                   .foregroundColor: UIColor.color(color: .brownishGrey)] as [NSAttributedString.Key: Any]
         let attributedCurrency = NSAttributedString(string: currentString, attributes: currencyAttributes)
         
         mutableAttributedPrice.append(attributedCurrency)
         
         return mutableAttributedPrice
+    }
+    
+    /// A helper method to get a string underlined
+    func underlinedText() -> NSAttributedString {
+        var attributes: [NSAttributedString.Key: Any] = [:]
+        attributes[NSAttributedString.Key.underlineStyle] = NSUnderlineStyle.single.rawValue
+
+        return NSAttributedString(string: self, attributes: attributes)
+    }
+    
+    // MARK: - Helper methods to convert HTML string to NSAttributed String.
+    func htmlAttributedString() -> NSAttributedString {
+        
+        let data = Data(self.utf8)
+        let attributedString = try? NSAttributedString(data: data,
+                                                       options: [.documentType: NSAttributedString.DocumentType.html],
+                                                       documentAttributes: nil)
+        return attributedString ?? NSAttributedString(string: self)
+    }
+    
+    
+    var htmlToAttributedString: NSAttributedString {
+
+        let attributeKey = NSAttributedString.DocumentAttributeKey.self
+        if let options = [
+            attributeKey.documentType.rawValue: NSAttributedString.DocumentType.html,
+            attributeKey.characterEncoding: String.Encoding.utf8.rawValue,
+        ] as? [NSAttributedString.DocumentReadingOptionKey: Any] {
+
+            guard let htmlData = data(using: String.Encoding.utf8) else {
+                return NSAttributedString(string: self)
+            }
+
+            if let attributedString = try? NSAttributedString(data: htmlData, options: options, documentAttributes: nil) {
+                return attributedString
+            }
+        }
+        return NSAttributedString(string: self)
+    }
+
+    func htmlToAttributedString(withFont font: UIFont?, andColor color: UIColor?) -> NSAttributedString? {
+
+        let attributeKey = NSAttributedString.DocumentAttributeKey.self
+        if let options = [
+            attributeKey.documentType.rawValue: NSAttributedString.DocumentType.html,
+            attributeKey.characterEncoding: String.Encoding.utf8.rawValue,
+        ] as? [NSAttributedString.DocumentReadingOptionKey: Any] {
+
+            guard let htmlData = data(using: String.Encoding.utf8) else {
+                return nil
+            }
+
+            if let attributedString = try? NSMutableAttributedString(data: htmlData, options: options, documentAttributes: nil) {
+                var attributes = attributedString.attributes(at: 0, effectiveRange: nil)
+                attributes[NSAttributedString.Key.font] = font
+                attributes[NSAttributedString.Key.foregroundColor] = color
+                attributes[NSAttributedString.Key.strokeColor] = color
+                attributedString.setAttributes(attributes, range: NSRange(location: 0, length: attributedString.length))
+                return attributedString
+            }
+        }
+        return nil
     }
 }

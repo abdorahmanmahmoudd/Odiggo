@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ProductReviewCollectionViewCell" customModule="odiggo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="171" height="85"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="171" height="85"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w04-ZI-usd">
+                        <rect key="frame" x="0.0" y="0.0" width="171" height="85"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile.pic" translatesAutoresizingMaskIntoConstraints="NO" id="DlJ-aW-cDt">
+                                <rect key="frame" x="7" y="7" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="85I-bP-ZKh"/>
+                                    <constraint firstAttribute="width" constant="28" id="JYj-Sr-qCB"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="haE-Mf-eIQ">
+                                <rect key="frame" x="42" y="7" width="29.5" height="14"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
+                                <color key="textColor" name="blackThree"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dg-Ie-dul">
+                                <rect key="frame" x="42" y="27" width="14" height="8"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="10"/>
+                                <color key="textColor" name="blackThree"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.icon" translatesAutoresizingMaskIntoConstraints="NO" id="Jxr-ZT-kf8">
+                                <rect key="frame" x="60" y="27" width="8" height="8"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="8" id="hEo-IZ-xpW"/>
+                                    <constraint firstAttribute="height" constant="8" id="x4h-Mq-cRn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ke-Hm-m8l">
+                                <rect key="frame" x="7" y="42" width="157" height="13"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11"/>
+                                <color key="textColor" name="warmGrey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DlJ-aW-cDt" firstAttribute="top" secondItem="w04-ZI-usd" secondAttribute="top" constant="7" id="1xs-lX-vRs"/>
+                            <constraint firstItem="haE-Mf-eIQ" firstAttribute="leading" secondItem="DlJ-aW-cDt" secondAttribute="trailing" constant="7" id="26u-pP-rkW"/>
+                            <constraint firstItem="Jxr-ZT-kf8" firstAttribute="top" secondItem="haE-Mf-eIQ" secondAttribute="bottom" constant="6" id="2d2-Ue-yLn"/>
+                            <constraint firstItem="5Ke-Hm-m8l" firstAttribute="top" secondItem="Jxr-ZT-kf8" secondAttribute="bottom" constant="7" id="8pJ-f4-0s2"/>
+                            <constraint firstItem="5Ke-Hm-m8l" firstAttribute="leading" secondItem="w04-ZI-usd" secondAttribute="leading" constant="7" id="L2q-lP-X7n"/>
+                            <constraint firstItem="Jxr-ZT-kf8" firstAttribute="leading" secondItem="5dg-Ie-dul" secondAttribute="trailing" constant="4" id="PkB-kK-Gr8"/>
+                            <constraint firstItem="DlJ-aW-cDt" firstAttribute="leading" secondItem="w04-ZI-usd" secondAttribute="leading" constant="7" id="Qwz-Rl-SKj"/>
+                            <constraint firstItem="5dg-Ie-dul" firstAttribute="leading" secondItem="haE-Mf-eIQ" secondAttribute="leading" id="VyJ-jM-Xvb"/>
+                            <constraint firstItem="Jxr-ZT-kf8" firstAttribute="centerY" secondItem="5dg-Ie-dul" secondAttribute="centerY" id="ZvL-ep-73n"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="haE-Mf-eIQ" secondAttribute="trailing" constant="7" id="bj8-N6-nkH"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5Ke-Hm-m8l" secondAttribute="bottom" constant="7" id="ojt-Ud-aBd"/>
+                            <constraint firstItem="haE-Mf-eIQ" firstAttribute="top" secondItem="w04-ZI-usd" secondAttribute="top" constant="7" id="qlP-Zp-ZUU"/>
+                            <constraint firstAttribute="trailing" secondItem="5Ke-Hm-m8l" secondAttribute="trailing" constant="7" id="ruC-wG-vC2"/>
+                            <constraint firstItem="5dg-Ie-dul" firstAttribute="top" secondItem="haE-Mf-eIQ" secondAttribute="bottom" constant="6" id="wbH-Zw-OKy"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="w04-ZI-usd" secondAttribute="trailing" id="8Za-oV-U0Y"/>
+                <constraint firstItem="w04-ZI-usd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9VL-Gy-rpk"/>
+                <constraint firstAttribute="bottom" secondItem="w04-ZI-usd" secondAttribute="bottom" id="iVs-jk-zp3"/>
+                <constraint firstItem="w04-ZI-usd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sli-ej-smD"/>
+            </constraints>
+            <connections>
+                <outlet property="containerView" destination="w04-ZI-usd" id="kPm-b7-a8A"/>
+                <outlet property="feedbackLabel" destination="5Ke-Hm-m8l" id="MGB-qT-eCe"/>
+                <outlet property="nameLabel" destination="haE-Mf-eIQ" id="uTT-Av-LGX"/>
+                <outlet property="profilePicImageView" destination="DlJ-aW-cDt" id="oKI-6P-bGL"/>
+                <outlet property="rateLabel" destination="5dg-Ie-dul" id="Bgc-oa-sL5"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="130"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="profile.pic" width="28" height="28"/>
+        <image name="star.icon" width="13" height="12"/>
+        <namedColor name="blackThree">
+            <color red="0.21176470588235294" green="0.21176470588235294" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="warmGrey">
+            <color red="0.47450980392156861" green="0.47450980392156861" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

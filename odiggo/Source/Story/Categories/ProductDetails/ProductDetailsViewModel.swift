@@ -37,4 +37,8 @@ extension ProductDetailsViewModel {
     func image(for index: IndexPath) -> String? {
         return productImages[safe: index.item] ?? ""
     }
+    
+    func productDetails() -> Product {
+        return selectedProduct
+    }
 }

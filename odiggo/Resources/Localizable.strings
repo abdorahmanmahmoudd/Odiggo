@@ -69,3 +69,17 @@
 "SEARCH_RESULT" = "Search Results";
 "NO_RESULT_TITLE" = "No Result Found";
 "NO_RESULT_DESC" = "Try Change the filters or search term";
+
+// MARK: Product Details
+"CATEGORIES_TITLE" = "Categories:";
+"FROM_TITLE" = "From:";
+"AVAILABILITY_TITLE" = "Availability:";
+"MPN_TITLE" = "Mpn:";
+"FAST_SHIPPING_TITLE" = "Fast shipping";
+"FREE_DELIVERY_TITLE" = "Free shipping";
+"FREE_RETURNS_TITLE" = "Enjoy Hassle free returns";
+"PRODUCT_REVIEWS_TITLE" = "Product Reviews";
+"RELATED_PRODUCTS_TITLE" = "Related Products";
+"VIEW_ALL_TITLE" = "View All";
+"IN_STOCK" = "In Stock";
+"ABOUT_PRODUCT_TITLE" = "About Product";

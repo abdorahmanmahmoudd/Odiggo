@@ -55,7 +55,7 @@ final class ProductDetailsViewController: BaseViewController {
                                                               target: nil)
         
         navigationItemStyle = NavigationItemStyle.detailsStyle(leftItems: [backButton].compactMap({ $0 }),
-                                                               rightItems: [shareButton, cartButton].compactMap({ $0 }))
+                                                               rightItems: [cartButton, shareButton].compactMap({ $0 }))
     }
     
     private func configureViews() {
@@ -63,6 +63,7 @@ final class ProductDetailsViewController: BaseViewController {
         embedProductDetailsView()
         configurePanGesture()
         pageControlView.addTarget(self, action: #selector(onPageChanged(_:)), for: .valueChanged)
+        pageControlView.hightlightedDotSelection = false
     }
     
     private func configureImagesCollectionView() {
@@ -72,7 +73,6 @@ final class ProductDetailsViewController: BaseViewController {
         if let flowLayout = imagesCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
-
         
         let nib = UINib(nibName: ProductImageCollectionViewCell.identifier, bundle: Bundle.main)
         imagesCollectionView.register(nib, forCellWithReuseIdentifier: ProductImageCollectionViewCell.identifier)
@@ -85,13 +85,8 @@ final class ProductDetailsViewController: BaseViewController {
         productDetailsContainerView.addSubview(pdv)
         pdv.activateConstraints(for: productDetailsContainerView)
         pdv.scrollView.isScrollEnabled = false
-        self.productDetailsView = pdv
-    }
-    
-    func configurePanGesture() {
-        panGesture.cancelsTouchesInView = false
-        panGesture.delegate = self
-        view.addGestureRecognizer(panGesture)
+        productDetailsView = pdv
+        productDetailsView.configure(with: viewModel.productDetails())
     }
     
     private func bindObservables() {
@@ -128,7 +123,13 @@ final class ProductDetailsViewController: BaseViewController {
         viewModel.fetchProduct()
     }
     
-    // MARK: - Pan Gesture recognizer overrides
+    // MARK: - Pan Gesture recognizer Related
+    func configurePanGesture() {
+        panGesture.cancelsTouchesInView = false
+        panGesture.delegate = self
+        view.addGestureRecognizer(panGesture)
+    }
+    
     override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
          
         /// Only apply our logic to our pan gesture
@@ -253,6 +254,7 @@ extension ProductDetailsViewController: UIScrollViewDelegate {
     
     func setPages(_ pages: Int) {
         pageControlView.numberOfPages = pages
+        setCurrentPage(0)
     }
     
     func setCurrentPage(_ page: Int) {

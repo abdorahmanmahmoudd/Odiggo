@@ -33,32 +33,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="124" height="121"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" ambiguous="YES" text="WINDA 155/70 R13 TIRE - WP15 - | CHINA" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1A-h2-BP2">
-                        <rect key="frame" x="140" y="16" width="207" height="34.5"/>
+                        <rect key="frame" x="136" y="16" width="211" height="34.5"/>
                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
                         <color key="textColor" name="blackThree"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="4.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qkp-2R-gWj">
-                        <rect key="frame" x="140" y="66.5" width="18.5" height="16"/>
+                        <rect key="frame" x="136" y="66.5" width="18.5" height="16"/>
                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="13"/>
                         <color key="textColor" name="blackThree"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="star.icon" translatesAutoresizingMaskIntoConstraints="NO" id="e55-hL-JCy">
-                        <rect key="frame" x="162.5" y="68.5" width="13" height="12"/>
+                        <rect key="frame" x="158.5" y="68.5" width="13" height="12"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="(9)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U37-cr-wUa">
-                        <rect key="frame" x="183.5" y="66.5" width="14" height="16"/>
+                        <rect key="frame" x="179.5" y="66.5" width="14" height="16"/>
                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="13"/>
                         <color key="textColor" name="warmGreyTwo"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcp-MF-2ZD">
-                        <rect key="frame" x="140" y="90.5" width="49" height="21"/>
+                        <rect key="frame" x="136" y="90.5" width="49" height="21"/>
                         <attributedString key="attributedText">
                             <fragment content="399">
                                 <attributes>
-                                    <color key="NSColor" name="greyishBrown"/>
+                                    <color key="NSColor" red="0.21176470588235294" green="0.21176470588235294" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                     <font key="NSFont" size="17" name="Montserrat-Bold"/>
                                 </attributes>
                             </fragment>
@@ -78,7 +78,7 @@
                             <constraint firstAttribute="width" constant="35" id="ZDJ-eK-aHo"/>
                         </constraints>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOB-Fb-3ik">
+                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOB-Fb-3ik">
                         <rect key="frame" x="278" y="79" width="136" height="42"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="42" id="P1Q-gr-4if"/>
@@ -98,7 +98,7 @@
                     <constraint firstItem="w1A-h2-BP2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="3Hq-UR-cdJ"/>
                     <constraint firstItem="QXE-kM-YYP" firstAttribute="centerY" secondItem="w1A-h2-BP2" secondAttribute="centerY" id="5Fh-U1-hOE"/>
                     <constraint firstAttribute="bottom" secondItem="8en-5w-156" secondAttribute="bottom" id="6Rh-hp-bxu"/>
-                    <constraint firstItem="w1A-h2-BP2" firstAttribute="leading" secondItem="8en-5w-156" secondAttribute="trailing" constant="16" id="8FQ-Ju-Cwp"/>
+                    <constraint firstItem="w1A-h2-BP2" firstAttribute="leading" secondItem="8en-5w-156" secondAttribute="trailing" constant="12" id="8FQ-Ju-Cwp"/>
                     <constraint firstItem="8en-5w-156" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="FaC-yC-R3K"/>
                     <constraint firstItem="QXE-kM-YYP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="w1A-h2-BP2" secondAttribute="trailing" constant="16" id="GkU-Rv-u4Q"/>
                     <constraint firstItem="e55-hL-JCy" firstAttribute="centerY" secondItem="Qkp-2R-gWj" secondAttribute="centerY" id="I36-3a-VIx"/>
@@ -110,6 +110,7 @@
                     <constraint firstAttribute="trailing" secondItem="YOB-Fb-3ik" secondAttribute="trailing" id="gb3-xH-AEI"/>
                     <constraint firstAttribute="bottom" secondItem="YOB-Fb-3ik" secondAttribute="bottom" id="gnN-WA-Pjr"/>
                     <constraint firstAttribute="bottom" secondItem="fcp-MF-2ZD" secondAttribute="bottom" constant="9.5" id="m2V-xf-4pC"/>
+                    <constraint firstItem="YOB-Fb-3ik" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fcp-MF-2ZD" secondAttribute="trailing" constant="2" id="pdZ-I9-DCs"/>
                     <constraint firstItem="e55-hL-JCy" firstAttribute="leading" secondItem="Qkp-2R-gWj" secondAttribute="trailing" constant="4" id="pf5-3T-OJd"/>
                     <constraint firstItem="8en-5w-156" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="u0K-Yl-qdK"/>
                     <constraint firstItem="U37-cr-wUa" firstAttribute="leading" secondItem="e55-hL-JCy" secondAttribute="trailing" constant="8" id="vla-td-KrG"/>
@@ -134,7 +135,7 @@
     </objects>
     <resources>
         <image name="button.green.background" width="136" height="42"/>
-        <image name="cart.icon" width="24" height="24"/>
+        <image name="cart.icon" width="19" height="22"/>
         <image name="star.icon" width="13" height="12"/>
         <image name="tire.placeholder.icon" width="126" height="121"/>
         <namedColor name="blackThree">

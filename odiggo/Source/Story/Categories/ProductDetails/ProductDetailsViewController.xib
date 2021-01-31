@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -39,8 +38,8 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLE-qX-FLi" customClass="PageControl" customModule="odiggo" customModuleProvider="target">
-                            <rect key="frame" x="16" y="411.5" width="382" height="45.5"/>
-                            <color key="backgroundColor" systemColor="systemBlueColor"/>
+                            <rect key="frame" x="24" y="411.5" width="366" height="45.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="numberOfPages">
                                     <integer key="value" value="0"/>
@@ -56,13 +55,13 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="JLE-qX-FLi" firstAttribute="centerX" secondItem="mfq-wa-PcT" secondAttribute="centerX" id="3q8-hq-sIM"/>
                         <constraint firstItem="JLE-qX-FLi" firstAttribute="height" secondItem="mfq-wa-PcT" secondAttribute="height" multiplier="0.1" id="Eb2-ZH-5eR"/>
-                        <constraint firstAttribute="trailing" secondItem="JLE-qX-FLi" secondAttribute="trailing" constant="16" id="MrI-2P-XoA"/>
                         <constraint firstAttribute="bottom" secondItem="JLE-qX-FLi" secondAttribute="bottom" id="Pq6-sQ-0RI"/>
                         <constraint firstAttribute="trailing" secondItem="PUE-Zm-eSU" secondAttribute="trailing" id="aaP-2B-g44"/>
                         <constraint firstItem="PUE-Zm-eSU" firstAttribute="leading" secondItem="mfq-wa-PcT" secondAttribute="leading" id="l3Q-hf-mPw"/>
                         <constraint firstItem="JLE-qX-FLi" firstAttribute="top" secondItem="PUE-Zm-eSU" secondAttribute="bottom" id="lYq-Hr-Mbg"/>
-                        <constraint firstItem="JLE-qX-FLi" firstAttribute="leading" secondItem="mfq-wa-PcT" secondAttribute="leading" constant="16" id="mlv-CQ-lKg"/>
+                        <constraint firstItem="JLE-qX-FLi" firstAttribute="leading" secondItem="mfq-wa-PcT" secondAttribute="leading" constant="24" id="mlv-CQ-lKg"/>
                         <constraint firstItem="PUE-Zm-eSU" firstAttribute="top" secondItem="mfq-wa-PcT" secondAttribute="top" id="uB9-NZ-osS"/>
                     </constraints>
                 </view>
@@ -96,8 +95,5 @@
         <namedColor name="whiteTwo">
             <color red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

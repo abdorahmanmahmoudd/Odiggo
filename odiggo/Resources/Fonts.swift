@@ -11,6 +11,8 @@ extension UIFont {
     
     /// Predefined font sizes
     enum FontSize: CGFloat {
+        /// 5
+        case micro = 5
         /// 10
         case tiny = 10
         /// 12

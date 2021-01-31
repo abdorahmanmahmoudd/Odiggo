@@ -43,6 +43,12 @@ final class PageControl: UIControl {
         }
     }
     
+    var hightlightedDotSelection: Bool = true {
+        didSet {
+            updateDotsAppearance()
+        }
+    }
+    
     @IBInspectable
     var pageIndicatorTintColor: UIColor? = .lightGray
     
@@ -50,9 +56,12 @@ final class PageControl: UIControl {
     var currentPageIndicatorTintColor: UIColor? = .darkGray
     
     /// Constraint constants
-    private let dotWidth: CGFloat = 9
-    private let selectedDotWidth: CGFloat = 20
-    private let customSpacing: CGFloat = 7
+    private let dotWidthPercentage: CGFloat = 0.375 /// 9 : 24
+    private let selectDotWidthPercentage: CGFloat = 2.2 /// 9 : 20
+    private let maxDotHeight: CGFloat = 9
+    private var customSpacing: CGFloat {
+        return hightlightedDotSelection ? 7 : 5
+    }
     
     /// Dots stack view container
     private lazy var stackView = UIStackView(frame: bounds)
@@ -98,16 +107,27 @@ final class PageControl: UIControl {
         }
     }
     
+    /// configure dot views constraints dynamically based on view height
     private func configureDotView(dot: UIView, with index: Int = 0) {
+        
+        var dotHeight = bounds.height * dotWidthPercentage
+        if dotHeight > maxDotHeight {
+            dotHeight = maxDotHeight
+        }
+
+        if let heightConstraint = dot.constraints.first(where: { $0.firstAttribute == .height }) {
+            heightConstraint.constant = dotHeight
+        } else {
+            dot.heightAnchor.constraint(equalToConstant: dotHeight).isActive = true
+        }
+        
+        let dotWidth = dotHeight
+        let newSelectedDotWidth = hightlightedDotSelection ? dotHeight * selectDotWidthPercentage : dotHeight
         
         dot.layer.cornerRadius = dotWidth / 2
         dot.layer.masksToBounds = true
         
-        if dot.constraints.first(where: { $0.firstAttribute == .height }) == nil {
-            dot.heightAnchor.constraint(equalToConstant: dotWidth).isActive = true
-        }
-        
-        let newWidthConstant = index == currentPage ? selectedDotWidth : dotWidth
+        let newWidthConstant = index == currentPage ? newSelectedDotWidth : dotWidth
         
         if let widthConstraint = dot.constraints.first(where: { $0.firstAttribute == .width }) {
             widthConstraint.constant = newWidthConstant

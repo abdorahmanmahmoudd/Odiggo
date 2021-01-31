@@ -133,6 +133,12 @@ extension CategoryResultViewController: UITableViewDataSource {
         cell.configure(with: viewModel.item(for: indexPath))
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if viewModel.shouldGetNextPage(withCellIndex: indexPath.row) {
+            viewModel.getNextPage()
+        }
+    }
 }
 
 // MARK: UITableViewDelegate
