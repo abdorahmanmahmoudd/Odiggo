@@ -37,6 +37,7 @@ extension ProductDetailsViewController {
             
         }, completion: { [weak self] _ in
             
+            self?.setCurrentPage(0)
             self?.isPanGesturing = false
             self?.currentSnapPosition = .bottom
         })
