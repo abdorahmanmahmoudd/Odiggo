@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 final class SearchViewController: BaseViewController {
     
+    @IBOutlet private weak var noResultViewContainer: UIView!
     @IBOutlet private weak var searchHistoryTitleLabel: UILabel!
     @IBOutlet private weak var keywordsTitleLabel: UILabel!
     @IBOutlet private weak var alignedCollectionViewLayout: AlignedCollectionViewFlowLayout!
@@ -17,8 +20,9 @@ final class SearchViewController: BaseViewController {
     
     /// Properties
     private var viewModel: SearchViewModel!
-    
     private var searchTextField: OTextField?
+    
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +48,7 @@ final class SearchViewController: BaseViewController {
         
         configureKeywordsCollectionView()
         configureSearchHistoryTableView()
+        configureResultEmptyView()
         
         keywordsTitleLabel.text = "KEYWORDS_TITLE".localized
         searchHistoryTitleLabel.text = "SEARCHHISTORY_TITLE".localized
@@ -97,10 +102,24 @@ final class SearchViewController: BaseViewController {
             case .result:
                 debugPrint("Result SearchViewController")
                 self.showLoadingIndicator(visible: false)
+                
+                self.noResultViewContainer.isHidden = !self.viewModel.isEmpty()
                 self.keywordsCollectionView.reloadData()
                 self.searchHistoryTableView.reloadData()
             }
         }
+        
+        /// Bind TexttField value changed event
+        searchTextField?.rx.controlEvent([.editingChanged])
+            .observeOn(MainScheduler.instance).asObservable()
+            .debounce(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
+            .subscribe({ [weak self] _ in
+                
+                if let text = self?.searchTextField?.text, text.hasContent() {
+                    self?.viewModel.fetchKeywords(text)
+                }
+                
+            }).disposed(by: disposeBag)
     }
     
     override func retry() {
@@ -110,6 +129,19 @@ final class SearchViewController: BaseViewController {
     override func viewTapped(_ sender: UITapGestureRecognizer) {
         super.viewTapped(sender)
         searchTextField?.resignFirstResponder()
+    }
+    
+    private func configureResultEmptyView() {
+        
+        guard let emptyView = ResultEmptyView().loadNib() as? ResultEmptyView else {
+            return
+        }
+        emptyView.configure(with: "search.empty.icon",
+                            title: "NO_RESULT_TITLE".localized,
+                            description: "NO_RESULT_DESC".localized)
+        noResultViewContainer.addSubview(emptyView)
+        emptyView.activateConstraints(for: noResultViewContainer)
+        noResultViewContainer.isHidden = true
     }
 }
 

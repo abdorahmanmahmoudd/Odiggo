@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,6 +14,7 @@
                 <outlet property="alignedCollectionViewLayout" destination="Jjl-L8-PRl" id="mJj-s7-Lc8"/>
                 <outlet property="keywordsCollectionView" destination="xDb-Tq-imc" id="cqY-6q-ABf"/>
                 <outlet property="keywordsTitleLabel" destination="biC-jA-emj" id="Jkf-A5-FXg"/>
+                <outlet property="noResultViewContainer" destination="DBV-pq-Mlv" id="Hex-HK-euI"/>
                 <outlet property="searchHistoryTableView" destination="JTw-yd-5Lg" id="MzQ-M7-Ohm"/>
                 <outlet property="searchHistoryTitleLabel" destination="Chq-5T-zjC" id="k8O-Cv-tpF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -87,15 +88,23 @@
                         <constraint firstAttribute="bottom" secondItem="6cV-J2-CTo" secondAttribute="bottom" id="IHo-vf-1kN"/>
                     </constraints>
                 </scrollView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBV-pq-Mlv">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" name="whiteTwo"/>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="whiteTwo"/>
             <constraints>
+                <constraint firstItem="DBV-pq-Mlv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Cuk-BW-nf7"/>
                 <constraint firstItem="Z9s-hh-qns" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="HCr-YY-gmO"/>
                 <constraint firstItem="Z9s-hh-qns" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="KKU-Lz-sIK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DBV-pq-Mlv" secondAttribute="trailing" id="ZZ6-Hh-cOF"/>
                 <constraint firstItem="6cV-J2-CTo" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="aQg-gw-YhI"/>
                 <constraint firstAttribute="trailing" secondItem="Z9s-hh-qns" secondAttribute="trailing" id="j2B-sG-eyj"/>
                 <constraint firstAttribute="bottom" secondItem="Z9s-hh-qns" secondAttribute="bottom" id="u1D-Am-XfZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="DBV-pq-Mlv" secondAttribute="bottom" id="yve-Eu-QlG"/>
+                <constraint firstItem="DBV-pq-Mlv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zTG-Bk-Nzr"/>
             </constraints>
             <point key="canvasLocation" x="44.927536231884062" y="124.55357142857142"/>
         </view>

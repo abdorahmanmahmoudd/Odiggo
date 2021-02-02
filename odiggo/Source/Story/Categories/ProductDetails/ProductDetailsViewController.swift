@@ -46,13 +46,13 @@ final class ProductDetailsViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        tabBarController?.tabBar.isHidden = !isMovingFromParent
+        tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        tabBarController?.tabBar.isHidden = isMovingFromParent
+        tabBarController?.tabBar.isHidden = false
     }
     
     private func styleNavigationItem() {

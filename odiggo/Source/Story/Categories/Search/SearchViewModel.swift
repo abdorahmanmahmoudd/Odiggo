@@ -15,6 +15,7 @@ final class SearchViewModel: BaseStateController {
     
     private var keywords: [String] = []
     private var term = String()
+    private var isFirstSearch = true
     
     private var searchHistory = [String]()
     
@@ -32,7 +33,7 @@ extension SearchViewModel {
         loadingState()
         self.term = term
 
-        if !term.isEmpty && term != searchHistory.last {
+        if term.hasContent() && term != searchHistory.last {
             self.searchHistory.append(term)
             storeSearchHistory(with: searchHistory)
         }
@@ -44,6 +45,7 @@ extension SearchViewModel {
             }
             self.keywords = keywords
             self.resultState()
+            self.isFirstSearch = false
             
         }, onError: { [weak self] error in
             
@@ -58,7 +60,6 @@ extension SearchViewModel {
         }
         searchHistory = history
         fetchKeywords(searchHistory.last ?? "")
-        resultState()
     }
 }
 
@@ -71,6 +72,10 @@ extension SearchViewModel {
     
     func numberOfKeywords() -> Int {
         return keywords.count
+    }
+    
+    func isEmpty() -> Bool {
+        return keywords.isEmpty && term.hasContent() && !isFirstSearch
     }
 }
 
