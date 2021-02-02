@@ -29,7 +29,7 @@ extension ProductDetailsViewController {
 
             } else if difference < -UIScreen.main.bounds.height {
                 /// Bottom bounce, disabled
-                imageContainerHeightConstraint.constant = -UIScreen.main.bounds.height * minImagesContainerViewHeightPercentage
+                imageContainerHeightConstraint.constant = (-UIScreen.main.bounds.height - tabbarHeight) * minImagesContainerViewHeightPercentage
 
             } else if difference < 0 {
                 /// Normal scroll
@@ -40,7 +40,7 @@ extension ProductDetailsViewController {
         case .ended, .cancelled:
             productDetailsView.scrollView.isScrollEnabled = true
 
-            let difference = max(-UIScreen.main.bounds.height,
+            let difference = max(-UIScreen.main.bounds.height - tabbarHeight,
                                  startConstant + (gesture.translation(in: view).y - startTranslation.y))
             let velocity = gesture.velocity(in: view)
 

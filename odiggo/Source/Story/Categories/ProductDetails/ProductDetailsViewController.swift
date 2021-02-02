@@ -13,6 +13,7 @@ final class ProductDetailsViewController: BaseViewController {
     @IBOutlet weak var pageControlView: PageControl!
     @IBOutlet private(set) weak var imagesCollectionView: UICollectionView!
     @IBOutlet private weak var productDetailsContainerView: UIView!
+    @IBOutlet private weak var orderNowButton: OButton!
     
     /// UI Constraints
     @IBOutlet private(set) var pageControlViewHeightConstraint: NSLayoutConstraint!
@@ -25,6 +26,7 @@ final class ProductDetailsViewController: BaseViewController {
     var startConstant: CGFloat = 0
     var startTranslation: CGPoint = .zero
     lazy var defaultNavigationBarHeight: CGFloat = navigationController?.navigationBar.bounds.height ?? 0
+    lazy var tabbarHeight: CGFloat = tabBarController?.tabBar.bounds.height ?? 0
     
     /// Properties
     private(set) var viewModel: ProductDetailsViewModel!
@@ -41,6 +43,18 @@ final class ProductDetailsViewController: BaseViewController {
         viewModel.fetchProduct()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tabBarController?.tabBar.isHidden = !isMovingFromParent
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        tabBarController?.tabBar.isHidden = isMovingFromParent
+    }
+    
     private func styleNavigationItem() {
         let backButton = UIBarButtonItem.odiggoBackButton(target: self,
                                                           action: #selector(self.didPressBackButton),
@@ -51,8 +65,8 @@ final class ProductDetailsViewController: BaseViewController {
                                                              target: nil)
         
         let shareButton = UIBarButtonItem.customBarButtonItem(image: UIImage(named: "product.share.icon"),
-                                                              selector: nil,
-                                                              target: nil)
+                                                              selector: #selector(self.share(sender:)),
+                                                              target: self)
         
         navigationItemStyle = NavigationItemStyle.detailsStyle(leftItems: [backButton].compactMap({ $0 }),
                                                                rightItems: [cartButton, shareButton].compactMap({ $0 }))
@@ -64,6 +78,9 @@ final class ProductDetailsViewController: BaseViewController {
         configurePanGesture()
         pageControlView.addTarget(self, action: #selector(onPageChanged(_:)), for: .valueChanged)
         pageControlView.hightlightedDotSelection = false
+        orderNowButton.config(title: "ORDER_NOW_TITLE".localized, image: UIImage(named: "cart.icon"),
+                              type: .primary(backgroundColor: .mediumGreen), font: UIFont.font(.primaryBold, .huge),
+                              alignment: .textTrailing)
     }
     
     private func configureImagesCollectionView() {
@@ -215,6 +232,37 @@ final class ProductDetailsViewController: BaseViewController {
         
         /// When the scroll view is scrolled to top or futher, we should scroll too
         return visibleScrollView.contentOffset.y <= 0
+    }
+    
+    // MARK: - Actions
+    @IBAction func OrderNowTapped(_ sender: OButton) {
+        debugPrint("OrderNowTapped")
+    }
+    
+    @IBAction func whatsAppUsTapped(_ sender: Any) {
+        debugPrint("whatsAppUsTapped")
+    }
+    
+    @objc
+    func share(sender: UIView){
+
+        let textToShare = "CHECK_OUT_THIS_ONE".localized
+        guard let myWebsite = URL(string: viewModel.linkToShare()) else {
+            return
+        }
+        let image = UIImage(named: "home.logo") ?? UIImage()
+        let activityViewController : UIActivityViewController = UIActivityViewController(
+            activityItems: [textToShare, myWebsite, image], applicationActivities: nil)
+        
+        activityViewController.popoverPresentationController?.sourceView = sender
+        activityViewController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.down
+        activityViewController.popoverPresentationController?.sourceRect = CGRect(x: 150, y: 150, width: 0, height: 0)
+        
+        activityViewController.activityItemsConfiguration = [UIActivity.ActivityType.message] as? UIActivityItemsConfigurationReading
+        activityViewController.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
+
+        activityViewController.isModalInPresentation = true
+        self.present(activityViewController, animated: true, completion: nil)
     }
 }
 

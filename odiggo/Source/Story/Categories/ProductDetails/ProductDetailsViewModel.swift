@@ -22,7 +22,7 @@ final class ProductDetailsViewModel: BaseStateController {
     }
     
     func fetchProduct() {
-        productImages = [selectedProduct.featuredImage, selectedProduct.featuredImage]
+        productImages = [selectedProduct.featuredImage]
         resultState()
     }
 }
@@ -40,5 +40,9 @@ extension ProductDetailsViewModel {
     
     func productDetails() -> Product {
         return selectedProduct
+    }
+    
+    func linkToShare() -> String {
+        return selectedProduct.slug ?? ""
     }
 }

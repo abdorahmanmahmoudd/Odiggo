@@ -31,7 +31,7 @@ extension ProductDetailsViewController {
 
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
 
-            self.imageContainerHeightConstraint.constant = -UIScreen.main.bounds.height * self.minImagesContainerViewHeightPercentage
+            self.imageContainerHeightConstraint.constant = (-UIScreen.main.bounds.height - self.tabbarHeight) * self.minImagesContainerViewHeightPercentage
             self.productDetailsView.scrollView.isScrollEnabled = true
             self.view.layoutIfNeeded()
             
