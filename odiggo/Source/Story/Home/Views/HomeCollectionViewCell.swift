@@ -42,12 +42,12 @@ final class HomeCollectionViewCell: UICollectionViewCell {
         containerView.layer.cornerRadius = 15
     }
     
-    func configure(_ category: Category?, _ backgroundColor: UIColor.Colors) {
+    func configure(_ category: Category?, _ backgroundColor: UIColor.Colors, _ desc: String) {
         
         containerView.backgroundColor = UIColor.color(color: backgroundColor)
 
         titleLabel.text = category?.name
-        descriptionLabel.text = category?.description
+        descriptionLabel.text = desc
  
         if let urlString = category?.banner_image, let imageURL = URL(string: urlString) {
             Nuke.loadImage(with: imageURL, into: imageView)

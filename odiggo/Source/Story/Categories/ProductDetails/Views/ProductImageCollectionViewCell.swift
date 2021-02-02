@@ -19,7 +19,7 @@ final class ProductImageCollectionViewCell: UICollectionViewCell {
         }
         let autoLayoutAttributes = layoutAttributes
         let autoLayoutSize = CGSize(width: superview.frame.width,
-                                    height: superview.frame.height / 1.59)
+                                    height: superview.frame.height / 1.3)
         
         let autoLayoutFrame = CGRect(origin: autoLayoutAttributes.frame.origin,
                                      size: autoLayoutSize)
